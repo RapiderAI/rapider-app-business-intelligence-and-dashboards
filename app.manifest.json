@@ -1,0 +1,4394 @@
+{
+  "name": "Rapider Business Intelligence & Dashboards",
+  "key": "business-intelligence-and-dashboards",
+  "domainKey": "DAT",
+  "appSuite": {
+    "key": "DAT",
+    "title": "Rapider Data & Analytics Suite"
+  },
+  "type": "App",
+  "description": "Business Intelligence & Dashboards enterprise microapplication in the Rapider Data & Analytics Suite.",
+  "isPublic": true,
+  "tags": [
+    "dat",
+    "business-intelligence-and-dashboards",
+    "top-200"
+  ],
+  "iconUrl": "fas fa-chart-bar",
+  "icon": "fas fa-chart-bar",
+  "route": "business-intelligence-and-dashboards",
+  "rating": 5,
+  "reviewCount": 0,
+  "status": "app-metadata-completed",
+  "coverPage": "<!-- Rapider Official App SOW & Specification | App #096: Business Intelligence & Dashboards (bi-dashboards) | Domain: DAT -->\n\n# #096 Business Intelligence & Dashboards (`bi-dashboards`) — Scope of Work (SOW)\n\n- **App Number & Slug:** `#096` / `096-business-intelligence-and-dashboards`\n- **Proposed Rapider App Key:** `bi-dashboards`\n- **Suite / Domain Key:** `DAT` (Data, Analytics & Business Intelligence Suite — `Dat*` Canonical Prefix)\n- **Representative Product (`P1`):** Microsoft Power BI (Microsoft Fabric)\n- **Combined Feature Catalog Reference:** [../combined-features/096-business-intelligence-and-dashboards-features.md](../combined-features/096-business-intelligence-and-dashboards-features.md)\n\n---\n\n## 1. Executive Outcome & Target Audience\n\n`bi-dashboards` delivers a single, governed Business Intelligence, Semantic Metrics, and Executive Dashboarding studio natively integrated across the Rapider suite ecosystem. Organizations routinely suffer from \"spreadsheet metric anarchy,\" where Sales, Finance, Operations, and Support teams compute conflicting numbers for ARR, Gross Margin, Net Retention, and SLA Attainment using ungoverned SQL snippets and disconnected CSV exports. `bi-dashboards` eliminates metric drift by combining a versioned semantic and metrics layer (`DatSemanticModel`, `DatMetricDefinition`) with a high-velocity interactive visual canvas (`DatDashboard`, `DatDashboardTile`), self-service no-code exploration (`DatSavedExploration`), row-level security (`DatRowSecurityPolicy`), and threshold alerting (`DatMetricAlert`).\n\n- **SME Fast-Path Defaults:** Small and mid-market teams can activate turnkey cross-suite starter packs (Sales Pipeline, Cash & P&L, Headcount & Attrition, Order Fulfillment, Support SLA) in under five minutes with zero SQL authoring, pre-wired to canonical Rapider collections (`Crm*`, `Fin*`, `Hr*`, `Ops*`, `Sup*`).\n- **Enterprise Progressive Disclosure:** Data engineering and analytics teams unlock multi-fact semantic model versioning, `DRAFT -> PROMOTED -> CERTIFIED` steward workflows via Rapider Home `WorkItem`s, dynamic Row/Column-Level Security (`DatRowSecurityPolicy`), multi-currency fiscal normalization against `FinLegalEntity`, RLS-aware report bursting (`DatReportSubscription`), and signed embedded analytics (`DatEmbedConfig`).\n- **Measurable Success Outcomes:**\n  - 100% single-source definition reuse for certified KPIs across executive scorecards, operational dashboards, and conversational AI queries.\n  - Sub-1.5s interactive cross-filtering and drill-down latency on cached semantic snapshots using non-blocking `findSWR`/`countSWR` reads.\n  - Zero unauthorized row or sensitive-column leakage across live queries, scheduled PDF/CSV subscriptions, and embedded widgets.\n- **Top 6 Global Benchmarks Synthesized:** `P1` Microsoft Power BI (Fabric), `P2` Salesforce Tableau, `P3` Google Looker, `P4` Qlik Cloud Analytics, `P5` SAP Analytics Cloud, and `P6` Zoho Analytics.\n\n---\n\n## 2. In-Scope, Out-of-Scope & Suite Ownership Boundaries\n\n### In-Scope\n1. Governed semantic models (`DatSemanticModel`) declaring entity relationships, join cardinalities, primary grains, and `LIVE` vs. `CACHED_SNAPSHOT` execution strategies.\n2. Canonical calculated measures and KPI scorecards (`DatMetricDefinition`) with time-intelligence (YoY, QoQ, MoM, trailing windows), target polarity, and steward certification states.\n3. Multi-tile responsive dashboard builder (`DatDashboard`, `DatDashboardTile`) with global filter bars, `#activeFilterTagsBar` chips, cross-highlighting, what-if sliders, hierarchical drill-downs, and deep-link record drill-through.\n4. No-code self-service visual exploration workbench (`DatSavedExploration`) with pivot matrices, Top-N bucketing, personal filter bookmarks, and variance driver attribution.\n5. Row-Level and Column-Level Security policies (`DatRowSecurityPolicy`), scheduled RLS-aware digest subscriptions (`DatReportSubscription`), threshold alerts (`DatMetricAlert`), and signed embedded widget configurations (`DatEmbedConfig`).\n6. Grounded conversational BI (\"Ask BI\") strictly constrained to certified `DatSemanticModel` and `DatMetricDefinition` definitions via platform `projectChannelMessage` threads.\n\n### Out-of-Scope\n1. Event-stream clickstream SDK ingestion, session replay, and mobile funnel instrumentation — owned by `#097 Product Analytics` (`product-analytics`).\n2. External SaaS/CDC ingestion connectors, ELT sync orchestration, and raw replication pipelines — owned by `#098 Data Integration / ETL` (`data-integration`).\n3. Cloud SQL compute cluster provisioning, physical warehouse storage partitioning, and multi-statement SQL IDE worksheets — owned by `#099 Data Warehouse & Analytics Platform` (`data-warehouse`).\n4. Enterprise-wide PII classification scanning, cross-system technical lineage graphs, and master glossary ownership — owned by `#100 Data Governance & Catalog` (`data-governance`).\n5. Financial general-ledger journal posting or statutory accounting",
+  "scopeOfWork": "<!-- Rapider Official App SOW & Specification | App #096: Business Intelligence & Dashboards (bi-dashboards) | Domain: DAT -->\n\n# #096 Business Intelligence & Dashboards (`bi-dashboards`) — Scope of Work (SOW)\n\n- **App Number & Slug:** `#096` / `096-business-intelligence-and-dashboards`\n- **Proposed Rapider App Key:** `bi-dashboards`\n- **Suite / Domain Key:** `DAT` (Data, Analytics & Business Intelligence Suite — `Dat*` Canonical Prefix)\n- **Representative Product (`P1`):** Microsoft Power BI (Microsoft Fabric)\n- **Combined Feature Catalog Reference:** [../combined-features/096-business-intelligence-and-dashboards-features.md](../combined-features/096-business-intelligence-and-dashboards-features.md)\n\n---\n\n## 1. Executive Outcome & Target Audience\n\n`bi-dashboards` delivers a single, governed Business Intelligence, Semantic Metrics, and Executive Dashboarding studio natively integrated across the Rapider suite ecosystem. Organizations routinely suffer from \"spreadsheet metric anarchy,\" where Sales, Finance, Operations, and Support teams compute conflicting numbers for ARR, Gross Margin, Net Retention, and SLA Attainment using ungoverned SQL snippets and disconnected CSV exports. `bi-dashboards` eliminates metric drift by combining a versioned semantic and metrics layer (`DatSemanticModel`, `DatMetricDefinition`) with a high-velocity interactive visual canvas (`DatDashboard`, `DatDashboardTile`), self-service no-code exploration (`DatSavedExploration`), row-level security (`DatRowSecurityPolicy`), and threshold alerting (`DatMetricAlert`).\n\n- **SME Fast-Path Defaults:** Small and mid-market teams can activate turnkey cross-suite starter packs (Sales Pipeline, Cash & P&L, Headcount & Attrition, Order Fulfillment, Support SLA) in under five minutes with zero SQL authoring, pre-wired to canonical Rapider collections (`Crm*`, `Fin*`, `Hr*`, `Ops*`, `Sup*`).\n- **Enterprise Progressive Disclosure:** Data engineering and analytics teams unlock multi-fact semantic model versioning, `DRAFT -> PROMOTED -> CERTIFIED` steward workflows via Rapider Home `WorkItem`s, dynamic Row/Column-Level Security (`DatRowSecurityPolicy`), multi-currency fiscal normalization against `FinLegalEntity`, RLS-aware report bursting (`DatReportSubscription`), and signed embedded analytics (`DatEmbedConfig`).\n- **Measurable Success Outcomes:**\n  - 100% single-source definition reuse for certified KPIs across executive scorecards, operational dashboards, and conversational AI queries.\n  - Sub-1.5s interactive cross-filtering and drill-down latency on cached semantic snapshots using non-blocking `findSWR`/`countSWR` reads.\n  - Zero unauthorized row or sensitive-column leakage across live queries, scheduled PDF/CSV subscriptions, and embedded widgets.\n- **Top 6 Global Benchmarks Synthesized:** `P1` Microsoft Power BI (Fabric), `P2` Salesforce Tableau, `P3` Google Looker, `P4` Qlik Cloud Analytics, `P5` SAP Analytics Cloud, and `P6` Zoho Analytics.\n\n---\n\n## 2. In-Scope, Out-of-Scope & Suite Ownership Boundaries\n\n### In-Scope\n1. Governed semantic models (`DatSemanticModel`) declaring entity relationships, join cardinalities, primary grains, and `LIVE` vs. `CACHED_SNAPSHOT` execution strategies.\n2. Canonical calculated measures and KPI scorecards (`DatMetricDefinition`) with time-intelligence (YoY, QoQ, MoM, trailing windows), target polarity, and steward certification states.\n3. Multi-tile responsive dashboard builder (`DatDashboard`, `DatDashboardTile`) with global filter bars, `#activeFilterTagsBar` chips, cross-highlighting, what-if sliders, hierarchical drill-downs, and deep-link record drill-through.\n4. No-code self-service visual exploration workbench (`DatSavedExploration`) with pivot matrices, Top-N bucketing, personal filter bookmarks, and variance driver attribution.\n5. Row-Level and Column-Level Security policies (`DatRowSecurityPolicy`), scheduled RLS-aware digest subscriptions (`DatReportSubscription`), threshold alerts (`DatMetricAlert`), and signed embedded widget configurations (`DatEmbedConfig`).\n6. Grounded conversational BI (\"Ask BI\") strictly constrained to certified `DatSemanticModel` and `DatMetricDefinition` definitions via platform `projectChannelMessage` threads.\n\n### Out-of-Scope\n1. Event-stream clickstream SDK ingestion, session replay, and mobile funnel instrumentation — owned by `#097 Product Analytics` (`product-analytics`).\n2. External SaaS/CDC ingestion connectors, ELT sync orchestration, and raw replication pipelines — owned by `#098 Data Integration / ETL` (`data-integration`).\n3. Cloud SQL compute cluster provisioning, physical warehouse storage partitioning, and multi-statement SQL IDE worksheets — owned by `#099 Data Warehouse & Analytics Platform` (`data-warehouse`).\n4. Enterprise-wide PII classification scanning, cross-system technical lineage graphs, and master glossary ownership — owned by `#100 Data Governance & Catalog` (`data-governance`).\n5. Financial general-ledger journal posting or statutory accounting close — owned by `FIN` (`acc`, `budgeting`).\n\n### Cross-Suite Ownership & Integration Contract\n\n| Domain / App | Owns (Single Source of Truth) | Integration Contract with `bi-dashboards` (`#096`) |\n| :--- | :--- | :--- |\n| **`bi-dashboards` (`#096`)** | `DatSemanticModel`, `DatMetricDefinition`, `DatDashboard`, `DatDashboardTile`, `DatSavedExploration`, `DatMetricAlert`, `DatReportSubscription`, `DatRowSecurityPolicy`, `DatEmbedConfig` | Publishes certified KPI snapshots, alert breach events, and embed tokens to sibling Rapider apps. |\n| **`#099` Data Warehouse (`data-warehouse`)** | `DatWarehouseTable`, `DatComputeCluster`, `DatDatabaseCatalog` | `DatSemanticModel` binds to governed `DatWarehouseTable` views/tables for analytical SQL pushdown without duplicating physical storage metadata. |\n| **`#100` Data Governance (`data-governance`)** | `DatBusinessGlossaryTerm`, `DatCatalogAsset`, `DatClassificationTag` | `DatMetricDefinition` links to `DatBusinessGlossaryTerm`; column masking honors PII/confidential `DatClassificationTag` policies. |\n| **`CRM`, `FIN`, `HR`, `OPS`, `SUP`, `APM` Suites** | Canonical operational entities (`CrmOpportunity`, `FinInvoice`, `FinBudget`, `FinLegalEntity`, `HrEmployee`, `HrDepartment`, `OpsCustomerOrder`, `SupTicket`, `ApmProject`) | Read-only analytical aggregation and record-level drill-through navigation (`window.rapiderApi.navigate`); never mutates operational suite records directly. |\n| **Rapider Platform Services** | Identity/RBAC, Multi-tenant Workspace Context, Home `WorkItem`s, `projectChannelMessage`, Files/Drive, Kafka/OpenWhisk | Routes certification reviews and KPI breach tasks to Home `WorkItem`s; stores dashboard discussions and AI sessions in `projectChannelMessage`; exports bursts to Files/Drive. |\n\n---\n\n## 3. Primary Web Pages & Sidebar Navigation Architecture (12 Pages)\n\nEvery visible sidebar section strictly enforces the **Minimum 3 Items Rule (`>= 3` visible pages per section)**, while detail, create, and edit drawers/routes set `displayOnMenu: false`.\n\n| # | Route | Page Title | Sidebar Section | Menu Visible | Key Components & UX |\n| :--- | :--- | :--- | :--- | :--- | :--- |\n| 1 | `bi-home` | Executive Analytics Hub | `Analytics` | `true` (Order 1) | Pinned KPI scorecard ribbon, recently viewed dashboards, turnkey starter pack activator, `#activeFilterTagsBar`, Ask BI drawer launcher. |\n| 2 | `dashboards` | Dashboards Directory | `Analytics` | `true` (Order 2) | Bulk `findSWR` catalog of `DatDashboard`s with collection/certification filter pills, `#activeFilterTagsBar` + `Clear all`, clickable dashboard title link, icon+text `Edit`, icon-only `Delete`. |\n| 3 | `kpi-scorecards` | KPI Scorecards & Goals | `Analytics` | `true` (Order 3) | Governed `DatMetricDefinition` watchlist with `Decimal128` Actual vs. Target cards, sparklines, `ON_TRACK / AT_RISK / OFF_TRACK` pills, and variance drill-down. |\n| 4 | `explore-workbench` | Self-Service Explore | `Modeling & Studio` | `true` (Order 4) | Interactive drag-and-drop dimension/measure query builder (`DatSavedExploration`), chart type switcher, pivot matrix with heat-map shading, and `Pin to Dashboard` action. |\n| 5 | `semantic-models` | Semantic Models | `Modeling & Studio` | `true` (Order 5) | Catalog of `DatSemanticModel`s showing source suite/warehouse bindings, execution mode (`LIVE` / `CACHED_SNAPSHOT`), certification badge, and cache refresh trigger. |\n| 6 | `metrics-library` | Certified Metrics Library | `Modeling & Studio` | `true` (Order 6) | Searchable `DatMetricDefinition` registry with formula preview, downstream dashboard impact count, `#100` glossary link, and `Request Certification` workflow trigger. |\n| 7 | `metric-alerts` | Alerts & Thresholds | `Governance & Delivery` | `true` (Order 7) | `DatMetricAlert` management table with condition badges, breach history, cooldown status, and linked Rapider Home `WorkItem` references. |\n| 8 | `report-subscriptions` | Scheduled Subscriptions | `Governance & Delivery` | `true` (Order 8) | `DatReportSubscription` schedule manager (cron cadence, PDF/CSV format, RLS-enforced recipient groups, last run status). |\n| 9 | `rls-embed-policies` | Security & Embed Policies | `Governance & Delivery` | `true` (Order 9) | Unified governance view for `DatRowSecurityPolicy` rules (with \"Test as Role\" simulator) and `DatEmbedConfig` signed widget tokens. |\n| 10 | `dashboard-view` | Interactive Dashboard Canvas | *(Hidden)* | `false` | Full responsive multi-tile canvas (`#/{dashboard-view}?id=...`), global date/dimension filter bar, what-if sliders, drill-through drawer, `projectChannelMessage` comments, and `Back to Dashboards` state-preserving link. |\n| 11 | `semantic-model-detail` | Semantic Model Designer | *(Hidden)* | `false` | Entity relationship join graph, primary grain validator, calculated measure editor, version history diff, and impact lineage inspector. |\n| 12 | `dashboard-tile-editor` | Dashboard & Tile Drawer | *(Hidden)* | `false` | Sliding creation/edit drawer for `DatDashboard` metadata, `DatDashboardTile` binding, and `DatMetricAlert` rules; auto-closes via `closePageDrawer()` on save/cancel with `try/catch/finally` button reset. |\n\n**Mandatory Rapider UI Standards Enforced Across All Pages:**\n- **SWR First:** All initial page mounts use `window.rapiderApi.findSWR` and `countSWR` without redundant client `isDeleted` predicates, paired with defensive in-memory filtering (`items = rawData.filter(it => it && it.isDeleted !== true)`).\n- **Table Actions & Navigation:** Zero standalone `\"View\"` buttons in `Actions` columns; primary record names (`title`, `name`, `metricCode`) render as `font-semibold text-primary hover:underline cursor-pointer` navigating to detail views; `Edit` uses `<i class=\"fas fa-edit mr-1\"></i><span>Edit</span>`; `Delete` uses icon-only `<i class=\"fas fa-trash-alt\"></i>` with custom modal confirmation (`#rapiderConfirmOkBtn`) and zero `window.alert`/`confirm`/`prompt`.\n- **Contrast & Active Filter Bar:** Primary and destructive buttons strictly enforce `!text-white text-white` with `style=\"color: #ffffff !important;\"`. Every searchable/filterable view renders `#activeFilterTagsBar` with HTML-escaped dismissible chips and `[Clear all]`.\n\n---\n\n## 4. Canonical Data Models (`Dat*` — 8 Models)\n\nAll models omit `projectId` (enforced by platform host tenancy), use platform UUID `id`, track optimistic concurrency `version`, and use `00000000-xxxx-xxxx-xxxx-xxxxxxxxxxxx` UUIDs for seed records.\n\n| Model Name | Key Fields & Types | Relationships & External Refs | Invariants & Lifecycle |\n| :--- | :--- | :--- | :--- |\n| **`DatSemanticModel`** | `id: UUID`, `code: string`, `name: string`, `sourceType: enum(RAPIDER_SUITE, WAREHOUSE_TABLE, BLENDED)`, `entitiesJson: object[]`, `joinsJson: object[]`, `primaryGrain: string`, `executionMode: enum(LIVE, CACHED_SNAPSHOT)`, `refreshCron: string?`, `lastRefreshedAt: datetime?`, `certificationStatus: enum(DRAFT, PROMOTED, CERTIFIED, ARCHIVED)`, `certifiedByUserId: UUID?`, `version: int` | Optional refs to `#099` `DatWarehouseTable.id` and `#100` `DatCatalogAsset.id`; owned by Author `ownerUserId`. | `code` unique per workspace. Every join must declare explicit cardinality (`ONE_TO_ONE`, `MANY_TO_ONE`) to block fan-out double counting. Transition to `CERTIFIED` requires Steward role via guarded command. |\n| **`DatMetricDefinition`** | `id: UUID`, `semanticModelId: UUID`, `metricCode: string`, `name: string`, `formulaExpression: string`, `aggregationType: enum(SUM, AVG, COUNT_DISTINCT, RATIO, WINDOW_DELTA)`, `unitType: enum(CURRENCY, PERCENT, INTEGER, DECIMAL, DURATION_MS)`, `currencyCode: string?`, `targetValue: Decimal128?`, `polarity: enum(HIGHER_IS_BETTER, LOWER_IS_BETTER)`, `certificationStatus: enum(DRAFT, PROMOTED, CERTIFIED, DEPRECATED)`, `glossaryTermId: UUID?`, `version: int` | `semanticModelId -> DatSemanticModel.id`; optional `glossaryTermId -> DatBusinessGlossaryTerm.id` (`#100`); optional `legalEntityId -> FinLegalEntity.id`. | Monetary `targetValue` stored as `Decimal128`. Formula edits increment `version` and record an immutable formula audit snapshot so historical scorecard variance remains reproducible. |\n| **`DatDashboard`** | `id: UUID`, `slug: string`, `title: string`, `collectionName: string`, `description: string`, `globalFiltersSchemaJson: object[]`, `whatIfParametersJson: object[]`, `certificationStatus: enum(DRAFT, PROMOTED, CERTIFIED, ARCHIVED)`, `starterPackKey: string?`, `viewCount90d: int`, `discussionChannelId: UUID?`, `ownerUserId: UUID`, `version: int` | `discussionChannelId -> projectChannelMessage` thread; contains `1..N` `DatDashboardTile` records. | Deleting a dashboard soft-deletes child tiles and disables active `DatReportSubscription`s atomically. |\n| **`DatDashboardTile`** | `id: UUID`, `dashboardId: UUID`, `semanticModelId: UUID`, `metricIds: UUID[]`, `title: string`, `visualType: enum(KPI_CARD, LINE, AREA, BAR_STACKED, BAR_GROUPED, COMBO, WATERFALL, FUNNEL, PIVOT_MATRIX, SCATTER, GEO_MAP)`, `dimensionsJson: string[]`, `tileFiltersJson: object[]`, `drillThroughRoute: string?`, `gridPositionJson: {x, y, w, h}`, `version: int` | `dashboardId -> DatDashboard.id`; `semanticModelId -> DatSemanticModel.id`; `metricIds -> DatMetricDefinition.id[]`. | Every `metricIds` entry must belong to `semanticModelId` or a shared conformed dimension bridge. `gridPositionJson` coordinates must not overlap on desktop (`12-col`) grid. |\n| **`DatSavedExploration`** | `id: UUID`, `semanticModelId: UUID`, `name: string`, `querySpecJson: object`, `visualType: string`, `bookmarkFiltersJson: object`, `visibility: enum(PRIVATE, SHARED_WORKSPACE)`, `ownerUserId: UUID`, `discussionChannelId: UUID?`, `version: int` | `semanticModelId -> DatSemanticModel.id`; optional `pinnedDashboardId -> DatDashboard.id`. | Private explorations are readable only by `ownerUserId` until explicitly shared; query execution always enforces `DatRowSecurityPolicy` dynamically at run time. |\n| **`DatRowSecurityPolicy`** | `id: UUID`, `semanticModelId: UUID`, `policyName: string`, `subjectRoleKeys: string[]`, `rowFilterPredicateJson: object`, `maskedColumns: string[]`, `isEnabled: boolean`, `version: int` | `semanticModelId -> DatSemanticModel.id`; binds dynamic attributes (`currentUser.id`, `HrDepartment.id`, `CrmTerritory.id`). | Default-deny when RLS is active on a `DatSemanticModel` and caller matches zero enabled policies (unless granted explicit `BI_ADMIN_BYPASS_RLS` audit-logged permission). |\n| **`DatMetricAlert`** | `id: UUID`, `metricId: UUID`, `name: string`, `operator: enum(ABOVE, BELOW, PCT_INCREASE_ABOVE, PCT_DECREASE_ABOVE)`, `thresholdValue: Decimal128`, `evaluationCron: string`, `cooldownMinutes: int`, `severity: enum(INFO, WARNING, CRITICAL)`, `lastEvaluatedAt: datetime?`, `lastTriggeredAt: datetime?`, `activeWorkItemId: UUID?`, `isEnabled: boolean`, `version: int` | `metricId -> DatMetricDefinition.id`; `activeWorkItemId -> Platform WorkItem.id`. | `thresholdValue` uses `Decimal128`. Duplicate breaches inside `cooldownMinutes` update existing `WorkItem` context rather than spamming duplicate tasks. |\n| **`DatReportSubscription`** | `id: UUID`, `dashboardId: UUID`, `name: string`, `scheduleCron: string`, `exportFormat: enum(PDF, CSV_ZIP, DIGEST_LINK)`, `recipientUserIds: UUID[]`, `presetFiltersJson: object`, `isEnabled: boolean`, `lastDeliveredAt: datetime?`, `lastDeliveryFileId: UUID?`, `version: int` | `dashboardId -> DatDashboard.id`; `lastDeliveryFileId -> Platform Drive File.id`. | Snapshot rendering MUST evaluate `DatRowSecurityPolicy` per individual recipient (`recipientUserIds`) — never broadcast an unrestricted admin snapshot to restricted viewers. |\n\n*(Note: Embedded widget configurations are stored as governed `DatEmbedConfig` documents or scoped tokens managed via `rls-embed-policies` with allowed origin allowlists, dashboard/tile scope, and mandatory TTL expiration <= 24 hours per signed token).*\n\n---\n\n## 5. Core End-to-End User Journeys (6 Journeys)\n\n1. **Journey 1 — SME 5-Minute Executive Starter Pack Activation:**\n   - An Operations Director opens `bi-home` (`Executive Analytics Hub`), clicks `\"Activate Sales & Cashflow Starter Pack\"`, and previews pre-wired models over `CrmOpportunity` and `FinInvoice`.\n   - The guarded command `activateStarterPack` provisions certified-ready `DatSemanticModel`, six `DatMetricDefinition`s (`Pipeline Coverage`, `Win Rate`, `Net Invoiced Revenue`, `DSO`, `Overdue AR`, `Gross Cash Inflow`), and a `DatDashboard`.\n   - The user lands directly on `#/dashboard-view?id=...`, applies a `\"This Quarter\"` filter pill (`#activeFilterTagsBar` renders `Date Range: \"This Quarter\" ✕`), and inspects live KPIs without writing a single line of SQL.\n2. **Journey 2 — Semantic Modeling & Steward Certification via Home `WorkItem`:**\n   - A BI Analyst creates a `DatSemanticModel` (`Net Revenue Retention Model`) joining `CrmAccount`, `FinSubscription`, and `FinInvoice` on `semantic-model-detail`, authors `NRR %` in `metrics-library`, and clicks `\"Submit for Certification\"`.\n   - The system transitions status to `PROMOTED` and dispatches a Rapider Home `WorkItem` assigned to the Data Steward role.\n   - The Data Steward clicks deep into `semantic-model-detail` from the Home `WorkItem`, verifies grain and `#100` `DatBusinessGlossaryTerm` alignment, and approves certification (`CERTIFIED`), illuminating the verified shield badge across every consuming dashboard.\n3. **Journey 3 — Interactive Cross-Filtering, Drill-Through to Source Suite & Back-Navigation Restoration:**\n   - On `dashboards`, a Regional VP filters by `Collection: \"Revenue\"` (`#activeFilterTagsBar` shows `Collection: \"Revenue\" ✕`), then physically clicks the primary link `\"Global Enterprise Pipeline\"` to navigate to `#/dashboard-view?id=...`.\n   - Clicking the `\"EMEA\"` bar on the Regional Revenue Waterfall cross-filters all sibling tiles and updates `#activeFilterTagsBar` (`Region: \"EMEA\" ✕`).\n   - Clicking drill-through on an at-risk deal row opens the canonical `CRM` `CrmOpportunity` detail route (`window.rapiderApi.navigate`), and clicking `\"Back to Dashboards\"` restores `dashboards` with `Collection: \"Revenue\"` intact.\n4. **Journey 4 — KPI Threshold Breach to Actionable Home `WorkItem`:**\n   - A Support Director configures a `DatMetricAlert` on `SLA Breach Rate %` (`ABOVE 5.00%`, `CRITICAL`, `cooldownMinutes: 240`) from `metric-alerts`.\n   - Upon scheduled evaluation, `SLA Breach Rate %` reaches `6.40%`. The alert workflow emits `dat.bi.metric_alert.triggered`, creates a high-priority Rapider Home `WorkItem` linked to the filtered `#/dashboard-view`, and suppresses duplicate alerts during the 4-hour cooldown window.\n5. **Journey 5 — Self-Service Exploration & Pinning to Dashboard:**\n   - A Financial Analyst opens `explore-workbench`, selects `Cash & AP Aging Model`, groups `FinSupplierBill` by `Department` (`HrDepartment`) and `Aging Bucket`, applies conditional heat-map shading, and clicks `\"Pin to Dashboard\"`.\n   - The sliding `dashboard-tile-editor` drawer opens, binds the new `PIVOT_MATRIX` `DatDashboardTile` to `\"Controller Weekly Cockpit\"`, invalidates `DatDashboard` SWR cache on save, auto-closes the drawer via `closePageDrawer()`, and immediately renders the newly pinned tile.\n6. **Journey 6 — Grounded Conversational BI (\"Ask BI\") with Citation & RLS Enforcement:**\n   - A Territory Manager opens the `\"Ask BI\"` side thread (`projectChannelMessage`) on `bi-home` and asks: *\"Why did Q3 Net Bookings drop compared to Q2?\"*\n   - The AI assistant resolves `Net Bookings` strictly against the certified `DatMetricDefinition`, executes the variance driver decomposition (`BID-027`) constrained by the caller's `EMEA-North` `DatRowSecurityPolicy`, and posts an interactive chart + cited explanation referencing `DatMetricDefinition` `MTR-BOOKINGS-NET` without exposing `AMER` or `APAC` rows.\n\n---\n\n## 6. Consolidated Feature Priorities & Work Packages (`P0`, `P1`, `P2`)\n\n### `P0` Foundation Work Packages (Must-Have for Initial Release)\n- **`WP-P0-1` Semantic & Metrics Core (`BID-001`, `BID-002`, `BID-003`):** Build `semantic-models`, `semantic-model-detail`, and `metrics-library` supporting entity-join validation, `Decimal128` measure formulas, and `LIVE` vs. `CACHED_SNAPSHOT` execution modes (`BI Author` / `Data Engineer`).\n- **`WP-P0-2` Interactive Dashboard Canvas & Starter Packs (`BID-007`, `BID-008`, `BID-009`, `BID-010`):** Build `bi-home`, `dashboards`, `dashboard-view`, and `dashboard-tile-editor` with 11 core chart types, `#activeFilterTagsBar`, hierarchical drill-down, cross-suite drill-through, and 5 turnkey SME starter packs (`All Roles`).\n- **`WP-P0-3` Governed Explore Workbench & Pivot Matrix (`BID-014`, `BID-015`):** Build `explore-workbench` for no-code slice-and-dice, heat-map pivot matrices, and one-click dashboard pinning (`Explorer` / `BI Author`).\n- **`WP-P0-4` Scorecards, Alerts, Subscriptions & RLS (`BID-018`, `BID-019`, `BID-020`, `BID-023`):** Build `kpi-scorecards`, `metric-alerts`, `report-subscriptions`, and `rls-embed-policies` enforcing dynamic user/department/territory RLS across live queries and scheduled exports (`Data Steward` / `Executive`).\n\n### `P1` Scale & Enterprise Governance Work Packages\n- **`WP-P1-1` Steward Certification, Fiscal Multi-Currency & Versioning (`BID-004`, `BID-005`, `BID-006`):** Home `WorkItem` certification flows, `FinLegalEntity` currency/fiscal calendar alignment, and downstream impact lineage checks before model edits (`Data Steward`).\n- **`WP-P1-2` What-If Scenarios, Bookmarks, IBCS Variance & Tile Threads (`BID-011`, `BID-012`, `BID-013`, `BID-016`, `BID-021`):** Parameter sliders, personal/shared filter bookmarks, Actual-vs-Budget (`FinBudget`) variance waterfalls, Top-N bucketing, and `projectChannelMessage` chart annotations (`Analyst` / `Executive`).\n- **`WP-P1-3` Collections Governance & Signed Embedded SDK (`BID-024`, `BID-025`):** Granular collection permissions and short-lived signed embed tokens for embedding KPIs in sibling Rapider apps and external portals (`BI Admin`).\n\n### `P2` Adjacent & Grounded AI Work Packages\n- **`WP-P2-1` Grounded \"Ask BI\" & Key-Driver Variance Decomposition (`BID-026`, `BID-027`):** Certified-metric-grounded NLQ over `projectChannelMessage` and automated statistical variance driver attribution (`All Permitted Viewers`).\n- **`WP-P2-2` Associative Excluded-Value Inspector, Alert Workflows & Telemetry (`BID-017`, `BID-022`, `BID-028`):** Unmatched dimension member discovery, OpenWhisk/Kafka workflow triggers on KPI breach, and 90-day stale dashboard hygiene analytics (`BI Author` / `Data Steward`).\n\n---\n\n## 7. Roles, Permissions & Field-Level Governance\n\n| Role | Permitted Actions | Restricted / Field-Level Boundaries |\n| :--- | :--- | :--- |\n| **`BI Viewer`** | View shared `DatDashboard`s and `kpi-scorecards`, apply interactive filters/bookmarks, participate in `projectChannelMessage` tile comments, subscribe to permitted digests. | Strictly bound by `DatRowSecurityPolicy` row filters and `maskedColumns`. Cannot create/edit dashboards, run raw CSV exports if disabled on collection, or view unshared draft models. |\n| **`BI Explorer / Analyst`** | All `BI Viewer` permissions + query certified/promoted `DatSemanticModel`s in `explore-workbench`, save `DatSavedExploration`s, create personal `DatMetricAlert`s, use grounded `\"Ask BI\"`. | Cannot modify canonical `DatSemanticModel` joins, alter `CERTIFIED` `DatMetricDefinition` formulas, or edit `DatRowSecurityPolicy` rules. |\n| **`BI Author`** | Create and edit `DatSemanticModel`s (`DRAFT`/`PROMOTED`), author `DatMetricDefinition`s, build and publish `DatDashboard`s and `DatDashboardTile`s, submit certification requests. | Cannot self-certify models/metrics (`CERTIFIED` requires `Data Steward`) and cannot disable workspace-mandatory `DatRowSecurityPolicy` predicates. |\n| **`Data Steward`** | Approve/reject `CERTIFIED` promotions via Home `WorkItem`s, link `#100` `DatBusinessGlossaryTerm`s, author and simulate `DatRowSecurityPolicy` rules, archive stale assets. | Cannot bypass audit logging; RLS \"Test as Role\" simulation displays aggregated/masked previews under audit trail. |\n| **`BI Administrator`** | Manage workspace starter packs, configure `DatEmbedConfig` allowed origins and signing keys, tune snapshot refresh schedules (`refreshCron`), manage role assignments. | Every administrative override or embed key rotation emits an immutable security audit event. |\n\n---\n\n## 8. Technical APIs, Guarded Commands, Events & `requiredWorkflows`\n\n### Guarded Commands (Idempotent & Concurrency-Safe)\nEvery mutation command requires `idempotencyKey: string`, `correlationId: string`, and `expectedVersion: number`:\n1. `dat.bi.activateStarterPack({ packKey, idempotencyKey, correlationId })` — Idempotently provisions prebuilt semantic models, metrics, and dashboards without duplicating existing `code`/`slug` assets.\n2. `dat.bi.publishSemanticModel({ semanticModelId, targetStatus, expectedVersion, idempotencyKey, correlationId })` — Validates DAG join acyclicity and downstream tile compatibility; if `targetStatus === 'PROMOTED'` with certification requested, creates a Home `WorkItem`.\n3. `dat.bi.certifyAsset({ assetType, assetId, decision, reviewNotes, expectedVersion, idempotencyKey, correlationId })` — Restricted to `Data Steward`; transitions `DatSemanticModel`, `DatMetricDefinition`, or `DatDashboard` to `CERTIFIED` and resolves the linked `WorkItem`.\n4. `dat.bi.refreshModelSnapshot({ semanticModelId, idempotencyKey, correlationId })` — Triggers asynchronous materialization of `CACHED_SNAPSHOT` aggregates and updates `lastRefreshedAt`.\n5. `dat.bi.evaluateMetricAlert({ alertId, idempotencyKey, correlationId })` — Evaluates `DatMetricAlert` against `Decimal128` `thresholdValue`, respects `cooldownMinutes`, and opens/updates a Home `WorkItem`.\n6. `dat.bi.issueEmbedToken({ embedConfigId, viewerContext, ttlSeconds, idempotencyKey, correlationId })` — Issues a cryptographically signed, RLS-scoped token (`ttlSeconds <= 86400`).\n\n### Domain Events Published & Consumed (Kafka)\n- **Published:** `dat.bi.semantic_model.certified.v1`, `dat.bi.metric.updated.v1`, `dat.bi.dashboard.published.v1`, `dat.bi.metric_alert.triggered.v1`, `dat.bi.subscription.delivered.v1`, `dat.bi.embed_token.issued.v1`.\n- **Consumed:** `dat.warehouse.table.refreshed.v1` (from `#099` to trigger `CACHED_SNAPSHOT` invalidation), `dat.governance.classification.updated.v1` (from `#100` to auto-enforce column masking on newly tagged PII columns), `fin.period.closed.v1` (from `FIN` to refresh executive financial scorecards).\n\n### `requiredWorkflows` (Declared in `app.manifest.json`)\n- `biSnapshotRefreshWorkflow` — Scheduled & event-driven semantic cache materialization with exponential backoff.\n- `biMetricAlertEvaluatorWorkflow` — Cron/refresh-triggered KPI threshold evaluation creating Home `WorkItem`s and optional downstream webhook triggers.\n- `biReportSubscriptionBurstWorkflow` — Per-recipient RLS-scoped dashboard PDF/CSV rendering to Rapider Drive (`Files`) and digest notification dispatch.\n- `biCertificationApprovalWorkflow` — Coordinates Steward review `WorkItem` lifecycle and audit stamping.\n\n### Grounded Rapider AI Governance Rules\n- `\"Ask BI\"` (`BID-026`) MUST compile natural-language requests exclusively into structured query specifications over permitted `DatSemanticModel` and `DatMetricDefinition` IDs — arbitrary free-form LLM-generated raw database queries are strictly prohibited.\n- Every AI response MUST cite the exact `metricCode`, applied date window, data freshness timestamp, and active RLS policy name, and MUST require explicit human confirmation before creating a `DatMetricAlert` or modifying any `DatDashboardTile`.\n\n---\n\n## 9. Security, Privacy, Compliance & Non-Functional Requirements\n\n- **Zero Cross-Tenant & Row Leakage (SOC 2 Type II / ISO 27001):** Workspace isolation is enforced at the platform host layer (zero `projectId` fields in app models), while `DatRowSecurityPolicy` predicates are injected server-side prior to SQL/aggregation execution, cache key derivation (`cacheKey = hash(modelId + querySpec + rlsPolicyScope)`), scheduled subscription rendering, and AI context assembly.\n- **GDPR / CCPA & PII Masking:** Columns tagged as PII (`email`, `phone`, `nationalId`, `compensation`) in `#100` `DatClassificationTag` or `DatRowSecurityPolicy.maskedColumns` are redacted or aggregated (`COUNT >= 5` k-anonymity minimum for sensitive HR cohorts) before returning payloads to non-privileged callers.\n- **Immutable Audit Trail & Retention:** Every semantic formula change, RLS policy edit, CSV/PDF data export, and embed token issuance writes an append-only audit entry retained for 7 years; cached snapshot artifacts auto-purge per workspace retention policy (default 90 days for rendered subscription exports).\n- **Monetary Accuracy:** Financial KPIs (`ARR`, `Net Revenue`, `Gross Margin`, `AP/AR Aging`, `Budget Variance` in `\\$`) strictly preserve `Decimal128` precision end-to-end without floating-point drift.\n- **Accessibility & Responsive UX:** Full WCAG 2.2 AA compliance (colorblind-safe chart palettes, keyboard-accessible data tables fallback for every visual tile, ARIA live announcements on filter updates, `#ffffff !important` contrast on primary/danger buttons) across `390px` mobile scorecards, `768px` tablet grids, and `1440px` executive wallboards.\n\n---\n\n## 10. Deterministic Acceptance Criteria (14 Testable Criteria)\n\n1. **AC-01 (Sidebar Minimum-3 Rule):** `app.manifest.json` defines exactly 3 visible sidebar sections (`Analytics`: 3 items, `Modeling & Studio`: 3 items, `Governance & Delivery`: 3 items), each containing `>= 3` `displayOnMenu: true` pages, while detail/drawer routes (`dashboard-view`, `semantic-model-detail`, `dashboard-tile-editor`) set `displayOnMenu: false`.\n2. **AC-02 (SWR Clean Query & Defensive Filtering):** Mounting `bi-home`, `dashboards`, `kpi-scorecards`, `semantic-models`, `metrics-library`, `metric-alerts`, `report-subscriptions`, and `rls-embed-policies` invokes `findSWR`/`countSWR` with zero `isDeleted` query clauses in network payloads while filtering soft-deleted items in memory (`item.isDeleted !== true`).\n3. **AC-03 (Table Actions & Click-Through Navigation):** On `dashboards`, `semantic-models`, `metrics-library`, and `metric-alerts`, zero `\"View\"` buttons exist in `Actions`; clicking the primary identifier physically navigates to the target detail view (`#/dashboard-view?id=...` or `#/semantic-model-detail?id=...`) without `<base href>` 404 diversion, `Edit` renders icon + `\"Edit\"` text, and `Delete` renders an icon-only button.\n4. **AC-04 (Active Filter Tags & Clear All):** Entering a search query or clicking a collection/status pill on `dashboards` or `dashboard-view` immediately displays `#activeFilterTagsBar` with HTML-escaped chips (`Search: \"...\" ✕`, `Status: \"...\" ✕`) and `[Clear all]`; dismissing a chip or clicking `[Clear all]` synchronously restores the unfiltered tiles/rows.\n5. **AC-05 (Optimistic Edit, Delete & Drawer Auto-Close):** Saving a new or edited tile in `dashboard-tile-editor` resets the save button inside a `finally` block, clears `DatDashboard`/`DatDashboardTile` SWR caches, broadcasts `RECORD_UPDATED`, closes the drawer via `closePageDrawer()`, and updates the canvas without a page reload; deleting a dashboard via `#rapiderConfirmOkBtn` removes it optimistically from memory with zero `window.confirm` calls.\n6. **AC-06 (Semantic Fan-Out Guard):** Attempting to save a `DatSemanticModel` with an undeclared `MANY_TO_MANY` join or circular entity path fails deterministic validation with a descriptive field error before persistence.\n7. **AC-07 (`Decimal128` Financial Metric Fidelity):** Evaluating a `CURRENCY` `DatMetricDefinition` over `FinInvoice` records totaling `\\$1,250,430.17` vs. a `FinBudget` target of `\\$1,200,000.00` computes an exact variance of `+\\$50,430.17` (`+4.20%`) with zero floating-point rounding error.\n8. **AC-08 (Row-Level & Column-Level Security Enforcement):** A `BI Viewer` scoped via `DatRowSecurityPolicy` to `Region = \"EMEA\"` querying `dashboard-view`, `explore-workbench`, CSV export, or `\"Ask BI\"` receives strictly `EMEA` aggregates and redacted `maskedColumns`, and never shares an unscoped SWR/snapshot cache key with an `AMER` viewer.\n9. **AC-09 (Steward Certification via Home `WorkItem`):** Submitting a `DatSemanticModel` or `DatMetricDefinition` for certification creates a Rapider Home `WorkItem`; a `BI Author` attempting to invoke `dat.bi.certifyAsset` receives `403 Forbidden`, whereas a `Data Steward` approving it transitions status to `CERTIFIED` and displays the verified badge.\n10. **AC-10 (Threshold Alert Cooldown Deduplication):** Triggering `dat.bi.evaluateMetricAlert` twice within `cooldownMinutes` when a KPI breaches `thresholdValue` creates exactly one Home `WorkItem` and updates its latest reading rather than creating duplicate tasks.\n11. **AC-11 (Per-Recipient RLS Report Bursting):** Executing `biReportSubscriptionBurstWorkflow` for a `DatReportSubscription` with two recipients in different territories produces distinct territory-filtered snapshots rather than sending an unfiltered admin PDF.\n12. **AC-12 (Back Navigation Filter Preservation):** Navigating from `dashboards` (with `Status: \"CERTIFIED\"` active) into `dashboard-view` and clicking `#btnGoBack` returns to `dashboards` with `Status: \"CERTIFIED\"` and `#activeFilterTagsBar` preserved.\n13. **AC-13 (Grounded AI Metric Citation):** Submitting a natural-language question in `\"Ask BI\"` returns a response persisted in `projectChannelMessage` that explicitly cites the resolved `DatMetricDefinition.metricCode` and rejects queries referencing non-existent or unauthorized metrics.\n14. **AC-14 (Dark/Light Theme & Button Contrast):** Automated `validate_theme` checks pass across all 12 routes in both light and dark modes with `#ffffff !important` white text on all primary and destructive buttons and WCAG 2.2 AA contrast ratios.\n",
+  "thumbnailUrl": "",
+  "isolationScope": "ENTERPRISE_SHARED",
+  "dataModels": [
+    {
+      "name": "ApmProject",
+      "title": "Project",
+      "description": "Represents a high-level initiative or body of work containing epics, sprints, and issues.",
+      "domainName": "Rapider Project & Portfolio Suite",
+      "domainKey": "APM",
+      "datatableName": "ApmProject",
+      "dataTableName": "ApmProject",
+      "sqlTableName": "apm_project",
+      "isolationScope": "ENTERPRISE_SHARED",
+      "titleFieldTemplate": "{{ name }}",
+      "scope": {
+        "where": {}
+      },
+      "aiAgentConfig": {
+        "vectorSearchFields": [
+          "name",
+          "description"
+        ],
+        "planning": {
+          "availableOperations": [
+            "create",
+            "update",
+            "read",
+            "delete"
+          ]
+        },
+        "entityItemCreate": {
+          "requiredFields": [
+            "name"
+          ],
+          "immutableFields": [
+            "isDeleted"
+          ],
+          "requiredRelations": [],
+          "autoGenerateFields": [
+            "description"
+          ],
+          "additionalPrompt": "When creating a project, ensure the name is concise and professional.",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": "Project name must be unique."
+        },
+        "entityItemUpdate": {
+          "immutableFields": [],
+          "autoGenerateFields": [],
+          "additionalPrompt": "Do not change the project name unless explicitly requested.",
+          "requireUserConfirmation": true,
+          "customValidationPrompt": "Ensure status transitions make logical sense.",
+          "restrictedStates": [
+            {
+              "description": "Cannot modify archived projects.",
+              "where": {}
+            }
+          ]
+        },
+        "entityRead": {
+          "defaultPageSize": 20,
+          "defaultContextLimit": 10,
+          "hiddenFields": [],
+          "maskedFields": [],
+          "additionalPrompt": "Summarize project progress by counting related open vs closed issues if possible."
+        },
+        "entityItemDelete": {
+          "requireCaptchaConfirmation": true,
+          "cascadingRelations": [
+            "epics",
+            "sprints",
+            "issues"
+          ],
+          "restrictedStates": [
+            {
+              "description": "Cannot delete active projects.",
+              "where": {}
+            }
+          ]
+        }
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Primary key UUID.",
+          "isPrimaryKey": true,
+          "isRequired": true,
+          "isHidden": false,
+          "isArray": false,
+          "defaultFn": "uuidv4"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isDeleted",
+          "type": "boolean",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        }
+      ],
+      "relations": [
+        {
+          "name": "epics",
+          "type": "hasMany",
+          "sourceModel": "ApmProject",
+          "sourceField": "id",
+          "targetModel": "ApmEpic",
+          "targetField": "projectId",
+          "throughModel": null,
+          "description": "A project can have multiple epics."
+        },
+        {
+          "name": "sprints",
+          "type": "hasMany",
+          "sourceModel": "ApmProject",
+          "sourceField": "id",
+          "targetModel": "ApmSprint",
+          "targetField": "projectId",
+          "throughModel": null,
+          "description": "A project can have multiple sprints."
+        },
+        {
+          "name": "issues",
+          "type": "hasMany",
+          "sourceModel": "ApmProject",
+          "sourceField": "id",
+          "targetModel": "ApmIssue",
+          "targetField": "projectId",
+          "throughModel": null,
+          "description": "A project contains multiple issues."
+        }
+      ]
+    },
+    {
+      "name": "CrmOpportunity",
+      "title": "Opportunity",
+      "description": "Represents a potential sales deal.",
+      "domainName": "Rapider CRM Suite",
+      "domainKey": "CRM",
+      "datatableName": "CrmOpportunity",
+      "dataTableName": "CrmOpportunity",
+      "sqlTableName": "crm_opportunity",
+      "isolationScope": "ENTERPRISE_SHARED",
+      "titleFieldTemplate": "{{ name }} - {{ stage }}",
+      "scope": {
+        "where": {}
+      },
+      "aiAgentConfig": {
+        "vectorSearchFields": [
+          "name",
+          "stage"
+        ],
+        "planning": {
+          "availableOperations": [
+            "create",
+            "update",
+            "read",
+            "delete"
+          ]
+        },
+        "entityItemCreate": {
+          "requiredFields": [
+            "name",
+            "accountId",
+            "stage"
+          ],
+          "immutableFields": [
+            "isDeleted"
+          ],
+          "requiredRelations": [],
+          "autoGenerateFields": [],
+          "additionalPrompt": "Ensure the opportunity is linked to an account.",
+          "requireUserConfirmation": true,
+          "customValidationPrompt": "Amount must be greater than 0 if provided."
+        },
+        "entityItemUpdate": {
+          "immutableFields": [
+            "accountId"
+          ],
+          "autoGenerateFields": [],
+          "additionalPrompt": "",
+          "requireUserConfirmation": true,
+          "customValidationPrompt": "If the stage is changing to 'Closed Won', ensure the amount is greater than 0.",
+          "restrictedStates": [
+            {
+              "description": "Opportunities marked as Closed Won cannot have their amounts modified.",
+              "where": {}
+            }
+          ]
+        },
+        "entityRead": {
+          "defaultPageSize": 10,
+          "defaultContextLimit": 20,
+          "hiddenFields": [],
+          "maskedFields": [],
+          "additionalPrompt": "Highlight high-value opportunities."
+        },
+        "entityItemDelete": {
+          "requireCaptchaConfirmation": true,
+          "cascadingRelations": [],
+          "restrictedStates": [
+            {
+              "description": "Cannot delete closed opportunities.",
+              "where": {}
+            }
+          ]
+        }
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Primary key UUID.",
+          "isPrimaryKey": true,
+          "isRequired": true,
+          "isHidden": false,
+          "isArray": false,
+          "defaultFn": "uuidv4"
+        },
+        {
+          "name": "accountId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "primaryContactId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "amount",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "stage",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "closeDate",
+          "type": "date",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "probability",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "Lifecycle or record status.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isDeleted",
+          "type": "boolean",
+          "description": "Soft deletion flag.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        }
+      ],
+      "relations": [
+        {
+          "name": "account",
+          "type": "belongsTo",
+          "sourceModel": "CrmOpportunity",
+          "sourceField": "accountId",
+          "targetModel": "CrmAccount",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "The account this opportunity is associated with."
+        },
+        {
+          "name": "primaryContact",
+          "type": "belongsTo",
+          "sourceModel": "CrmOpportunity",
+          "sourceField": "primaryContactId",
+          "targetModel": "CrmContact",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "The primary contact driving this deal."
+        },
+        {
+          "name": "quotes",
+          "type": "hasMany",
+          "sourceModel": "CrmOpportunity",
+          "sourceField": "id",
+          "targetModel": "CrmQuote",
+          "targetField": "opportunityId",
+          "throughModel": null,
+          "description": "Quotes generated for this opportunity."
+        },
+        {
+          "name": "orders",
+          "type": "hasMany",
+          "sourceModel": "CrmOpportunity",
+          "sourceField": "id",
+          "targetModel": "OpsCustomerOrder",
+          "targetField": "opportunityId",
+          "throughModel": null,
+          "description": "Orders generated upon winning the opportunity."
+        },
+        {
+          "name": "activities",
+          "type": "hasMany",
+          "sourceModel": "CrmOpportunity",
+          "sourceField": "id",
+          "targetModel": "CrmActivity",
+          "targetField": "opportunityId",
+          "throughModel": null,
+          "description": "Activities logged against this deal."
+        }
+      ]
+    },
+    {
+      "name": "FinBudget",
+      "title": "Budget",
+      "description": "A financial budget for a period.",
+      "domainName": "Rapider Finance Suite",
+      "domainKey": "FIN",
+      "datatableName": "FinBudget",
+      "dataTableName": "FinBudget",
+      "sqlTableName": "fin_budget",
+      "isolationScope": "ENTERPRISE_SHARED_GOVERNED",
+      "titleFieldTemplate": "{{ name }}",
+      "scope": {
+        "where": {}
+      },
+      "aiAgentConfig": {
+        "vectorSearchFields": [
+          "id"
+        ],
+        "planning": {
+          "availableOperations": [
+            "create",
+            "update",
+            "read",
+            "delete"
+          ]
+        },
+        "entityItemCreate": {
+          "requiredFields": [
+            "id"
+          ],
+          "immutableFields": [
+            "isDeleted"
+          ],
+          "requiredRelations": [],
+          "autoGenerateFields": [
+            "id"
+          ],
+          "additionalPrompt": "When creating Budget, ensure required attributes are populated.",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": ""
+        },
+        "entityItemUpdate": {
+          "immutableFields": [
+            "id"
+          ],
+          "autoGenerateFields": [],
+          "additionalPrompt": "",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": "",
+          "restrictedStates": []
+        },
+        "entityRead": {
+          "defaultPageSize": 20,
+          "defaultContextLimit": 30,
+          "hiddenFields": [
+            "isDeleted"
+          ],
+          "maskedFields": [],
+          "additionalPrompt": ""
+        },
+        "entityItemDelete": {
+          "requireCaptchaConfirmation": true,
+          "cascadingRelations": [],
+          "restrictedStates": []
+        }
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Primary key UUID.",
+          "isPrimaryKey": true,
+          "isRequired": true,
+          "isHidden": false,
+          "isArray": false,
+          "defaultFn": "uuidv4"
+        },
+        {
+          "name": "scenarioId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "entityId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "fiscalYear",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "totalAmount",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isDeleted",
+          "type": "boolean",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "Lifecycle or record status.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        }
+      ],
+      "relations": []
+    },
+    {
+      "name": "FinInvoice",
+      "title": "Invoice",
+      "description": "Accounts Payable or Receivable invoice.",
+      "domainName": "Rapider Finance Suite",
+      "domainKey": "FIN",
+      "datatableName": "FinInvoice",
+      "dataTableName": "FinInvoice",
+      "sqlTableName": "fin_invoice",
+      "isolationScope": "ENTERPRISE_SHARED_GOVERNED",
+      "titleFieldTemplate": "{{ partnerName }} - {{ totalAmount }} {{ currency }}",
+      "scope": {
+        "where": {}
+      },
+      "aiAgentConfig": {
+        "vectorSearchFields": [
+          "partnerName"
+        ],
+        "planning": {
+          "availableOperations": [
+            "create",
+            "update",
+            "read",
+            "delete"
+          ]
+        },
+        "entityItemCreate": {
+          "requiredFields": [
+            "legalEntityId",
+            "type",
+            "partnerName",
+            "invoiceDate",
+            "totalAmount",
+            "currency"
+          ],
+          "immutableFields": [
+            "isDeleted"
+          ],
+          "requiredRelations": [],
+          "autoGenerateFields": [
+            "status"
+          ],
+          "additionalPrompt": "",
+          "requireUserConfirmation": true,
+          "customValidationPrompt": ""
+        },
+        "entityItemUpdate": {
+          "immutableFields": [
+            "legalEntityId",
+            "type"
+          ],
+          "autoGenerateFields": [],
+          "additionalPrompt": "",
+          "requireUserConfirmation": true,
+          "customValidationPrompt": "",
+          "restrictedStates": [
+            {
+              "description": "Cannot modify paid invoices.",
+              "where": {}
+            }
+          ]
+        },
+        "entityRead": {
+          "defaultPageSize": 20,
+          "defaultContextLimit": 10,
+          "hiddenFields": [],
+          "maskedFields": [],
+          "additionalPrompt": ""
+        },
+        "entityItemDelete": {
+          "requireCaptchaConfirmation": true,
+          "cascadingRelations": [
+            "payments"
+          ],
+          "restrictedStates": [
+            {
+              "description": "Cannot delete approved or paid invoices.",
+              "where": {}
+            }
+          ]
+        }
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Primary key UUID.",
+          "isPrimaryKey": true,
+          "isRequired": true,
+          "isHidden": false,
+          "isArray": false,
+          "defaultFn": "uuidv4"
+        },
+        {
+          "name": "legalEntityId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "partnerName",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "invoiceDate",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "dueDate",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "totalAmount",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "currency",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isDeleted",
+          "type": "boolean",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        },
+        {
+          "name": "invoiceNumber",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "accountId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "referenceModel": "CrmAccount",
+          "referenceField": "id"
+        },
+        {
+          "name": "billingProfileId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "referenceModel": "FinBillingProfile",
+          "referenceField": "id"
+        },
+        {
+          "name": "subscriptionId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "referenceModel": "FinSubscription",
+          "referenceField": "id"
+        },
+        {
+          "name": "customerOrderId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "referenceModel": "OpsCustomerOrder",
+          "referenceField": "id"
+        },
+        {
+          "name": "issueDate",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "subtotalAmount",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "taxAmount",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "openAmount",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "currencyCode",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "disputeStatus",
+          "type": "string",
+          "description": "Allowed values: NONE, IN_DISPUTE, RESOLVED) (from accreceivable",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "NONE",
+            "IN_DISPUTE",
+            "RESOLVED) (from accreceivable"
+          ],
+          "options": [
+            "NONE",
+            "IN_DISPUTE",
+            "RESOLVED) (from accreceivable"
+          ]
+        },
+        {
+          "name": "eInvoiceClearanceStatus",
+          "type": "string",
+          "description": "Allowed values: NOT_REQUIRED, PENDING, CLEARED, REJECTED",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "NOT_REQUIRED",
+            "PENDING",
+            "CLEARED",
+            "REJECTED"
+          ],
+          "options": [
+            "NOT_REQUIRED",
+            "PENDING",
+            "CLEARED",
+            "REJECTED"
+          ]
+        },
+        {
+          "name": "customerName",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "createdAt",
+          "type": "date",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "updatedAt",
+          "type": "date",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        }
+      ],
+      "relations": [
+        {
+          "name": "legalEntity",
+          "type": "belongsTo",
+          "sourceModel": "FinInvoice",
+          "sourceField": "legalEntityId",
+          "targetModel": "FinLegalEntity",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "The legal entity this invoice belongs to."
+        },
+        {
+          "name": "payments",
+          "type": "hasMany",
+          "sourceModel": "FinInvoice",
+          "sourceField": "id",
+          "targetModel": "FinPayment",
+          "targetField": "invoiceId",
+          "throughModel": null,
+          "description": "Payments applied to this invoice."
+        },
+        {
+          "name": "account",
+          "type": "belongsTo",
+          "sourceModel": "FinInvoice",
+          "sourceField": "accountId",
+          "targetModel": "CrmAccount",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "FinInvoice account foreign key link to CrmAccount."
+        },
+        {
+          "name": "billingProfile",
+          "type": "belongsTo",
+          "sourceModel": "FinInvoice",
+          "sourceField": "billingProfileId",
+          "targetModel": "FinBillingProfile",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "FinInvoice billingProfile foreign key link to FinBillingProfile."
+        },
+        {
+          "name": "subscription",
+          "type": "belongsTo",
+          "sourceModel": "FinInvoice",
+          "sourceField": "subscriptionId",
+          "targetModel": "FinSubscription",
+          "targetField": "id?",
+          "throughModel": null,
+          "description": "FinInvoice subscription foreign key link to FinSubscription."
+        },
+        {
+          "name": "customerOrder",
+          "type": "belongsTo",
+          "sourceModel": "FinInvoice",
+          "sourceField": "customerOrderId",
+          "targetModel": "OpsCustomerOrder",
+          "targetField": "id?",
+          "throughModel": null,
+          "description": "FinInvoice customerOrder foreign key link to OpsCustomerOrder."
+        }
+      ]
+    },
+    {
+      "name": "FinLegalEntity",
+      "title": "Legal Entity",
+      "description": "Represents a distinct legal entity within the organization.",
+      "domainName": "Rapider Finance Suite",
+      "domainKey": "FIN",
+      "datatableName": "FinLegalEntity",
+      "dataTableName": "FinLegalEntity",
+      "sqlTableName": "fin_legal_entity",
+      "isolationScope": "ENTERPRISE_SHARED_GOVERNED",
+      "titleFieldTemplate": "{{ name }}",
+      "scope": {
+        "where": {}
+      },
+      "aiAgentConfig": {
+        "vectorSearchFields": [
+          "name",
+          "country"
+        ],
+        "planning": {
+          "availableOperations": [
+            "create",
+            "update",
+            "read",
+            "delete"
+          ]
+        },
+        "entityItemCreate": {
+          "requiredFields": [
+            "name",
+            "baseCurrency",
+            "country"
+          ],
+          "immutableFields": [
+            "isDeleted"
+          ],
+          "requiredRelations": [],
+          "autoGenerateFields": [],
+          "additionalPrompt": "Ensure the base currency is a valid 3-letter ISO code.",
+          "requireUserConfirmation": true,
+          "customValidationPrompt": ""
+        },
+        "entityItemUpdate": {
+          "immutableFields": [
+            "baseCurrency"
+          ],
+          "autoGenerateFields": [],
+          "additionalPrompt": "",
+          "requireUserConfirmation": true,
+          "customValidationPrompt": "",
+          "restrictedStates": []
+        },
+        "entityRead": {
+          "defaultPageSize": 20,
+          "defaultContextLimit": 10,
+          "hiddenFields": [],
+          "maskedFields": [],
+          "additionalPrompt": ""
+        },
+        "entityItemDelete": {
+          "requireCaptchaConfirmation": true,
+          "cascadingRelations": [
+            "ledgers"
+          ],
+          "restrictedStates": []
+        }
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Primary key UUID.",
+          "isPrimaryKey": true,
+          "isRequired": true,
+          "isHidden": false,
+          "isArray": false,
+          "defaultFn": "uuidv4"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "registrationNumber",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "taxId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "baseCurrency",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "country",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isDeleted",
+          "type": "boolean",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        },
+        {
+          "name": "code",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "registeredAddressesJson",
+          "type": "object",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "taxRegistrationsJson",
+          "type": "array",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": true
+        },
+        {
+          "name": "defaultTimeZone",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "eInvoiceCountryPolicyVersion",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "parentLegalEntityId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "referenceModel": "FinLegalEntity",
+          "referenceField": "id"
+        },
+        {
+          "name": "countryCode",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "legalName",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "registeredAddresses",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "taxRegistrations",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "timezone",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "countryPolicyVersion",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "ledgerConnectionRef",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        }
+      ],
+      "relations": [
+        {
+          "name": "ledgers",
+          "type": "hasMany",
+          "sourceModel": "FinLegalEntity",
+          "sourceField": "id",
+          "targetModel": "FinLedger",
+          "targetField": "legalEntityId",
+          "throughModel": null,
+          "description": "A legal entity can have multiple ledgers."
+        },
+        {
+          "name": "invoices",
+          "type": "hasMany",
+          "sourceModel": "FinLegalEntity",
+          "sourceField": "id",
+          "targetModel": "FinInvoice",
+          "targetField": "legalEntityId",
+          "throughModel": null,
+          "description": "Invoices belonging to this legal entity."
+        },
+        {
+          "name": "parentLegalEntity",
+          "type": "belongsTo",
+          "sourceModel": "FinLegalEntity",
+          "sourceField": "parentLegalEntityId",
+          "targetModel": "FinLegalEntity",
+          "targetField": "id?",
+          "throughModel": null,
+          "description": "FinLegalEntity parentLegalEntity foreign key link to FinLegalEntity."
+        }
+      ]
+    },
+    {
+      "name": "HrDepartment",
+      "title": "Department",
+      "description": "Organizational units within the company.",
+      "domainName": "Rapider HR & Talent Suite",
+      "domainKey": "HR",
+      "datatableName": "HrDepartment",
+      "dataTableName": "HrDepartment",
+      "sqlTableName": "hr_department",
+      "isolationScope": "ENTERPRISE_SHARED_WITH_CONFIDENTIAL_VAULTS",
+      "titleFieldTemplate": "{{ name }}",
+      "scope": {
+        "where": {}
+      },
+      "aiAgentConfig": {
+        "vectorSearchFields": [
+          "name",
+          "code",
+          "description"
+        ],
+        "planning": {
+          "availableOperations": [
+            "create",
+            "update",
+            "read",
+            "delete"
+          ]
+        },
+        "entityItemCreate": {
+          "requiredFields": [
+            "name"
+          ],
+          "immutableFields": [],
+          "requiredRelations": [],
+          "autoGenerateFields": [
+            "description"
+          ],
+          "additionalPrompt": "Ensure code is short uppercase.",
+          "requireUserConfirmation": false
+        },
+        "entityItemUpdate": {
+          "immutableFields": [],
+          "autoGenerateFields": [],
+          "requireUserConfirmation": false,
+          "customValidationPrompt": "Department cannot be its own parent."
+        },
+        "entityRead": {
+          "defaultPageSize": 50,
+          "defaultContextLimit": 100
+        },
+        "entityItemDelete": {
+          "requireCaptchaConfirmation": true
+        }
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Primary key UUID.",
+          "isPrimaryKey": true,
+          "isRequired": true,
+          "isHidden": false,
+          "isArray": false,
+          "defaultFn": "uuidv4"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "code",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "headId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "parentDepartmentId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "legalEntityId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "costCenterCode",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isDeleted",
+          "type": "boolean",
+          "description": "Soft deletion flag.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        }
+      ],
+      "relations": [
+        {
+          "name": "head",
+          "type": "belongsTo",
+          "sourceModel": "HrDepartment",
+          "sourceField": "headId",
+          "targetModel": "HrEmployee",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "Employee who heads this department."
+        },
+        {
+          "name": "parentDepartment",
+          "type": "belongsTo",
+          "sourceModel": "HrDepartment",
+          "sourceField": "parentDepartmentId",
+          "targetModel": "HrDepartment",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "Parent department in the organizational hierarchy."
+        },
+        {
+          "name": "subDepartments",
+          "type": "hasMany",
+          "sourceModel": "HrDepartment",
+          "sourceField": "id",
+          "targetModel": "HrDepartment",
+          "targetField": "parentDepartmentId",
+          "throughModel": null,
+          "description": "Sub-departments under this department."
+        },
+        {
+          "name": "employees",
+          "type": "hasMany",
+          "sourceModel": "HrDepartment",
+          "sourceField": "id",
+          "targetModel": "HrEmployee",
+          "targetField": "departmentId",
+          "throughModel": null,
+          "description": "Employees in this department."
+        },
+        {
+          "name": "positions",
+          "type": "hasMany",
+          "sourceModel": "HrDepartment",
+          "sourceField": "id",
+          "targetModel": "HrPosition",
+          "targetField": "departmentId",
+          "throughModel": null,
+          "description": "Positions in this department."
+        }
+      ]
+    },
+    {
+      "name": "HrEmployee",
+      "title": "Employee",
+      "description": "Core profile representing an individual worker within the organization.",
+      "domainName": "Rapider HR & Talent Suite",
+      "domainKey": "HR",
+      "datatableName": "HrEmployee",
+      "dataTableName": "HrEmployee",
+      "sqlTableName": "hr_employee",
+      "isolationScope": "ENTERPRISE_SHARED_WITH_CONFIDENTIAL_VAULTS",
+      "titleFieldTemplate": "{{ firstName }} {{ lastName }}",
+      "scope": {
+        "where": {}
+      },
+      "aiAgentConfig": {
+        "vectorSearchFields": [
+          "firstName",
+          "lastName",
+          "email",
+          "jobTitle",
+          "employeeNumber"
+        ],
+        "planning": {
+          "availableOperations": [
+            "create",
+            "update",
+            "read",
+            "delete"
+          ]
+        },
+        "entityItemCreate": {
+          "requiredFields": [
+            "firstName",
+            "lastName",
+            "email",
+            "status"
+          ],
+          "immutableFields": [],
+          "requiredRelations": [],
+          "autoGenerateFields": [],
+          "additionalPrompt": "Ensure the email address is formatted correctly. If a department is mentioned, link the employee to the correct departmentId.",
+          "requireUserConfirmation": true,
+          "customValidationPrompt": "If status is 'Active', a hireDate must be provided or assumed as today."
+        },
+        "entityItemUpdate": {
+          "immutableFields": [],
+          "autoGenerateFields": [],
+          "additionalPrompt": "When updating manager or department, suggest creating a Lifecycle Event.",
+          "requireUserConfirmation": true,
+          "customValidationPrompt": "Ensure the employee is not set as their own manager.",
+          "restrictedStates": [
+            {
+              "description": "Cannot update terminated employees without authorization.",
+              "where": {}
+            }
+          ]
+        },
+        "entityRead": {
+          "defaultPageSize": 50,
+          "defaultContextLimit": 100,
+          "hiddenFields": [
+            "ssn"
+          ],
+          "maskedFields": [
+            "personalEmail",
+            "phone"
+          ],
+          "additionalPrompt": "Always show job title, department, and status."
+        },
+        "entityItemDelete": {
+          "requireCaptchaConfirmation": true,
+          "cascadingRelations": [
+            "lifecycleEvents",
+            "documents",
+            "emergencyContacts"
+          ],
+          "restrictedStates": [
+            {
+              "description": "Active employees must be terminated before deletion.",
+              "where": {}
+            }
+          ]
+        }
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Primary key UUID.",
+          "isPrimaryKey": true,
+          "isRequired": true,
+          "isHidden": false,
+          "isArray": false,
+          "defaultFn": "uuidv4"
+        },
+        {
+          "name": "employeeNumber",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "firstName",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "lastName",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "preferredName",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "email",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "personalEmail",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "phone",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "jobTitle",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "workerType",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "employmentType",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "hireDate",
+          "type": "date",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "startDate",
+          "type": "date",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "endDate",
+          "type": "date",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "departmentId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "managerId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "positionId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "jobProfileId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "locationId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "legalEntityId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "weeklyHours",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "timeZone",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "avatarColor",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "notes",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isDeleted",
+          "type": "boolean",
+          "description": "Soft deletion flag.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        }
+      ],
+      "relations": [
+        {
+          "name": "department",
+          "type": "belongsTo",
+          "sourceModel": "HrEmployee",
+          "sourceField": "departmentId",
+          "targetModel": "HrDepartment",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "Department this employee belongs to."
+        },
+        {
+          "name": "manager",
+          "type": "belongsTo",
+          "sourceModel": "HrEmployee",
+          "sourceField": "managerId",
+          "targetModel": "HrEmployee",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "Manager this employee reports to."
+        },
+        {
+          "name": "position",
+          "type": "belongsTo",
+          "sourceModel": "HrEmployee",
+          "sourceField": "positionId",
+          "targetModel": "HrPosition",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "Specific position this employee holds."
+        },
+        {
+          "name": "jobProfile",
+          "type": "belongsTo",
+          "sourceModel": "HrEmployee",
+          "sourceField": "jobProfileId",
+          "targetModel": "HrJobProfile",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "Job profile associated with this employee."
+        },
+        {
+          "name": "location",
+          "type": "belongsTo",
+          "sourceModel": "HrEmployee",
+          "sourceField": "locationId",
+          "targetModel": "HrLocation",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "Work location of this employee."
+        },
+        {
+          "name": "legalEntity",
+          "type": "belongsTo",
+          "sourceModel": "HrEmployee",
+          "sourceField": "legalEntityId",
+          "targetModel": "FinLegalEntity",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "Legal entity employing this person."
+        },
+        {
+          "name": "lifecycleEvents",
+          "type": "hasMany",
+          "sourceModel": "HrEmployee",
+          "sourceField": "id",
+          "targetModel": "HrLifecycleEvent",
+          "targetField": "employeeId",
+          "throughModel": null,
+          "description": "Lifecycle events for this employee."
+        },
+        {
+          "name": "changeRequests",
+          "type": "hasMany",
+          "sourceModel": "HrEmployee",
+          "sourceField": "id",
+          "targetModel": "HrChangeRequest",
+          "targetField": "employeeId",
+          "throughModel": null,
+          "description": "Pending and past change requests for this employee."
+        },
+        {
+          "name": "documents",
+          "type": "hasMany",
+          "sourceModel": "HrEmployee",
+          "sourceField": "id",
+          "targetModel": "HrDocumentRef",
+          "targetField": "employeeId",
+          "throughModel": null,
+          "description": "Uploaded compliance and employment documents."
+        },
+        {
+          "name": "emergencyContacts",
+          "type": "hasMany",
+          "sourceModel": "HrEmployee",
+          "sourceField": "id",
+          "targetModel": "HrEmergencyContact",
+          "targetField": "employeeId",
+          "throughModel": null,
+          "description": "Emergency contacts."
+        },
+        {
+          "name": "directReports",
+          "type": "hasMany",
+          "sourceModel": "HrEmployee",
+          "sourceField": "id",
+          "targetModel": "HrEmployee",
+          "targetField": "managerId",
+          "throughModel": null,
+          "description": "Direct reports who report to this manager."
+        }
+      ]
+    },
+    {
+      "name": "OpsCustomerOrder",
+      "title": "Order",
+      "description": "Generated from won Opportunities, recording final sales agreements.",
+      "domainName": "Rapider Operations Suite",
+      "domainKey": "OPS",
+      "datatableName": "OpsCustomerOrder",
+      "dataTableName": "OpsCustomerOrder",
+      "sqlTableName": "ops_customer_order",
+      "isolationScope": "ENTERPRISE_SHARED",
+      "titleFieldTemplate": "Order: ${{ totalAmount }} ({{ status }})",
+      "scope": {
+        "where": {}
+      },
+      "aiAgentConfig": {
+        "vectorSearchFields": [
+          "status"
+        ],
+        "planning": {
+          "availableOperations": [
+            "create",
+            "update",
+            "read",
+            "delete"
+          ]
+        },
+        "entityItemCreate": {
+          "requiredFields": [
+            "accountId",
+            "totalAmount"
+          ],
+          "immutableFields": [
+            "isDeleted"
+          ],
+          "requiredRelations": [],
+          "autoGenerateFields": [
+            "status"
+          ],
+          "additionalPrompt": "",
+          "requireUserConfirmation": true,
+          "customValidationPrompt": ""
+        },
+        "entityItemUpdate": {
+          "immutableFields": [
+            "accountId",
+            "opportunityId"
+          ],
+          "autoGenerateFields": [],
+          "additionalPrompt": "",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": "",
+          "restrictedStates": [
+            {
+              "description": "Cannot modify fulfilled orders.",
+              "where": {}
+            }
+          ]
+        },
+        "entityRead": {
+          "defaultPageSize": 20,
+          "defaultContextLimit": 30,
+          "hiddenFields": [],
+          "maskedFields": [],
+          "additionalPrompt": ""
+        },
+        "entityItemDelete": {
+          "requireCaptchaConfirmation": true,
+          "cascadingRelations": [],
+          "restrictedStates": []
+        }
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Primary key UUID.",
+          "isPrimaryKey": true,
+          "isRequired": true,
+          "isHidden": false,
+          "isArray": false,
+          "defaultFn": "uuidv4"
+        },
+        {
+          "name": "opportunityId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "accountId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "totalAmount",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "quoteId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "referenceModel": "CrmQuote",
+          "referenceField": "id"
+        },
+        {
+          "name": "cartId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "referenceModel": "ComCart",
+          "referenceField": "id"
+        },
+        {
+          "name": "contactId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "referenceModel": "CrmContact",
+          "referenceField": "id"
+        },
+        {
+          "name": "legalEntityId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "referenceModel": "FinLegalEntity",
+          "referenceField": "id"
+        },
+        {
+          "name": "fulfillmentStatus",
+          "type": "string",
+          "description": "Allowed values: UNFULFILLED, PARTIAL, FULFILLED, RETURNED",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "UNFULFILLED",
+            "PARTIAL",
+            "FULFILLED",
+            "RETURNED"
+          ],
+          "options": [
+            "UNFULFILLED",
+            "PARTIAL",
+            "FULFILLED",
+            "RETURNED"
+          ]
+        },
+        {
+          "name": "invoiceId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "referenceModel": "FinInvoice",
+          "referenceField": "id"
+        },
+        {
+          "name": "channelOrderId",
+          "type": "string",
+          "description": "",
+          "isRequired": true,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "canonicalOrderId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "customerId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "orderTotal",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "currency",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "paymentStatus",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "createdAt",
+          "type": "date",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "updatedAt",
+          "type": "date",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isDeleted",
+          "type": "boolean",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        },
+        {
+          "name": "orderNumber",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "crmAccountId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "customerName",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "channel",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "orderDate",
+          "type": "date",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        }
+      ],
+      "relations": [
+        {
+          "name": "account",
+          "type": "belongsTo",
+          "sourceModel": "OpsCustomerOrder",
+          "sourceField": "accountId",
+          "targetModel": "CrmAccount",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "The account placing the order."
+        },
+        {
+          "name": "opportunity",
+          "type": "belongsTo",
+          "sourceModel": "OpsCustomerOrder",
+          "sourceField": "opportunityId",
+          "targetModel": "CrmOpportunity",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "The original opportunity that led to this order."
+        },
+        {
+          "name": "crmAccount",
+          "type": "belongsTo",
+          "sourceModel": "OpsCustomerOrder",
+          "sourceField": "crmAccountId",
+          "targetModel": "CrmAccount",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "OpsCustomerOrder crmAccount foreign key link to CrmAccount."
+        },
+        {
+          "name": "contact",
+          "type": "belongsTo",
+          "sourceModel": "OpsCustomerOrder",
+          "sourceField": "contactId",
+          "targetModel": "CrmContact",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "OpsCustomerOrder contact foreign key link to CrmContact."
+        },
+        {
+          "name": "quote",
+          "type": "belongsTo",
+          "sourceModel": "OpsCustomerOrder",
+          "sourceField": "quoteId",
+          "targetModel": "CrmQuote",
+          "targetField": "id?",
+          "throughModel": null,
+          "description": "OpsCustomerOrder quote foreign key link to CrmQuote."
+        },
+        {
+          "name": "cart",
+          "type": "belongsTo",
+          "sourceModel": "OpsCustomerOrder",
+          "sourceField": "cartId",
+          "targetModel": "ComCart",
+          "targetField": "id?",
+          "throughModel": null,
+          "description": "OpsCustomerOrder cart foreign key link to ComCart."
+        }
+      ]
+    },
+    {
+      "name": "SupTicket",
+      "title": "Case",
+      "description": "Represents a customer support issue or ticket.",
+      "domainName": "Rapider Customer Support Suite",
+      "domainKey": "SUP",
+      "datatableName": "SupTicket",
+      "dataTableName": "SupTicket",
+      "sqlTableName": "sup_ticket",
+      "isolationScope": "ENTERPRISE_SHARED",
+      "titleFieldTemplate": "{{ subject }} - {{ status }}",
+      "scope": {
+        "where": {}
+      },
+      "aiAgentConfig": {
+        "vectorSearchFields": [
+          "subject",
+          "description"
+        ],
+        "planning": {
+          "availableOperations": [
+            "create",
+            "update",
+            "read",
+            "delete"
+          ]
+        },
+        "entityItemCreate": {
+          "requiredFields": [
+            "subject",
+            "accountId"
+          ],
+          "immutableFields": [
+            "isDeleted"
+          ],
+          "requiredRelations": [],
+          "autoGenerateFields": [
+            "status",
+            "priority"
+          ],
+          "additionalPrompt": "Set priority to High if words like 'urgent' or 'critical' are used.",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": ""
+        },
+        "entityItemUpdate": {
+          "immutableFields": [
+            "accountId"
+          ],
+          "autoGenerateFields": [],
+          "additionalPrompt": "",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": "",
+          "restrictedStates": [
+            {
+              "description": "Cannot modify closed cases.",
+              "where": {}
+            }
+          ]
+        },
+        "entityRead": {
+          "defaultPageSize": 20,
+          "defaultContextLimit": 30,
+          "hiddenFields": [],
+          "maskedFields": [],
+          "additionalPrompt": "Always list critical cases first."
+        },
+        "entityItemDelete": {
+          "requireCaptchaConfirmation": true,
+          "cascadingRelations": [],
+          "restrictedStates": [
+            {
+              "description": "Cannot delete resolved cases.",
+              "where": {}
+            }
+          ]
+        }
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Primary key UUID.",
+          "isPrimaryKey": true,
+          "isRequired": true,
+          "isHidden": false,
+          "isArray": false,
+          "defaultFn": "uuidv4"
+        },
+        {
+          "name": "accountId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "contactId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "subject",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "priority",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "ticketNumber",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "channel",
+          "type": "string",
+          "description": "Allowed values: PORTAL, EMAIL, CHAT, VOICE, FIELD_SERVICE, SOCIAL, API",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "PORTAL",
+            "EMAIL",
+            "CHAT",
+            "VOICE",
+            "FIELD_SERVICE",
+            "SOCIAL",
+            "API"
+          ],
+          "options": [
+            "PORTAL",
+            "EMAIL",
+            "CHAT",
+            "VOICE",
+            "FIELD_SERVICE",
+            "SOCIAL",
+            "API"
+          ]
+        },
+        {
+          "name": "queueId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "referenceModel": "SupQueue",
+          "referenceField": "id"
+        },
+        {
+          "name": "assetId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "referenceModel": "OpsOperationsAsset",
+          "referenceField": "id"
+        },
+        {
+          "name": "firstResponseDueAt",
+          "type": "datetime",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "resolutionDueAt",
+          "type": "datetime",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "csatScore",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "assigneeId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "slaPolicyId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isDeleted",
+          "type": "boolean",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        }
+      ],
+      "relations": [
+        {
+          "name": "account",
+          "type": "belongsTo",
+          "sourceModel": "SupTicket",
+          "sourceField": "accountId",
+          "targetModel": "CrmAccount",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "The account this case is associated with."
+        },
+        {
+          "name": "contact",
+          "type": "belongsTo",
+          "sourceModel": "SupTicket",
+          "sourceField": "contactId",
+          "targetModel": "CrmContact",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "The individual contact associated with this case."
+        },
+        {
+          "name": "queue",
+          "type": "belongsTo",
+          "sourceModel": "SupTicket",
+          "sourceField": "queueId",
+          "targetModel": "SupQueue",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "SupTicket queue foreign key link to SupQueue."
+        },
+        {
+          "name": "assigneeEmployee",
+          "type": "belongsTo",
+          "sourceModel": "SupTicket",
+          "sourceField": "assigneeEmployeeId",
+          "targetModel": "HrEmployee",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "SupTicket assigneeEmployee foreign key link to HrEmployee."
+        },
+        {
+          "name": "slaPolicy",
+          "type": "belongsTo",
+          "sourceModel": "SupTicket",
+          "sourceField": "slaPolicyId",
+          "targetModel": "SupSlaPolicy",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "SupTicket slaPolicy foreign key link to SupSlaPolicy."
+        },
+        {
+          "name": "asset",
+          "type": "belongsTo",
+          "sourceModel": "SupTicket",
+          "sourceField": "assetId",
+          "targetModel": "OpsOperationsAsset",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "SupTicket asset foreign key link to OpsOperationsAsset."
+        }
+      ]
+    },
+    {
+      "name": "DatSemanticModel",
+      "title": "Semantic Model",
+      "description": "`code` unique per workspace. Every join must declare explicit cardinality (`ONE_TO_ONE`, `MANY_TO_ONE`) to block fan-out double counting. Transition to `CERTIFIED` requires Steward role via guarded command.",
+      "domainName": "Rapider Data & Analytics Suite",
+      "domainKey": "DAT",
+      "datatableName": "DatSemanticModel",
+      "dataTableName": "DatSemanticModel",
+      "sqlTableName": "dat_semantic_model",
+      "isolationScope": "ENTERPRISE_SHARED",
+      "titleFieldTemplate": "{{ name }}",
+      "scope": {
+        "where": {}
+      },
+      "aiAgentConfig": {
+        "vectorSearchFields": [
+          "name",
+          "code"
+        ],
+        "planning": {
+          "availableOperations": [
+            "create",
+            "update",
+            "read",
+            "delete"
+          ]
+        },
+        "entityItemCreate": {
+          "requiredFields": [
+            "id"
+          ],
+          "immutableFields": [
+            "isDeleted"
+          ],
+          "requiredRelations": [],
+          "autoGenerateFields": [
+            "id"
+          ],
+          "additionalPrompt": "When creating Semantic Model, ensure required attributes are populated.",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": ""
+        },
+        "entityItemUpdate": {
+          "immutableFields": [
+            "id"
+          ],
+          "autoGenerateFields": [],
+          "additionalPrompt": "",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": "",
+          "restrictedStates": []
+        },
+        "entityRead": {
+          "defaultPageSize": 20,
+          "defaultContextLimit": 30,
+          "hiddenFields": [
+            "isDeleted"
+          ],
+          "maskedFields": [],
+          "additionalPrompt": ""
+        },
+        "entityItemDelete": {
+          "requireCaptchaConfirmation": true,
+          "cascadingRelations": [],
+          "restrictedStates": []
+        }
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Primary key UUID.",
+          "isPrimaryKey": true,
+          "isRequired": true,
+          "isHidden": false,
+          "isArray": false,
+          "defaultFn": "uuidv4"
+        },
+        {
+          "name": "code",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "sourceType",
+          "type": "string",
+          "description": "Allowed values: RAPIDER_SUITE, WAREHOUSE_TABLE, BLENDED",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "RAPIDER_SUITE",
+            "WAREHOUSE_TABLE",
+            "BLENDED"
+          ],
+          "options": [
+            "RAPIDER_SUITE",
+            "WAREHOUSE_TABLE",
+            "BLENDED"
+          ]
+        },
+        {
+          "name": "entitiesJson",
+          "type": "array",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": true
+        },
+        {
+          "name": "joinsJson",
+          "type": "array",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": true
+        },
+        {
+          "name": "primaryGrain",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "executionMode",
+          "type": "string",
+          "description": "Allowed values: LIVE, CACHED_SNAPSHOT",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "LIVE",
+            "CACHED_SNAPSHOT"
+          ],
+          "options": [
+            "LIVE",
+            "CACHED_SNAPSHOT"
+          ]
+        },
+        {
+          "name": "refreshCron",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "lastRefreshedAt",
+          "type": "datetime",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "certificationStatus",
+          "type": "string",
+          "description": "Allowed values: DRAFT, PROMOTED, CERTIFIED, ARCHIVED",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "DRAFT",
+            "PROMOTED",
+            "CERTIFIED",
+            "ARCHIVED"
+          ],
+          "options": [
+            "DRAFT",
+            "PROMOTED",
+            "CERTIFIED",
+            "ARCHIVED"
+          ]
+        },
+        {
+          "name": "certifiedByUserId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "version",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "Lifecycle or record status.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isDeleted",
+          "type": "boolean",
+          "description": "Soft deletion flag.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        }
+      ],
+      "relations": []
+    },
+    {
+      "name": "DatMetricDefinition",
+      "title": "Metric Definition",
+      "description": "Monetary `targetValue` stored as `Decimal128`. Formula edits increment `version` and record an immutable formula audit snapshot so historical scorecard variance remains reproducible.",
+      "domainName": "Rapider Data & Analytics Suite",
+      "domainKey": "DAT",
+      "datatableName": "DatMetricDefinition",
+      "dataTableName": "DatMetricDefinition",
+      "sqlTableName": "dat_metric_definition",
+      "isolationScope": "ENTERPRISE_SHARED",
+      "titleFieldTemplate": "{{ name }}",
+      "scope": {
+        "where": {}
+      },
+      "aiAgentConfig": {
+        "vectorSearchFields": [
+          "name"
+        ],
+        "planning": {
+          "availableOperations": [
+            "create",
+            "update",
+            "read",
+            "delete"
+          ]
+        },
+        "entityItemCreate": {
+          "requiredFields": [
+            "id"
+          ],
+          "immutableFields": [
+            "isDeleted"
+          ],
+          "requiredRelations": [],
+          "autoGenerateFields": [
+            "id"
+          ],
+          "additionalPrompt": "When creating Metric Definition, ensure required attributes are populated.",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": ""
+        },
+        "entityItemUpdate": {
+          "immutableFields": [
+            "id"
+          ],
+          "autoGenerateFields": [],
+          "additionalPrompt": "",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": "",
+          "restrictedStates": []
+        },
+        "entityRead": {
+          "defaultPageSize": 20,
+          "defaultContextLimit": 30,
+          "hiddenFields": [
+            "isDeleted"
+          ],
+          "maskedFields": [],
+          "additionalPrompt": ""
+        },
+        "entityItemDelete": {
+          "requireCaptchaConfirmation": true,
+          "cascadingRelations": [],
+          "restrictedStates": []
+        }
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Primary key UUID.",
+          "isPrimaryKey": true,
+          "isRequired": true,
+          "isHidden": false,
+          "isArray": false,
+          "defaultFn": "uuidv4"
+        },
+        {
+          "name": "semanticModelId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "metricCode",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "formulaExpression",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "aggregationType",
+          "type": "string",
+          "description": "Allowed values: SUM, AVG, COUNT_DISTINCT, RATIO, WINDOW_DELTA",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "SUM",
+            "AVG",
+            "COUNT_DISTINCT",
+            "RATIO",
+            "WINDOW_DELTA"
+          ],
+          "options": [
+            "SUM",
+            "AVG",
+            "COUNT_DISTINCT",
+            "RATIO",
+            "WINDOW_DELTA"
+          ]
+        },
+        {
+          "name": "unitType",
+          "type": "string",
+          "description": "Allowed values: CURRENCY, PERCENT, INTEGER, DECIMAL, DURATION_MS",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "CURRENCY",
+            "PERCENT",
+            "INTEGER",
+            "DECIMAL",
+            "DURATION_MS"
+          ],
+          "options": [
+            "CURRENCY",
+            "PERCENT",
+            "INTEGER",
+            "DECIMAL",
+            "DURATION_MS"
+          ]
+        },
+        {
+          "name": "currencyCode",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "targetValue",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "polarity",
+          "type": "string",
+          "description": "Allowed values: HIGHER_IS_BETTER, LOWER_IS_BETTER",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "HIGHER_IS_BETTER",
+            "LOWER_IS_BETTER"
+          ],
+          "options": [
+            "HIGHER_IS_BETTER",
+            "LOWER_IS_BETTER"
+          ]
+        },
+        {
+          "name": "certificationStatus",
+          "type": "string",
+          "description": "Allowed values: DRAFT, PROMOTED, CERTIFIED, DEPRECATED",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "DRAFT",
+            "PROMOTED",
+            "CERTIFIED",
+            "DEPRECATED"
+          ],
+          "options": [
+            "DRAFT",
+            "PROMOTED",
+            "CERTIFIED",
+            "DEPRECATED"
+          ]
+        },
+        {
+          "name": "glossaryTermId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "version",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "Lifecycle or record status.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isDeleted",
+          "type": "boolean",
+          "description": "Soft deletion flag.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        }
+      ],
+      "relations": [
+        {
+          "name": "semanticModel",
+          "type": "belongsTo",
+          "sourceModel": "DatMetricDefinition",
+          "sourceField": "semanticModelId",
+          "targetModel": "DatSemanticModel",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "DatMetricDefinition semanticModel foreign key link to DatSemanticModel."
+        }
+      ]
+    },
+    {
+      "name": "DatDashboard",
+      "title": "Dashboard",
+      "description": "Deleting a dashboard soft-deletes child tiles and disables active `DatReportSubscription`s atomically.",
+      "domainName": "Rapider Data & Analytics Suite",
+      "domainKey": "DAT",
+      "datatableName": "DatDashboard",
+      "dataTableName": "DatDashboard",
+      "sqlTableName": "dat_dashboard",
+      "isolationScope": "ENTERPRISE_SHARED",
+      "titleFieldTemplate": "{{ title }}",
+      "scope": {
+        "where": {}
+      },
+      "aiAgentConfig": {
+        "vectorSearchFields": [
+          "title",
+          "description",
+          "slug"
+        ],
+        "planning": {
+          "availableOperations": [
+            "create",
+            "update",
+            "read",
+            "delete"
+          ]
+        },
+        "entityItemCreate": {
+          "requiredFields": [
+            "id"
+          ],
+          "immutableFields": [
+            "isDeleted"
+          ],
+          "requiredRelations": [],
+          "autoGenerateFields": [
+            "id"
+          ],
+          "additionalPrompt": "When creating Dashboard, ensure required attributes are populated.",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": ""
+        },
+        "entityItemUpdate": {
+          "immutableFields": [
+            "id"
+          ],
+          "autoGenerateFields": [],
+          "additionalPrompt": "",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": "",
+          "restrictedStates": []
+        },
+        "entityRead": {
+          "defaultPageSize": 20,
+          "defaultContextLimit": 30,
+          "hiddenFields": [
+            "isDeleted"
+          ],
+          "maskedFields": [],
+          "additionalPrompt": ""
+        },
+        "entityItemDelete": {
+          "requireCaptchaConfirmation": true,
+          "cascadingRelations": [],
+          "restrictedStates": []
+        }
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Primary key UUID.",
+          "isPrimaryKey": true,
+          "isRequired": true,
+          "isHidden": false,
+          "isArray": false,
+          "defaultFn": "uuidv4"
+        },
+        {
+          "name": "slug",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "collectionName",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "globalFiltersSchemaJson",
+          "type": "array",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": true
+        },
+        {
+          "name": "whatIfParametersJson",
+          "type": "array",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": true
+        },
+        {
+          "name": "certificationStatus",
+          "type": "string",
+          "description": "Allowed values: DRAFT, PROMOTED, CERTIFIED, ARCHIVED",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "DRAFT",
+            "PROMOTED",
+            "CERTIFIED",
+            "ARCHIVED"
+          ],
+          "options": [
+            "DRAFT",
+            "PROMOTED",
+            "CERTIFIED",
+            "ARCHIVED"
+          ]
+        },
+        {
+          "name": "starterPackKey",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "viewCount90d",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "discussionChannelId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "ownerUserId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "version",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "Lifecycle or record status.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isDeleted",
+          "type": "boolean",
+          "description": "Soft deletion flag.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        }
+      ],
+      "relations": []
+    },
+    {
+      "name": "DatDashboardTile",
+      "title": "Dashboard Tile",
+      "description": "Every `metricIds` entry must belong to `semanticModelId` or a shared conformed dimension bridge. `gridPositionJson` coordinates must not overlap on desktop (`12-col`) grid.",
+      "domainName": "Rapider Data & Analytics Suite",
+      "domainKey": "DAT",
+      "datatableName": "DatDashboardTile",
+      "dataTableName": "DatDashboardTile",
+      "sqlTableName": "dat_dashboard_tile",
+      "isolationScope": "ENTERPRISE_SHARED",
+      "titleFieldTemplate": "{{ title }}",
+      "scope": {
+        "where": {}
+      },
+      "aiAgentConfig": {
+        "vectorSearchFields": [
+          "title"
+        ],
+        "planning": {
+          "availableOperations": [
+            "create",
+            "update",
+            "read",
+            "delete"
+          ]
+        },
+        "entityItemCreate": {
+          "requiredFields": [
+            "id"
+          ],
+          "immutableFields": [
+            "isDeleted"
+          ],
+          "requiredRelations": [],
+          "autoGenerateFields": [
+            "id"
+          ],
+          "additionalPrompt": "When creating Dashboard Tile, ensure required attributes are populated.",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": ""
+        },
+        "entityItemUpdate": {
+          "immutableFields": [
+            "id"
+          ],
+          "autoGenerateFields": [],
+          "additionalPrompt": "",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": "",
+          "restrictedStates": []
+        },
+        "entityRead": {
+          "defaultPageSize": 20,
+          "defaultContextLimit": 30,
+          "hiddenFields": [
+            "isDeleted"
+          ],
+          "maskedFields": [],
+          "additionalPrompt": ""
+        },
+        "entityItemDelete": {
+          "requireCaptchaConfirmation": true,
+          "cascadingRelations": [],
+          "restrictedStates": []
+        }
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Primary key UUID.",
+          "isPrimaryKey": true,
+          "isRequired": true,
+          "isHidden": false,
+          "isArray": false,
+          "defaultFn": "uuidv4"
+        },
+        {
+          "name": "dashboardId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "semanticModelId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "metricIds",
+          "type": "array",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": true
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "visualType",
+          "type": "string",
+          "description": "Allowed values: KPI_CARD, LINE, AREA, BAR_STACKED, BAR_GROUPED, COMBO, WATERFALL, FUNNEL, PIVOT_MATRIX, SCATTER, GEO_MAP",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "KPI_CARD",
+            "LINE",
+            "AREA",
+            "BAR_STACKED",
+            "BAR_GROUPED",
+            "COMBO",
+            "WATERFALL",
+            "FUNNEL",
+            "PIVOT_MATRIX",
+            "SCATTER",
+            "GEO_MAP"
+          ],
+          "options": [
+            "KPI_CARD",
+            "LINE",
+            "AREA",
+            "BAR_STACKED",
+            "BAR_GROUPED",
+            "COMBO",
+            "WATERFALL",
+            "FUNNEL",
+            "PIVOT_MATRIX",
+            "SCATTER",
+            "GEO_MAP"
+          ]
+        },
+        {
+          "name": "dimensionsJson",
+          "type": "array",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": true
+        },
+        {
+          "name": "tileFiltersJson",
+          "type": "array",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": true
+        },
+        {
+          "name": "drillThroughRoute",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "gridPositionJson",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "version",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "Lifecycle or record status.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isDeleted",
+          "type": "boolean",
+          "description": "Soft deletion flag.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        }
+      ],
+      "relations": [
+        {
+          "name": "dashboard",
+          "type": "belongsTo",
+          "sourceModel": "DatDashboardTile",
+          "sourceField": "dashboardId",
+          "targetModel": "DatDashboard",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "DatDashboardTile dashboard foreign key link to DatDashboard."
+        }
+      ]
+    },
+    {
+      "name": "DatSavedExploration",
+      "title": "Saved Exploration",
+      "description": "Private explorations are readable only by `ownerUserId` until explicitly shared; query execution always enforces `DatRowSecurityPolicy` dynamically at run time.",
+      "domainName": "Rapider Data & Analytics Suite",
+      "domainKey": "DAT",
+      "datatableName": "DatSavedExploration",
+      "dataTableName": "DatSavedExploration",
+      "sqlTableName": "dat_saved_exploration",
+      "isolationScope": "ENTERPRISE_SHARED",
+      "titleFieldTemplate": "{{ name }}",
+      "scope": {
+        "where": {}
+      },
+      "aiAgentConfig": {
+        "vectorSearchFields": [
+          "name"
+        ],
+        "planning": {
+          "availableOperations": [
+            "create",
+            "update",
+            "read",
+            "delete"
+          ]
+        },
+        "entityItemCreate": {
+          "requiredFields": [
+            "id"
+          ],
+          "immutableFields": [
+            "isDeleted"
+          ],
+          "requiredRelations": [],
+          "autoGenerateFields": [
+            "id"
+          ],
+          "additionalPrompt": "When creating Saved Exploration, ensure required attributes are populated.",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": ""
+        },
+        "entityItemUpdate": {
+          "immutableFields": [
+            "id"
+          ],
+          "autoGenerateFields": [],
+          "additionalPrompt": "",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": "",
+          "restrictedStates": []
+        },
+        "entityRead": {
+          "defaultPageSize": 20,
+          "defaultContextLimit": 30,
+          "hiddenFields": [
+            "isDeleted"
+          ],
+          "maskedFields": [],
+          "additionalPrompt": ""
+        },
+        "entityItemDelete": {
+          "requireCaptchaConfirmation": true,
+          "cascadingRelations": [],
+          "restrictedStates": []
+        }
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Primary key UUID.",
+          "isPrimaryKey": true,
+          "isRequired": true,
+          "isHidden": false,
+          "isArray": false,
+          "defaultFn": "uuidv4"
+        },
+        {
+          "name": "semanticModelId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "querySpecJson",
+          "type": "object",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "visualType",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "bookmarkFiltersJson",
+          "type": "object",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "visibility",
+          "type": "string",
+          "description": "Allowed values: PRIVATE, SHARED_WORKSPACE",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "PRIVATE",
+            "SHARED_WORKSPACE"
+          ],
+          "options": [
+            "PRIVATE",
+            "SHARED_WORKSPACE"
+          ]
+        },
+        {
+          "name": "ownerUserId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "discussionChannelId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "version",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "Lifecycle or record status.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isDeleted",
+          "type": "boolean",
+          "description": "Soft deletion flag.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        }
+      ],
+      "relations": [
+        {
+          "name": "semanticModel",
+          "type": "belongsTo",
+          "sourceModel": "DatSavedExploration",
+          "sourceField": "semanticModelId",
+          "targetModel": "DatSemanticModel",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "DatSavedExploration semanticModel foreign key link to DatSemanticModel."
+        }
+      ]
+    },
+    {
+      "name": "DatRowSecurityPolicy",
+      "title": "Row Security Policy",
+      "description": "Default-deny when RLS is active on a `DatSemanticModel` and caller matches zero enabled policies (unless granted explicit `BI_ADMIN_BYPASS_RLS` audit-logged permission).",
+      "domainName": "Rapider Data & Analytics Suite",
+      "domainKey": "DAT",
+      "datatableName": "DatRowSecurityPolicy",
+      "dataTableName": "DatRowSecurityPolicy",
+      "sqlTableName": "dat_row_security_policy",
+      "isolationScope": "ENTERPRISE_SHARED",
+      "titleFieldTemplate": "{{ id }}",
+      "scope": {
+        "where": {}
+      },
+      "aiAgentConfig": {
+        "vectorSearchFields": [
+          "id"
+        ],
+        "planning": {
+          "availableOperations": [
+            "create",
+            "update",
+            "read",
+            "delete"
+          ]
+        },
+        "entityItemCreate": {
+          "requiredFields": [
+            "id"
+          ],
+          "immutableFields": [
+            "isDeleted"
+          ],
+          "requiredRelations": [],
+          "autoGenerateFields": [
+            "id"
+          ],
+          "additionalPrompt": "When creating Row Security Policy, ensure required attributes are populated.",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": ""
+        },
+        "entityItemUpdate": {
+          "immutableFields": [
+            "id"
+          ],
+          "autoGenerateFields": [],
+          "additionalPrompt": "",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": "",
+          "restrictedStates": []
+        },
+        "entityRead": {
+          "defaultPageSize": 20,
+          "defaultContextLimit": 30,
+          "hiddenFields": [
+            "isDeleted"
+          ],
+          "maskedFields": [],
+          "additionalPrompt": ""
+        },
+        "entityItemDelete": {
+          "requireCaptchaConfirmation": true,
+          "cascadingRelations": [],
+          "restrictedStates": []
+        }
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Primary key UUID.",
+          "isPrimaryKey": true,
+          "isRequired": true,
+          "isHidden": false,
+          "isArray": false,
+          "defaultFn": "uuidv4"
+        },
+        {
+          "name": "semanticModelId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "policyName",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "subjectRoleKeys",
+          "type": "array",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": true
+        },
+        {
+          "name": "rowFilterPredicateJson",
+          "type": "object",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "maskedColumns",
+          "type": "array",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": true
+        },
+        {
+          "name": "isEnabled",
+          "type": "boolean",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        },
+        {
+          "name": "version",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "Lifecycle or record status.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isDeleted",
+          "type": "boolean",
+          "description": "Soft deletion flag.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        }
+      ],
+      "relations": [
+        {
+          "name": "semanticModel",
+          "type": "belongsTo",
+          "sourceModel": "DatRowSecurityPolicy",
+          "sourceField": "semanticModelId",
+          "targetModel": "DatSemanticModel",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "DatRowSecurityPolicy semanticModel foreign key link to DatSemanticModel."
+        }
+      ]
+    },
+    {
+      "name": "DatMetricAlert",
+      "title": "Metric Alert",
+      "description": "`thresholdValue` uses `Decimal128`. Duplicate breaches inside `cooldownMinutes` update existing `WorkItem` context rather than spamming duplicate tasks.",
+      "domainName": "Rapider Data & Analytics Suite",
+      "domainKey": "DAT",
+      "datatableName": "DatMetricAlert",
+      "dataTableName": "DatMetricAlert",
+      "sqlTableName": "dat_metric_alert",
+      "isolationScope": "ENTERPRISE_SHARED",
+      "titleFieldTemplate": "{{ name }}",
+      "scope": {
+        "where": {}
+      },
+      "aiAgentConfig": {
+        "vectorSearchFields": [
+          "name"
+        ],
+        "planning": {
+          "availableOperations": [
+            "create",
+            "update",
+            "read",
+            "delete"
+          ]
+        },
+        "entityItemCreate": {
+          "requiredFields": [
+            "id"
+          ],
+          "immutableFields": [
+            "isDeleted"
+          ],
+          "requiredRelations": [],
+          "autoGenerateFields": [
+            "id"
+          ],
+          "additionalPrompt": "When creating Metric Alert, ensure required attributes are populated.",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": ""
+        },
+        "entityItemUpdate": {
+          "immutableFields": [
+            "id"
+          ],
+          "autoGenerateFields": [],
+          "additionalPrompt": "",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": "",
+          "restrictedStates": []
+        },
+        "entityRead": {
+          "defaultPageSize": 20,
+          "defaultContextLimit": 30,
+          "hiddenFields": [
+            "isDeleted"
+          ],
+          "maskedFields": [],
+          "additionalPrompt": ""
+        },
+        "entityItemDelete": {
+          "requireCaptchaConfirmation": true,
+          "cascadingRelations": [],
+          "restrictedStates": []
+        }
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Primary key UUID.",
+          "isPrimaryKey": true,
+          "isRequired": true,
+          "isHidden": false,
+          "isArray": false,
+          "defaultFn": "uuidv4"
+        },
+        {
+          "name": "metricId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "operator",
+          "type": "string",
+          "description": "Allowed values: ABOVE, BELOW, PCT_INCREASE_ABOVE, PCT_DECREASE_ABOVE",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "ABOVE",
+            "BELOW",
+            "PCT_INCREASE_ABOVE",
+            "PCT_DECREASE_ABOVE"
+          ],
+          "options": [
+            "ABOVE",
+            "BELOW",
+            "PCT_INCREASE_ABOVE",
+            "PCT_DECREASE_ABOVE"
+          ]
+        },
+        {
+          "name": "thresholdValue",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "evaluationCron",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "cooldownMinutes",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "severity",
+          "type": "string",
+          "description": "Allowed values: INFO, WARNING, CRITICAL",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "INFO",
+            "WARNING",
+            "CRITICAL"
+          ],
+          "options": [
+            "INFO",
+            "WARNING",
+            "CRITICAL"
+          ]
+        },
+        {
+          "name": "lastEvaluatedAt",
+          "type": "datetime",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "lastTriggeredAt",
+          "type": "datetime",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "activeWorkItemId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isEnabled",
+          "type": "boolean",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        },
+        {
+          "name": "version",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "Lifecycle or record status.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isDeleted",
+          "type": "boolean",
+          "description": "Soft deletion flag.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        }
+      ],
+      "relations": [
+        {
+          "name": "metric",
+          "type": "belongsTo",
+          "sourceModel": "DatMetricAlert",
+          "sourceField": "metricId",
+          "targetModel": "DatMetricDefinition",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "DatMetricAlert metric foreign key link to DatMetricDefinition."
+        }
+      ]
+    },
+    {
+      "name": "DatReportSubscription",
+      "title": "Report Subscription",
+      "description": "Snapshot rendering MUST evaluate `DatRowSecurityPolicy` per individual recipient (`recipientUserIds`) — never broadcast an unrestricted admin snapshot to restricted viewers.",
+      "domainName": "Rapider Data & Analytics Suite",
+      "domainKey": "DAT",
+      "datatableName": "DatReportSubscription",
+      "dataTableName": "DatReportSubscription",
+      "sqlTableName": "dat_report_subscription",
+      "isolationScope": "ENTERPRISE_SHARED",
+      "titleFieldTemplate": "{{ name }}",
+      "scope": {
+        "where": {}
+      },
+      "aiAgentConfig": {
+        "vectorSearchFields": [
+          "name"
+        ],
+        "planning": {
+          "availableOperations": [
+            "create",
+            "update",
+            "read",
+            "delete"
+          ]
+        },
+        "entityItemCreate": {
+          "requiredFields": [
+            "id"
+          ],
+          "immutableFields": [
+            "isDeleted"
+          ],
+          "requiredRelations": [],
+          "autoGenerateFields": [
+            "id"
+          ],
+          "additionalPrompt": "When creating Report Subscription, ensure required attributes are populated.",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": ""
+        },
+        "entityItemUpdate": {
+          "immutableFields": [
+            "id"
+          ],
+          "autoGenerateFields": [],
+          "additionalPrompt": "",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": "",
+          "restrictedStates": []
+        },
+        "entityRead": {
+          "defaultPageSize": 20,
+          "defaultContextLimit": 30,
+          "hiddenFields": [
+            "isDeleted"
+          ],
+          "maskedFields": [],
+          "additionalPrompt": ""
+        },
+        "entityItemDelete": {
+          "requireCaptchaConfirmation": true,
+          "cascadingRelations": [],
+          "restrictedStates": []
+        }
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Primary key UUID.",
+          "isPrimaryKey": true,
+          "isRequired": true,
+          "isHidden": false,
+          "isArray": false,
+          "defaultFn": "uuidv4"
+        },
+        {
+          "name": "dashboardId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "scheduleCron",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "exportFormat",
+          "type": "string",
+          "description": "Allowed values: PDF, CSV_ZIP, DIGEST_LINK",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "PDF",
+            "CSV_ZIP",
+            "DIGEST_LINK"
+          ],
+          "options": [
+            "PDF",
+            "CSV_ZIP",
+            "DIGEST_LINK"
+          ]
+        },
+        {
+          "name": "recipientUserIds",
+          "type": "array",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": true
+        },
+        {
+          "name": "presetFiltersJson",
+          "type": "object",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isEnabled",
+          "type": "boolean",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        },
+        {
+          "name": "lastDeliveredAt",
+          "type": "datetime",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "lastDeliveryFileId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "version",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "Lifecycle or record status.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isDeleted",
+          "type": "boolean",
+          "description": "Soft deletion flag.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        }
+      ],
+      "relations": [
+        {
+          "name": "dashboard",
+          "type": "belongsTo",
+          "sourceModel": "DatReportSubscription",
+          "sourceField": "dashboardId",
+          "targetModel": "DatDashboard",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "DatReportSubscription dashboard foreign key link to DatDashboard."
+        }
+      ]
+    }
+  ],
+  "webPages": [
+    {
+      "name": "Executive Analytics Hub",
+      "route": "bi-home",
+      "htmlFilePath": "pages/bi-home/bi-home.html",
+      "title": "Executive Analytics Hub",
+      "group": "Analytics",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": true,
+      "order": 1,
+      "developmentDetails": "Pinned KPI scorecard ribbon, recently viewed dashboards, turnkey starter pack activator, #activeFilterTagsBar, Ask BI drawer launcher."
+    },
+    {
+      "name": "Dashboards Directory",
+      "route": "dashboards",
+      "htmlFilePath": "pages/dashboards/dashboards.html",
+      "title": "Dashboards Directory",
+      "group": "Analytics",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": true,
+      "order": 2,
+      "developmentDetails": "Bulk findSWR catalog of DatDashboards with collection/certification filter pills, #activeFilterTagsBar + Clear all, clickable dashboard title link, icon+text Edit, icon-only Delete."
+    },
+    {
+      "name": "KPI Scorecards & Goals",
+      "route": "kpi-scorecards",
+      "htmlFilePath": "pages/kpi-scorecards/kpi-scorecards.html",
+      "title": "KPI Scorecards & Goals",
+      "group": "Analytics",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": true,
+      "order": 3,
+      "developmentDetails": "Governed DatMetricDefinition watchlist with Decimal128 Actual vs. Target cards, sparklines, ON_TRACK / AT_RISK / OFF_TRACK pills, and variance drill-down."
+    },
+    {
+      "name": "Self-Service Explore",
+      "route": "explore-workbench",
+      "htmlFilePath": "pages/explore-workbench/explore-workbench.html",
+      "title": "Self-Service Explore",
+      "group": "Modeling & Studio",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": true,
+      "order": 4,
+      "developmentDetails": "Interactive drag-and-drop dimension/measure query builder (DatSavedExploration), chart type switcher, pivot matrix with heat-map shading, and Pin to Dashboard action."
+    },
+    {
+      "name": "Semantic Models",
+      "route": "semantic-models",
+      "htmlFilePath": "pages/semantic-models/semantic-models.html",
+      "title": "Semantic Models",
+      "group": "Modeling & Studio",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": true,
+      "order": 5,
+      "developmentDetails": "Catalog of DatSemanticModels showing source suite/warehouse bindings, execution mode (LIVE / CACHED_SNAPSHOT), certification badge, and cache refresh trigger."
+    },
+    {
+      "name": "Certified Metrics Library",
+      "route": "metrics-library",
+      "htmlFilePath": "pages/metrics-library/metrics-library.html",
+      "title": "Certified Metrics Library",
+      "group": "Modeling & Studio",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": true,
+      "order": 6,
+      "developmentDetails": "Searchable DatMetricDefinition registry with formula preview, downstream dashboard impact count, #100 glossary link, and Request Certification workflow trigger."
+    },
+    {
+      "name": "Alerts & Thresholds",
+      "route": "metric-alerts",
+      "htmlFilePath": "pages/metric-alerts/metric-alerts.html",
+      "title": "Alerts & Thresholds",
+      "group": "Governance & Delivery",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": true,
+      "order": 7,
+      "developmentDetails": "DatMetricAlert management table with condition badges, breach history, cooldown status, and linked Rapider Home WorkItem references."
+    },
+    {
+      "name": "Scheduled Subscriptions",
+      "route": "report-subscriptions",
+      "htmlFilePath": "pages/report-subscriptions/report-subscriptions.html",
+      "title": "Scheduled Subscriptions",
+      "group": "Governance & Delivery",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": true,
+      "order": 8,
+      "developmentDetails": "DatReportSubscription schedule manager (cron cadence, PDF/CSV format, RLS-enforced recipient groups, last run status)."
+    },
+    {
+      "name": "Security & Embed Policies",
+      "route": "rls-embed-policies",
+      "htmlFilePath": "pages/rls-embed-policies/rls-embed-policies.html",
+      "title": "Security & Embed Policies",
+      "group": "Governance & Delivery",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": true,
+      "order": 9,
+      "developmentDetails": "Unified governance view for DatRowSecurityPolicy rules (with \"Test as Role\" simulator) and DatEmbedConfig signed widget tokens."
+    },
+    {
+      "name": "Interactive Dashboard Canvas",
+      "route": "dashboard-view",
+      "htmlFilePath": "pages/dashboard-view/dashboard-view.html",
+      "title": "Interactive Dashboard Canvas",
+      "group": "(Hidden)",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": false,
+      "order": 10,
+      "developmentDetails": "Full responsive multi-tile canvas (#/{dashboard-view}?id=...), global date/dimension filter bar, what-if sliders, drill-through drawer, projectChannelMessage comments, and Back to Dashboards state-preserving link."
+    },
+    {
+      "name": "Semantic Model Designer",
+      "route": "semantic-model-detail",
+      "htmlFilePath": "pages/semantic-model-detail/semantic-model-detail.html",
+      "title": "Semantic Model Designer",
+      "group": "(Hidden)",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": false,
+      "order": 11,
+      "developmentDetails": "Entity relationship join graph, primary grain validator, calculated measure editor, version history diff, and impact lineage inspector."
+    },
+    {
+      "name": "Dashboard & Tile Drawer",
+      "route": "dashboard-tile-editor",
+      "htmlFilePath": "pages/dashboard-tile-editor/dashboard-tile-editor.html",
+      "title": "Dashboard & Tile Drawer",
+      "group": "(Hidden)",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": false,
+      "order": 12,
+      "developmentDetails": "Sliding creation/edit drawer for DatDashboard metadata, DatDashboardTile binding, and DatMetricAlert rules; auto-closes via closePageDrawer() on save/cancel with try/catch/finally button reset."
+    }
+  ],
+  "workflows": [],
+  "variables": [],
+  "tools": [],
+  "pages": [
+    {
+      "name": "Executive Analytics Hub",
+      "route": "bi-home",
+      "htmlFilePath": "pages/bi-home/bi-home.html",
+      "title": "Executive Analytics Hub",
+      "group": "Analytics",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": true,
+      "order": 1,
+      "developmentDetails": "Pinned KPI scorecard ribbon, recently viewed dashboards, turnkey starter pack activator, #activeFilterTagsBar, Ask BI drawer launcher."
+    },
+    {
+      "name": "Dashboards Directory",
+      "route": "dashboards",
+      "htmlFilePath": "pages/dashboards/dashboards.html",
+      "title": "Dashboards Directory",
+      "group": "Analytics",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": true,
+      "order": 2,
+      "developmentDetails": "Bulk findSWR catalog of DatDashboards with collection/certification filter pills, #activeFilterTagsBar + Clear all, clickable dashboard title link, icon+text Edit, icon-only Delete."
+    },
+    {
+      "name": "KPI Scorecards & Goals",
+      "route": "kpi-scorecards",
+      "htmlFilePath": "pages/kpi-scorecards/kpi-scorecards.html",
+      "title": "KPI Scorecards & Goals",
+      "group": "Analytics",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": true,
+      "order": 3,
+      "developmentDetails": "Governed DatMetricDefinition watchlist with Decimal128 Actual vs. Target cards, sparklines, ON_TRACK / AT_RISK / OFF_TRACK pills, and variance drill-down."
+    },
+    {
+      "name": "Self-Service Explore",
+      "route": "explore-workbench",
+      "htmlFilePath": "pages/explore-workbench/explore-workbench.html",
+      "title": "Self-Service Explore",
+      "group": "Modeling & Studio",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": true,
+      "order": 4,
+      "developmentDetails": "Interactive drag-and-drop dimension/measure query builder (DatSavedExploration), chart type switcher, pivot matrix with heat-map shading, and Pin to Dashboard action."
+    },
+    {
+      "name": "Semantic Models",
+      "route": "semantic-models",
+      "htmlFilePath": "pages/semantic-models/semantic-models.html",
+      "title": "Semantic Models",
+      "group": "Modeling & Studio",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": true,
+      "order": 5,
+      "developmentDetails": "Catalog of DatSemanticModels showing source suite/warehouse bindings, execution mode (LIVE / CACHED_SNAPSHOT), certification badge, and cache refresh trigger."
+    },
+    {
+      "name": "Certified Metrics Library",
+      "route": "metrics-library",
+      "htmlFilePath": "pages/metrics-library/metrics-library.html",
+      "title": "Certified Metrics Library",
+      "group": "Modeling & Studio",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": true,
+      "order": 6,
+      "developmentDetails": "Searchable DatMetricDefinition registry with formula preview, downstream dashboard impact count, #100 glossary link, and Request Certification workflow trigger."
+    },
+    {
+      "name": "Alerts & Thresholds",
+      "route": "metric-alerts",
+      "htmlFilePath": "pages/metric-alerts/metric-alerts.html",
+      "title": "Alerts & Thresholds",
+      "group": "Governance & Delivery",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": true,
+      "order": 7,
+      "developmentDetails": "DatMetricAlert management table with condition badges, breach history, cooldown status, and linked Rapider Home WorkItem references."
+    },
+    {
+      "name": "Scheduled Subscriptions",
+      "route": "report-subscriptions",
+      "htmlFilePath": "pages/report-subscriptions/report-subscriptions.html",
+      "title": "Scheduled Subscriptions",
+      "group": "Governance & Delivery",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": true,
+      "order": 8,
+      "developmentDetails": "DatReportSubscription schedule manager (cron cadence, PDF/CSV format, RLS-enforced recipient groups, last run status)."
+    },
+    {
+      "name": "Security & Embed Policies",
+      "route": "rls-embed-policies",
+      "htmlFilePath": "pages/rls-embed-policies/rls-embed-policies.html",
+      "title": "Security & Embed Policies",
+      "group": "Governance & Delivery",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": true,
+      "order": 9,
+      "developmentDetails": "Unified governance view for DatRowSecurityPolicy rules (with \"Test as Role\" simulator) and DatEmbedConfig signed widget tokens."
+    },
+    {
+      "name": "Interactive Dashboard Canvas",
+      "route": "dashboard-view",
+      "htmlFilePath": "pages/dashboard-view/dashboard-view.html",
+      "title": "Interactive Dashboard Canvas",
+      "group": "(Hidden)",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": false,
+      "order": 10,
+      "developmentDetails": "Full responsive multi-tile canvas (#/{dashboard-view}?id=...), global date/dimension filter bar, what-if sliders, drill-through drawer, projectChannelMessage comments, and Back to Dashboards state-preserving link."
+    },
+    {
+      "name": "Semantic Model Designer",
+      "route": "semantic-model-detail",
+      "htmlFilePath": "pages/semantic-model-detail/semantic-model-detail.html",
+      "title": "Semantic Model Designer",
+      "group": "(Hidden)",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": false,
+      "order": 11,
+      "developmentDetails": "Entity relationship join graph, primary grain validator, calculated measure editor, version history diff, and impact lineage inspector."
+    },
+    {
+      "name": "Dashboard & Tile Drawer",
+      "route": "dashboard-tile-editor",
+      "htmlFilePath": "pages/dashboard-tile-editor/dashboard-tile-editor.html",
+      "title": "Dashboard & Tile Drawer",
+      "group": "(Hidden)",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": false,
+      "order": 12,
+      "developmentDetails": "Sliding creation/edit drawer for DatDashboard metadata, DatDashboardTile binding, and DatMetricAlert rules; auto-closes via closePageDrawer() on save/cancel with try/catch/finally button reset."
+    }
+  ]
+}

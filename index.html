@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rapider Business Intelligence &amp; Dashboards</title>
+  <script src="https://kit.fontawesome.com/5b23df26dc.js" crossorigin="anonymous" defer></script>
+  <script src="/assets/js/rapider-components.js" defer></script>
+  <link rel="stylesheet" href="/assets/themes/rapider-tailwind-theme.css">
+  <link rel="stylesheet" href="/assets/themes/crm-expenses-design.css">
+  <style>
+    body, html { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; }
+    iframe#appFrame { width: 100%; height: 100%; border: none; }
+  </style>
+</head>
+<body>
+  <iframe id="appFrame" src="pages/bi-home/bi-home.html"></iframe>
+  <script>
+    const routes = {
+  "bi-home": "pages/bi-home/bi-home.html",
+  "dashboards": "pages/dashboards/dashboards.html",
+  "kpi-scorecards": "pages/kpi-scorecards/kpi-scorecards.html",
+  "explore-workbench": "pages/explore-workbench/explore-workbench.html",
+  "semantic-models": "pages/semantic-models/semantic-models.html",
+  "metrics-library": "pages/metrics-library/metrics-library.html",
+  "metric-alerts": "pages/metric-alerts/metric-alerts.html",
+  "report-subscriptions": "pages/report-subscriptions/report-subscriptions.html",
+  "rls-embed-policies": "pages/rls-embed-policies/rls-embed-policies.html",
+  "dashboard-view": "pages/dashboard-view/dashboard-view.html",
+  "semantic-model-detail": "pages/semantic-model-detail/semantic-model-detail.html",
+  "dashboard-tile-editor": "pages/dashboard-tile-editor/dashboard-tile-editor.html"
+};
+    function handleHash() {
+      const hash = window.location.hash.replace(/^#\/?/, '').split('?')[0];
+      const route = hash || 'bi-home';
+      const target = routes[route] || routes['bi-home'];
+      const iframe = document.getElementById('appFrame');
+      if (iframe) iframe.src = target;
+    }
+    window.addEventListener('hashchange', handleHash);
+    window.addEventListener('load', handleHash);
+  </script>
+</body>
+</html>

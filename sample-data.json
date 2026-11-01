@@ -1,0 +1,1044 @@
+{
+  "ApmProject": [
+    {
+      "id": "00000000-0096-0001-0000-000000000001",
+      "name": "Project #1 — Enterprise Primary Record",
+      "description": "Project description configuration (1)",
+      "status": "ACTIVE",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0096-0001-0000-000000000002",
+      "name": "Project #2 — Enterprise Operations Record",
+      "description": "Project description configuration (2)",
+      "status": "IN_PROGRESS",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0096-0001-0000-000000000003",
+      "name": "Project #3 — Enterprise Compliance Record",
+      "description": "Project description configuration (3)",
+      "status": "COMPLETED",
+      "isDeleted": false
+    }
+  ],
+  "CrmOpportunity": [
+    {
+      "id": "00000000-0096-0002-0000-000000000001",
+      "accountId": "00000000-0096-0001-0000-000000000001",
+      "primaryContactId": "00000000-0096-0001-0000-000000000001",
+      "name": "Opportunity #1 — Enterprise Primary Record",
+      "amount": 1250,
+      "stage": "Opportunity stage configuration (1)",
+      "closeDate": "2026-11-01T10:00:00Z",
+      "probability": 85,
+      "status": "ACTIVE",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0096-0002-0000-000000000002",
+      "accountId": "00000000-0096-0001-0000-000000000002",
+      "primaryContactId": "00000000-0096-0001-0000-000000000002",
+      "name": "Opportunity #2 — Enterprise Operations Record",
+      "amount": 2500,
+      "stage": "Opportunity stage configuration (2)",
+      "closeDate": "2026-11-02T10:00:00Z",
+      "probability": 90,
+      "status": "IN_PROGRESS",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0096-0002-0000-000000000003",
+      "accountId": "00000000-0096-0001-0000-000000000003",
+      "primaryContactId": "00000000-0096-0001-0000-000000000003",
+      "name": "Opportunity #3 — Enterprise Compliance Record",
+      "amount": 3750,
+      "stage": "Opportunity stage configuration (3)",
+      "closeDate": "2026-11-03T10:00:00Z",
+      "probability": 95,
+      "status": "COMPLETED",
+      "isDeleted": false
+    }
+  ],
+  "FinBudget": [
+    {
+      "id": "00000000-0096-0003-0000-000000000001",
+      "scenarioId": "00000000-0096-0001-0000-000000000001",
+      "entityId": "00000000-0096-0001-0000-000000000001",
+      "fiscalYear": "Budget fiscalYear configuration (1)",
+      "totalAmount": 1250,
+      "isDeleted": false,
+      "status": "ACTIVE"
+    },
+    {
+      "id": "00000000-0096-0003-0000-000000000002",
+      "scenarioId": "00000000-0096-0001-0000-000000000002",
+      "entityId": "00000000-0096-0001-0000-000000000002",
+      "fiscalYear": "Budget fiscalYear configuration (2)",
+      "totalAmount": 2500,
+      "isDeleted": false,
+      "status": "IN_PROGRESS"
+    },
+    {
+      "id": "00000000-0096-0003-0000-000000000003",
+      "scenarioId": "00000000-0096-0001-0000-000000000003",
+      "entityId": "00000000-0096-0001-0000-000000000003",
+      "fiscalYear": "Budget fiscalYear configuration (3)",
+      "totalAmount": 3750,
+      "isDeleted": false,
+      "status": "COMPLETED"
+    }
+  ],
+  "FinInvoice": [
+    {
+      "id": "00000000-0096-0004-0000-000000000001",
+      "legalEntityId": "00000000-0096-0001-0000-000000000001",
+      "type": "Invoice type configuration (1)",
+      "partnerName": "Invoice #1 — Enterprise Primary Record",
+      "invoiceDate": "2026-11-01T10:00:00Z",
+      "dueDate": "2026-11-01T10:00:00Z",
+      "totalAmount": 1250,
+      "currency": "USD",
+      "status": "ACTIVE",
+      "isDeleted": false,
+      "invoiceNumber": "FI-2026-0001",
+      "accountId": "00000000-0096-0001-0000-000000000001",
+      "billingProfileId": "00000000-0096-0001-0000-000000000001",
+      "subscriptionId": "00000000-0096-0001-0000-000000000001",
+      "customerOrderId": "00000000-0096-0001-0000-000000000001",
+      "issueDate": "2026-11-01T10:00:00Z",
+      "subtotalAmount": 1250,
+      "taxAmount": 1250,
+      "openAmount": 1250,
+      "currencyCode": "FI-2026-0001",
+      "disputeStatus": "Invoice disputeStatus configuration (1)",
+      "eInvoiceClearanceStatus": "Invoice eInvoiceClearanceStatus configuration (1)",
+      "customerName": "Invoice #1 — Enterprise Primary Record",
+      "createdAt": "2026-11-01T10:00:00Z",
+      "updatedAt": "2026-11-01T10:00:00Z"
+    },
+    {
+      "id": "00000000-0096-0004-0000-000000000002",
+      "legalEntityId": "00000000-0096-0001-0000-000000000002",
+      "type": "Invoice type configuration (2)",
+      "partnerName": "Invoice #2 — Enterprise Operations Record",
+      "invoiceDate": "2026-11-02T10:00:00Z",
+      "dueDate": "2026-11-02T10:00:00Z",
+      "totalAmount": 2500,
+      "currency": "USD",
+      "status": "IN_PROGRESS",
+      "isDeleted": false,
+      "invoiceNumber": "FI-2026-0002",
+      "accountId": "00000000-0096-0001-0000-000000000002",
+      "billingProfileId": "00000000-0096-0001-0000-000000000002",
+      "subscriptionId": "00000000-0096-0001-0000-000000000002",
+      "customerOrderId": "00000000-0096-0001-0000-000000000002",
+      "issueDate": "2026-11-02T10:00:00Z",
+      "subtotalAmount": 2500,
+      "taxAmount": 2500,
+      "openAmount": 2500,
+      "currencyCode": "FI-2026-0002",
+      "disputeStatus": "Invoice disputeStatus configuration (2)",
+      "eInvoiceClearanceStatus": "Invoice eInvoiceClearanceStatus configuration (2)",
+      "customerName": "Invoice #2 — Enterprise Operations Record",
+      "createdAt": "2026-11-02T10:00:00Z",
+      "updatedAt": "2026-11-02T10:00:00Z"
+    },
+    {
+      "id": "00000000-0096-0004-0000-000000000003",
+      "legalEntityId": "00000000-0096-0001-0000-000000000003",
+      "type": "Invoice type configuration (3)",
+      "partnerName": "Invoice #3 — Enterprise Compliance Record",
+      "invoiceDate": "2026-11-03T10:00:00Z",
+      "dueDate": "2026-11-03T10:00:00Z",
+      "totalAmount": 3750,
+      "currency": "USD",
+      "status": "COMPLETED",
+      "isDeleted": false,
+      "invoiceNumber": "FI-2026-0003",
+      "accountId": "00000000-0096-0001-0000-000000000003",
+      "billingProfileId": "00000000-0096-0001-0000-000000000003",
+      "subscriptionId": "00000000-0096-0001-0000-000000000003",
+      "customerOrderId": "00000000-0096-0001-0000-000000000003",
+      "issueDate": "2026-11-03T10:00:00Z",
+      "subtotalAmount": 3750,
+      "taxAmount": 3750,
+      "openAmount": 3750,
+      "currencyCode": "FI-2026-0003",
+      "disputeStatus": "Invoice disputeStatus configuration (3)",
+      "eInvoiceClearanceStatus": "Invoice eInvoiceClearanceStatus configuration (3)",
+      "customerName": "Invoice #3 — Enterprise Compliance Record",
+      "createdAt": "2026-11-03T10:00:00Z",
+      "updatedAt": "2026-11-03T10:00:00Z"
+    }
+  ],
+  "FinLegalEntity": [
+    {
+      "id": "00000000-0096-0005-0000-000000000001",
+      "name": "Legal Entity #1 — Enterprise Primary Record",
+      "registrationNumber": "FLE-2026-0001",
+      "taxId": "00000000-0096-0001-0000-000000000001",
+      "baseCurrency": "USD",
+      "country": "Legal Entity country configuration (1)",
+      "isDeleted": false,
+      "code": "FLE-2026-0001",
+      "registeredAddressesJson": {
+        "configured": true,
+        "tier": 1
+      },
+      "taxRegistrationsJson": [
+        "item-1-a",
+        "item-1-b"
+      ],
+      "defaultTimeZone": "Legal Entity defaultTimeZone configuration (1)",
+      "eInvoiceCountryPolicyVersion": "Legal Entity eInvoiceCountryPolicyVersion configuration (1)",
+      "parentLegalEntityId": "00000000-0096-0001-0000-000000000001",
+      "countryCode": "FLE-2026-0001",
+      "status": "ACTIVE",
+      "legalName": "Legal Entity #1 — Enterprise Primary Record",
+      "registeredAddresses": "Legal Entity registeredAddresses configuration (1)",
+      "taxRegistrations": "Legal Entity taxRegistrations configuration (1)",
+      "timezone": "Legal Entity timezone configuration (1)",
+      "countryPolicyVersion": "Legal Entity countryPolicyVersion configuration (1)",
+      "ledgerConnectionRef": "Legal Entity ledgerConnectionRef configuration (1)"
+    },
+    {
+      "id": "00000000-0096-0005-0000-000000000002",
+      "name": "Legal Entity #2 — Enterprise Operations Record",
+      "registrationNumber": "FLE-2026-0002",
+      "taxId": "00000000-0096-0001-0000-000000000002",
+      "baseCurrency": "USD",
+      "country": "Legal Entity country configuration (2)",
+      "isDeleted": false,
+      "code": "FLE-2026-0002",
+      "registeredAddressesJson": {
+        "configured": true,
+        "tier": 2
+      },
+      "taxRegistrationsJson": [
+        "item-2-a",
+        "item-2-b"
+      ],
+      "defaultTimeZone": "Legal Entity defaultTimeZone configuration (2)",
+      "eInvoiceCountryPolicyVersion": "Legal Entity eInvoiceCountryPolicyVersion configuration (2)",
+      "parentLegalEntityId": "00000000-0096-0001-0000-000000000002",
+      "countryCode": "FLE-2026-0002",
+      "status": "IN_PROGRESS",
+      "legalName": "Legal Entity #2 — Enterprise Operations Record",
+      "registeredAddresses": "Legal Entity registeredAddresses configuration (2)",
+      "taxRegistrations": "Legal Entity taxRegistrations configuration (2)",
+      "timezone": "Legal Entity timezone configuration (2)",
+      "countryPolicyVersion": "Legal Entity countryPolicyVersion configuration (2)",
+      "ledgerConnectionRef": "Legal Entity ledgerConnectionRef configuration (2)"
+    },
+    {
+      "id": "00000000-0096-0005-0000-000000000003",
+      "name": "Legal Entity #3 — Enterprise Compliance Record",
+      "registrationNumber": "FLE-2026-0003",
+      "taxId": "00000000-0096-0001-0000-000000000003",
+      "baseCurrency": "USD",
+      "country": "Legal Entity country configuration (3)",
+      "isDeleted": false,
+      "code": "FLE-2026-0003",
+      "registeredAddressesJson": {
+        "configured": true,
+        "tier": 3
+      },
+      "taxRegistrationsJson": [
+        "item-3-a",
+        "item-3-b"
+      ],
+      "defaultTimeZone": "Legal Entity defaultTimeZone configuration (3)",
+      "eInvoiceCountryPolicyVersion": "Legal Entity eInvoiceCountryPolicyVersion configuration (3)",
+      "parentLegalEntityId": "00000000-0096-0001-0000-000000000003",
+      "countryCode": "FLE-2026-0003",
+      "status": "COMPLETED",
+      "legalName": "Legal Entity #3 — Enterprise Compliance Record",
+      "registeredAddresses": "Legal Entity registeredAddresses configuration (3)",
+      "taxRegistrations": "Legal Entity taxRegistrations configuration (3)",
+      "timezone": "Legal Entity timezone configuration (3)",
+      "countryPolicyVersion": "Legal Entity countryPolicyVersion configuration (3)",
+      "ledgerConnectionRef": "Legal Entity ledgerConnectionRef configuration (3)"
+    }
+  ],
+  "HrDepartment": [
+    {
+      "id": "00000000-0096-0006-0000-000000000001",
+      "name": "Department #1 — Enterprise Primary Record",
+      "code": "HD-2026-0001",
+      "description": "Department description configuration (1)",
+      "headId": "00000000-0096-0001-0000-000000000001",
+      "parentDepartmentId": "00000000-0096-0001-0000-000000000001",
+      "legalEntityId": "00000000-0096-0001-0000-000000000001",
+      "costCenterCode": "HD-2026-0001",
+      "status": "ACTIVE",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0096-0006-0000-000000000002",
+      "name": "Department #2 — Enterprise Operations Record",
+      "code": "HD-2026-0002",
+      "description": "Department description configuration (2)",
+      "headId": "00000000-0096-0001-0000-000000000002",
+      "parentDepartmentId": "00000000-0096-0001-0000-000000000002",
+      "legalEntityId": "00000000-0096-0001-0000-000000000002",
+      "costCenterCode": "HD-2026-0002",
+      "status": "IN_PROGRESS",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0096-0006-0000-000000000003",
+      "name": "Department #3 — Enterprise Compliance Record",
+      "code": "HD-2026-0003",
+      "description": "Department description configuration (3)",
+      "headId": "00000000-0096-0001-0000-000000000003",
+      "parentDepartmentId": "00000000-0096-0001-0000-000000000003",
+      "legalEntityId": "00000000-0096-0001-0000-000000000003",
+      "costCenterCode": "HD-2026-0003",
+      "status": "COMPLETED",
+      "isDeleted": false
+    }
+  ],
+  "HrEmployee": [
+    {
+      "id": "00000000-0096-0007-0000-000000000001",
+      "employeeNumber": "HE-2026-0001",
+      "firstName": "Employee #1 — Enterprise Primary Record",
+      "lastName": "Employee #1 — Enterprise Primary Record",
+      "preferredName": "Employee #1 — Enterprise Primary Record",
+      "email": "ops-team-1@rapider-enterprise.io",
+      "personalEmail": "ops-team-1@rapider-enterprise.io",
+      "phone": "+1-555-019-2801",
+      "jobTitle": "Employee #1 — Enterprise Primary Record",
+      "status": "ACTIVE",
+      "workerType": "Employee workerType configuration (1)",
+      "employmentType": "Employee employmentType configuration (1)",
+      "hireDate": "2026-11-01T10:00:00Z",
+      "startDate": "2026-11-01T10:00:00Z",
+      "endDate": "2026-11-01T10:00:00Z",
+      "departmentId": "00000000-0096-0001-0000-000000000001",
+      "managerId": "00000000-0096-0001-0000-000000000001",
+      "positionId": "00000000-0096-0001-0000-000000000001",
+      "jobProfileId": "00000000-0096-0001-0000-000000000001",
+      "locationId": "00000000-0096-0001-0000-000000000001",
+      "legalEntityId": "00000000-0096-0001-0000-000000000001",
+      "weeklyHours": 10,
+      "timeZone": "Employee timeZone configuration (1)",
+      "avatarColor": "Employee avatarColor configuration (1)",
+      "notes": "Employee notes configuration (1)",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0096-0007-0000-000000000002",
+      "employeeNumber": "HE-2026-0002",
+      "firstName": "Employee #2 — Enterprise Operations Record",
+      "lastName": "Employee #2 — Enterprise Operations Record",
+      "preferredName": "Employee #2 — Enterprise Operations Record",
+      "email": "ops-team-2@rapider-enterprise.io",
+      "personalEmail": "ops-team-2@rapider-enterprise.io",
+      "phone": "+1-555-019-2802",
+      "jobTitle": "Employee #2 — Enterprise Operations Record",
+      "status": "IN_PROGRESS",
+      "workerType": "Employee workerType configuration (2)",
+      "employmentType": "Employee employmentType configuration (2)",
+      "hireDate": "2026-11-02T10:00:00Z",
+      "startDate": "2026-11-02T10:00:00Z",
+      "endDate": "2026-11-02T10:00:00Z",
+      "departmentId": "00000000-0096-0001-0000-000000000002",
+      "managerId": "00000000-0096-0001-0000-000000000002",
+      "positionId": "00000000-0096-0001-0000-000000000002",
+      "jobProfileId": "00000000-0096-0001-0000-000000000002",
+      "locationId": "00000000-0096-0001-0000-000000000002",
+      "legalEntityId": "00000000-0096-0001-0000-000000000002",
+      "weeklyHours": 20,
+      "timeZone": "Employee timeZone configuration (2)",
+      "avatarColor": "Employee avatarColor configuration (2)",
+      "notes": "Employee notes configuration (2)",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0096-0007-0000-000000000003",
+      "employeeNumber": "HE-2026-0003",
+      "firstName": "Employee #3 — Enterprise Compliance Record",
+      "lastName": "Employee #3 — Enterprise Compliance Record",
+      "preferredName": "Employee #3 — Enterprise Compliance Record",
+      "email": "ops-team-3@rapider-enterprise.io",
+      "personalEmail": "ops-team-3@rapider-enterprise.io",
+      "phone": "+1-555-019-2803",
+      "jobTitle": "Employee #3 — Enterprise Compliance Record",
+      "status": "COMPLETED",
+      "workerType": "Employee workerType configuration (3)",
+      "employmentType": "Employee employmentType configuration (3)",
+      "hireDate": "2026-11-03T10:00:00Z",
+      "startDate": "2026-11-03T10:00:00Z",
+      "endDate": "2026-11-03T10:00:00Z",
+      "departmentId": "00000000-0096-0001-0000-000000000003",
+      "managerId": "00000000-0096-0001-0000-000000000003",
+      "positionId": "00000000-0096-0001-0000-000000000003",
+      "jobProfileId": "00000000-0096-0001-0000-000000000003",
+      "locationId": "00000000-0096-0001-0000-000000000003",
+      "legalEntityId": "00000000-0096-0001-0000-000000000003",
+      "weeklyHours": 30,
+      "timeZone": "Employee timeZone configuration (3)",
+      "avatarColor": "Employee avatarColor configuration (3)",
+      "notes": "Employee notes configuration (3)",
+      "isDeleted": false
+    }
+  ],
+  "OpsCustomerOrder": [
+    {
+      "id": "00000000-0096-0008-0000-000000000001",
+      "opportunityId": "00000000-0096-0001-0000-000000000001",
+      "accountId": "00000000-0096-0001-0000-000000000001",
+      "totalAmount": 1250,
+      "status": "ACTIVE",
+      "quoteId": "00000000-0096-0001-0000-000000000001",
+      "cartId": "00000000-0096-0001-0000-000000000001",
+      "contactId": "00000000-0096-0001-0000-000000000001",
+      "legalEntityId": "00000000-0096-0001-0000-000000000001",
+      "fulfillmentStatus": "Order fulfillmentStatus configuration (1)",
+      "invoiceId": "00000000-0096-0001-0000-000000000001",
+      "channelOrderId": "00000000-0096-0001-0000-000000000001",
+      "canonicalOrderId": "00000000-0096-0001-0000-000000000001",
+      "customerId": "00000000-0096-0001-0000-000000000001",
+      "orderTotal": 10,
+      "currency": "USD",
+      "paymentStatus": "Order paymentStatus configuration (1)",
+      "createdAt": "2026-11-01T10:00:00Z",
+      "updatedAt": "2026-11-01T10:00:00Z",
+      "isDeleted": false,
+      "orderNumber": "OCO-2026-0001",
+      "crmAccountId": "00000000-0096-0001-0000-000000000001",
+      "customerName": "Order #1 — Enterprise Primary Record",
+      "channel": "Order channel configuration (1)",
+      "orderDate": "2026-11-01T10:00:00Z"
+    },
+    {
+      "id": "00000000-0096-0008-0000-000000000002",
+      "opportunityId": "00000000-0096-0001-0000-000000000002",
+      "accountId": "00000000-0096-0001-0000-000000000002",
+      "totalAmount": 2500,
+      "status": "IN_PROGRESS",
+      "quoteId": "00000000-0096-0001-0000-000000000002",
+      "cartId": "00000000-0096-0001-0000-000000000002",
+      "contactId": "00000000-0096-0001-0000-000000000002",
+      "legalEntityId": "00000000-0096-0001-0000-000000000002",
+      "fulfillmentStatus": "Order fulfillmentStatus configuration (2)",
+      "invoiceId": "00000000-0096-0001-0000-000000000002",
+      "channelOrderId": "00000000-0096-0001-0000-000000000002",
+      "canonicalOrderId": "00000000-0096-0001-0000-000000000002",
+      "customerId": "00000000-0096-0001-0000-000000000002",
+      "orderTotal": 20,
+      "currency": "USD",
+      "paymentStatus": "Order paymentStatus configuration (2)",
+      "createdAt": "2026-11-02T10:00:00Z",
+      "updatedAt": "2026-11-02T10:00:00Z",
+      "isDeleted": false,
+      "orderNumber": "OCO-2026-0002",
+      "crmAccountId": "00000000-0096-0001-0000-000000000002",
+      "customerName": "Order #2 — Enterprise Operations Record",
+      "channel": "Order channel configuration (2)",
+      "orderDate": "2026-11-02T10:00:00Z"
+    },
+    {
+      "id": "00000000-0096-0008-0000-000000000003",
+      "opportunityId": "00000000-0096-0001-0000-000000000003",
+      "accountId": "00000000-0096-0001-0000-000000000003",
+      "totalAmount": 3750,
+      "status": "COMPLETED",
+      "quoteId": "00000000-0096-0001-0000-000000000003",
+      "cartId": "00000000-0096-0001-0000-000000000003",
+      "contactId": "00000000-0096-0001-0000-000000000003",
+      "legalEntityId": "00000000-0096-0001-0000-000000000003",
+      "fulfillmentStatus": "Order fulfillmentStatus configuration (3)",
+      "invoiceId": "00000000-0096-0001-0000-000000000003",
+      "channelOrderId": "00000000-0096-0001-0000-000000000003",
+      "canonicalOrderId": "00000000-0096-0001-0000-000000000003",
+      "customerId": "00000000-0096-0001-0000-000000000003",
+      "orderTotal": 30,
+      "currency": "USD",
+      "paymentStatus": "Order paymentStatus configuration (3)",
+      "createdAt": "2026-11-03T10:00:00Z",
+      "updatedAt": "2026-11-03T10:00:00Z",
+      "isDeleted": false,
+      "orderNumber": "OCO-2026-0003",
+      "crmAccountId": "00000000-0096-0001-0000-000000000003",
+      "customerName": "Order #3 — Enterprise Compliance Record",
+      "channel": "Order channel configuration (3)",
+      "orderDate": "2026-11-03T10:00:00Z"
+    }
+  ],
+  "SupTicket": [
+    {
+      "id": "00000000-0096-0009-0000-000000000001",
+      "accountId": "00000000-0096-0001-0000-000000000001",
+      "contactId": "00000000-0096-0001-0000-000000000001",
+      "subject": "Case #1 — Enterprise Primary Record",
+      "description": "Case description configuration (1)",
+      "status": "ACTIVE",
+      "priority": "Case priority configuration (1)",
+      "ticketNumber": "ST-2026-0001",
+      "channel": "Case channel configuration (1)",
+      "queueId": "00000000-0096-0001-0000-000000000001",
+      "assetId": "00000000-0096-0001-0000-000000000001",
+      "firstResponseDueAt": "2026-11-01T10:00:00Z",
+      "resolutionDueAt": "2026-11-01T10:00:00Z",
+      "csatScore": 85,
+      "assigneeId": "00000000-0096-0001-0000-000000000001",
+      "slaPolicyId": "00000000-0096-0001-0000-000000000001",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0096-0009-0000-000000000002",
+      "accountId": "00000000-0096-0001-0000-000000000002",
+      "contactId": "00000000-0096-0001-0000-000000000002",
+      "subject": "Case #2 — Enterprise Operations Record",
+      "description": "Case description configuration (2)",
+      "status": "IN_PROGRESS",
+      "priority": "Case priority configuration (2)",
+      "ticketNumber": "ST-2026-0002",
+      "channel": "Case channel configuration (2)",
+      "queueId": "00000000-0096-0001-0000-000000000002",
+      "assetId": "00000000-0096-0001-0000-000000000002",
+      "firstResponseDueAt": "2026-11-02T10:00:00Z",
+      "resolutionDueAt": "2026-11-02T10:00:00Z",
+      "csatScore": 90,
+      "assigneeId": "00000000-0096-0001-0000-000000000002",
+      "slaPolicyId": "00000000-0096-0001-0000-000000000002",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0096-0009-0000-000000000003",
+      "accountId": "00000000-0096-0001-0000-000000000003",
+      "contactId": "00000000-0096-0001-0000-000000000003",
+      "subject": "Case #3 — Enterprise Compliance Record",
+      "description": "Case description configuration (3)",
+      "status": "COMPLETED",
+      "priority": "Case priority configuration (3)",
+      "ticketNumber": "ST-2026-0003",
+      "channel": "Case channel configuration (3)",
+      "queueId": "00000000-0096-0001-0000-000000000003",
+      "assetId": "00000000-0096-0001-0000-000000000003",
+      "firstResponseDueAt": "2026-11-03T10:00:00Z",
+      "resolutionDueAt": "2026-11-03T10:00:00Z",
+      "csatScore": 95,
+      "assigneeId": "00000000-0096-0001-0000-000000000003",
+      "slaPolicyId": "00000000-0096-0001-0000-000000000003",
+      "isDeleted": false
+    }
+  ],
+  "DatSemanticModel": [
+    {
+      "id": "00000000-0096-0010-0000-000000000001",
+      "code": "DSM-2026-0001",
+      "name": "Semantic Model #1 — Enterprise Primary Record",
+      "sourceType": "Semantic Model sourceType configuration (1)",
+      "entitiesJson": [
+        "item-1-a",
+        "item-1-b"
+      ],
+      "joinsJson": [
+        "item-1-a",
+        "item-1-b"
+      ],
+      "primaryGrain": "Semantic Model primaryGrain configuration (1)",
+      "executionMode": "Semantic Model executionMode configuration (1)",
+      "refreshCron": "Semantic Model refreshCron configuration (1)",
+      "lastRefreshedAt": "2026-11-01T10:00:00Z",
+      "certificationStatus": "Semantic Model certificationStatus configuration (1)",
+      "certifiedByUserId": "00000000-0096-0001-0000-000000000001",
+      "version": 1,
+      "status": "ACTIVE",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0096-0010-0000-000000000002",
+      "code": "DSM-2026-0002",
+      "name": "Semantic Model #2 — Enterprise Operations Record",
+      "sourceType": "Semantic Model sourceType configuration (2)",
+      "entitiesJson": [
+        "item-2-a",
+        "item-2-b"
+      ],
+      "joinsJson": [
+        "item-2-a",
+        "item-2-b"
+      ],
+      "primaryGrain": "Semantic Model primaryGrain configuration (2)",
+      "executionMode": "Semantic Model executionMode configuration (2)",
+      "refreshCron": "Semantic Model refreshCron configuration (2)",
+      "lastRefreshedAt": "2026-11-02T10:00:00Z",
+      "certificationStatus": "Semantic Model certificationStatus configuration (2)",
+      "certifiedByUserId": "00000000-0096-0001-0000-000000000002",
+      "version": 2,
+      "status": "IN_PROGRESS",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0096-0010-0000-000000000003",
+      "code": "DSM-2026-0003",
+      "name": "Semantic Model #3 — Enterprise Compliance Record",
+      "sourceType": "Semantic Model sourceType configuration (3)",
+      "entitiesJson": [
+        "item-3-a",
+        "item-3-b"
+      ],
+      "joinsJson": [
+        "item-3-a",
+        "item-3-b"
+      ],
+      "primaryGrain": "Semantic Model primaryGrain configuration (3)",
+      "executionMode": "Semantic Model executionMode configuration (3)",
+      "refreshCron": "Semantic Model refreshCron configuration (3)",
+      "lastRefreshedAt": "2026-11-03T10:00:00Z",
+      "certificationStatus": "Semantic Model certificationStatus configuration (3)",
+      "certifiedByUserId": "00000000-0096-0001-0000-000000000003",
+      "version": 3,
+      "status": "COMPLETED",
+      "isDeleted": false
+    }
+  ],
+  "DatMetricDefinition": [
+    {
+      "id": "00000000-0096-0011-0000-000000000001",
+      "semanticModelId": "00000000-0096-0001-0000-000000000001",
+      "metricCode": "DMD-2026-0001",
+      "name": "Metric Definition #1 — Enterprise Primary Record",
+      "formulaExpression": "Metric Definition formulaExpression configuration (1)",
+      "aggregationType": "Metric Definition aggregationType configuration (1)",
+      "unitType": "Metric Definition unitType configuration (1)",
+      "currencyCode": "DMD-2026-0001",
+      "targetValue": 1250,
+      "polarity": "Metric Definition polarity configuration (1)",
+      "certificationStatus": "Metric Definition certificationStatus configuration (1)",
+      "glossaryTermId": "00000000-0096-0001-0000-000000000001",
+      "version": 1,
+      "status": "ACTIVE",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0096-0011-0000-000000000002",
+      "semanticModelId": "00000000-0096-0001-0000-000000000002",
+      "metricCode": "DMD-2026-0002",
+      "name": "Metric Definition #2 — Enterprise Operations Record",
+      "formulaExpression": "Metric Definition formulaExpression configuration (2)",
+      "aggregationType": "Metric Definition aggregationType configuration (2)",
+      "unitType": "Metric Definition unitType configuration (2)",
+      "currencyCode": "DMD-2026-0002",
+      "targetValue": 2500,
+      "polarity": "Metric Definition polarity configuration (2)",
+      "certificationStatus": "Metric Definition certificationStatus configuration (2)",
+      "glossaryTermId": "00000000-0096-0001-0000-000000000002",
+      "version": 2,
+      "status": "IN_PROGRESS",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0096-0011-0000-000000000003",
+      "semanticModelId": "00000000-0096-0001-0000-000000000003",
+      "metricCode": "DMD-2026-0003",
+      "name": "Metric Definition #3 — Enterprise Compliance Record",
+      "formulaExpression": "Metric Definition formulaExpression configuration (3)",
+      "aggregationType": "Metric Definition aggregationType configuration (3)",
+      "unitType": "Metric Definition unitType configuration (3)",
+      "currencyCode": "DMD-2026-0003",
+      "targetValue": 3750,
+      "polarity": "Metric Definition polarity configuration (3)",
+      "certificationStatus": "Metric Definition certificationStatus configuration (3)",
+      "glossaryTermId": "00000000-0096-0001-0000-000000000003",
+      "version": 3,
+      "status": "COMPLETED",
+      "isDeleted": false
+    }
+  ],
+  "DatDashboard": [
+    {
+      "id": "00000000-0096-0012-0000-000000000001",
+      "slug": "DD-2026-0001",
+      "title": "Dashboard #1 — Enterprise Primary Record",
+      "collectionName": "Dashboard #1 — Enterprise Primary Record",
+      "description": "Dashboard description configuration (1)",
+      "globalFiltersSchemaJson": [
+        "item-1-a",
+        "item-1-b"
+      ],
+      "whatIfParametersJson": [
+        "item-1-a",
+        "item-1-b"
+      ],
+      "certificationStatus": "Dashboard certificationStatus configuration (1)",
+      "starterPackKey": "DD-2026-0001",
+      "viewCount90d": 10,
+      "discussionChannelId": "00000000-0096-0001-0000-000000000001",
+      "ownerUserId": "00000000-0096-0001-0000-000000000001",
+      "version": 1,
+      "status": "ACTIVE",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0096-0012-0000-000000000002",
+      "slug": "DD-2026-0002",
+      "title": "Dashboard #2 — Enterprise Operations Record",
+      "collectionName": "Dashboard #2 — Enterprise Operations Record",
+      "description": "Dashboard description configuration (2)",
+      "globalFiltersSchemaJson": [
+        "item-2-a",
+        "item-2-b"
+      ],
+      "whatIfParametersJson": [
+        "item-2-a",
+        "item-2-b"
+      ],
+      "certificationStatus": "Dashboard certificationStatus configuration (2)",
+      "starterPackKey": "DD-2026-0002",
+      "viewCount90d": 20,
+      "discussionChannelId": "00000000-0096-0001-0000-000000000002",
+      "ownerUserId": "00000000-0096-0001-0000-000000000002",
+      "version": 2,
+      "status": "IN_PROGRESS",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0096-0012-0000-000000000003",
+      "slug": "DD-2026-0003",
+      "title": "Dashboard #3 — Enterprise Compliance Record",
+      "collectionName": "Dashboard #3 — Enterprise Compliance Record",
+      "description": "Dashboard description configuration (3)",
+      "globalFiltersSchemaJson": [
+        "item-3-a",
+        "item-3-b"
+      ],
+      "whatIfParametersJson": [
+        "item-3-a",
+        "item-3-b"
+      ],
+      "certificationStatus": "Dashboard certificationStatus configuration (3)",
+      "starterPackKey": "DD-2026-0003",
+      "viewCount90d": 30,
+      "discussionChannelId": "00000000-0096-0001-0000-000000000003",
+      "ownerUserId": "00000000-0096-0001-0000-000000000003",
+      "version": 3,
+      "status": "COMPLETED",
+      "isDeleted": false
+    }
+  ],
+  "DatDashboardTile": [
+    {
+      "id": "00000000-0096-0013-0000-000000000001",
+      "dashboardId": "00000000-0096-0001-0000-000000000001",
+      "semanticModelId": "00000000-0096-0001-0000-000000000001",
+      "metricIds": [
+        "item-1-a",
+        "item-1-b"
+      ],
+      "title": "Dashboard Tile #1 — Enterprise Primary Record",
+      "visualType": "Dashboard Tile visualType configuration (1)",
+      "dimensionsJson": [
+        "item-1-a",
+        "item-1-b"
+      ],
+      "tileFiltersJson": [
+        "item-1-a",
+        "item-1-b"
+      ],
+      "drillThroughRoute": "Dashboard Tile drillThroughRoute configuration (1)",
+      "gridPositionJson": "Dashboard Tile gridPositionJson configuration (1)",
+      "version": 1,
+      "status": "ACTIVE",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0096-0013-0000-000000000002",
+      "dashboardId": "00000000-0096-0001-0000-000000000002",
+      "semanticModelId": "00000000-0096-0001-0000-000000000002",
+      "metricIds": [
+        "item-2-a",
+        "item-2-b"
+      ],
+      "title": "Dashboard Tile #2 — Enterprise Operations Record",
+      "visualType": "Dashboard Tile visualType configuration (2)",
+      "dimensionsJson": [
+        "item-2-a",
+        "item-2-b"
+      ],
+      "tileFiltersJson": [
+        "item-2-a",
+        "item-2-b"
+      ],
+      "drillThroughRoute": "Dashboard Tile drillThroughRoute configuration (2)",
+      "gridPositionJson": "Dashboard Tile gridPositionJson configuration (2)",
+      "version": 2,
+      "status": "IN_PROGRESS",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0096-0013-0000-000000000003",
+      "dashboardId": "00000000-0096-0001-0000-000000000003",
+      "semanticModelId": "00000000-0096-0001-0000-000000000003",
+      "metricIds": [
+        "item-3-a",
+        "item-3-b"
+      ],
+      "title": "Dashboard Tile #3 — Enterprise Compliance Record",
+      "visualType": "Dashboard Tile visualType configuration (3)",
+      "dimensionsJson": [
+        "item-3-a",
+        "item-3-b"
+      ],
+      "tileFiltersJson": [
+        "item-3-a",
+        "item-3-b"
+      ],
+      "drillThroughRoute": "Dashboard Tile drillThroughRoute configuration (3)",
+      "gridPositionJson": "Dashboard Tile gridPositionJson configuration (3)",
+      "version": 3,
+      "status": "COMPLETED",
+      "isDeleted": false
+    }
+  ],
+  "DatSavedExploration": [
+    {
+      "id": "00000000-0096-0014-0000-000000000001",
+      "semanticModelId": "00000000-0096-0001-0000-000000000001",
+      "name": "Saved Exploration #1 — Enterprise Primary Record",
+      "querySpecJson": {
+        "configured": true,
+        "tier": 1
+      },
+      "visualType": "Saved Exploration visualType configuration (1)",
+      "bookmarkFiltersJson": {
+        "configured": true,
+        "tier": 1
+      },
+      "visibility": "Saved Exploration visibility configuration (1)",
+      "ownerUserId": "00000000-0096-0001-0000-000000000001",
+      "discussionChannelId": "00000000-0096-0001-0000-000000000001",
+      "version": 1,
+      "status": "ACTIVE",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0096-0014-0000-000000000002",
+      "semanticModelId": "00000000-0096-0001-0000-000000000002",
+      "name": "Saved Exploration #2 — Enterprise Operations Record",
+      "querySpecJson": {
+        "configured": true,
+        "tier": 2
+      },
+      "visualType": "Saved Exploration visualType configuration (2)",
+      "bookmarkFiltersJson": {
+        "configured": true,
+        "tier": 2
+      },
+      "visibility": "Saved Exploration visibility configuration (2)",
+      "ownerUserId": "00000000-0096-0001-0000-000000000002",
+      "discussionChannelId": "00000000-0096-0001-0000-000000000002",
+      "version": 2,
+      "status": "IN_PROGRESS",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0096-0014-0000-000000000003",
+      "semanticModelId": "00000000-0096-0001-0000-000000000003",
+      "name": "Saved Exploration #3 — Enterprise Compliance Record",
+      "querySpecJson": {
+        "configured": true,
+        "tier": 3
+      },
+      "visualType": "Saved Exploration visualType configuration (3)",
+      "bookmarkFiltersJson": {
+        "configured": true,
+        "tier": 3
+      },
+      "visibility": "Saved Exploration visibility configuration (3)",
+      "ownerUserId": "00000000-0096-0001-0000-000000000003",
+      "discussionChannelId": "00000000-0096-0001-0000-000000000003",
+      "version": 3,
+      "status": "COMPLETED",
+      "isDeleted": false
+    }
+  ],
+  "DatRowSecurityPolicy": [
+    {
+      "id": "00000000-0096-0015-0000-000000000001",
+      "semanticModelId": "00000000-0096-0001-0000-000000000001",
+      "policyName": "Row Security Policy #1 — Enterprise Primary Record",
+      "subjectRoleKeys": [
+        "item-1-a",
+        "item-1-b"
+      ],
+      "rowFilterPredicateJson": {
+        "configured": true,
+        "tier": 1
+      },
+      "maskedColumns": [
+        "item-1-a",
+        "item-1-b"
+      ],
+      "isEnabled": true,
+      "version": 1,
+      "status": "ACTIVE",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0096-0015-0000-000000000002",
+      "semanticModelId": "00000000-0096-0001-0000-000000000002",
+      "policyName": "Row Security Policy #2 — Enterprise Operations Record",
+      "subjectRoleKeys": [
+        "item-2-a",
+        "item-2-b"
+      ],
+      "rowFilterPredicateJson": {
+        "configured": true,
+        "tier": 2
+      },
+      "maskedColumns": [
+        "item-2-a",
+        "item-2-b"
+      ],
+      "isEnabled": true,
+      "version": 2,
+      "status": "IN_PROGRESS",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0096-0015-0000-000000000003",
+      "semanticModelId": "00000000-0096-0001-0000-000000000003",
+      "policyName": "Row Security Policy #3 — Enterprise Compliance Record",
+      "subjectRoleKeys": [
+        "item-3-a",
+        "item-3-b"
+      ],
+      "rowFilterPredicateJson": {
+        "configured": true,
+        "tier": 3
+      },
+      "maskedColumns": [
+        "item-3-a",
+        "item-3-b"
+      ],
+      "isEnabled": false,
+      "version": 3,
+      "status": "COMPLETED",
+      "isDeleted": false
+    }
+  ],
+  "DatMetricAlert": [
+    {
+      "id": "00000000-0096-0016-0000-000000000001",
+      "metricId": "00000000-0096-0001-0000-000000000001",
+      "name": "Metric Alert #1 — Enterprise Primary Record",
+      "operator": "Metric Alert operator configuration (1)",
+      "thresholdValue": 1250,
+      "evaluationCron": "Metric Alert evaluationCron configuration (1)",
+      "cooldownMinutes": 10,
+      "severity": "Metric Alert severity configuration (1)",
+      "lastEvaluatedAt": "2026-11-01T10:00:00Z",
+      "lastTriggeredAt": "2026-11-01T10:00:00Z",
+      "activeWorkItemId": "00000000-0096-0001-0000-000000000001",
+      "isEnabled": true,
+      "version": 1,
+      "status": "ACTIVE",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0096-0016-0000-000000000002",
+      "metricId": "00000000-0096-0001-0000-000000000002",
+      "name": "Metric Alert #2 — Enterprise Operations Record",
+      "operator": "Metric Alert operator configuration (2)",
+      "thresholdValue": 2500,
+      "evaluationCron": "Metric Alert evaluationCron configuration (2)",
+      "cooldownMinutes": 20,
+      "severity": "Metric Alert severity configuration (2)",
+      "lastEvaluatedAt": "2026-11-02T10:00:00Z",
+      "lastTriggeredAt": "2026-11-02T10:00:00Z",
+      "activeWorkItemId": "00000000-0096-0001-0000-000000000002",
+      "isEnabled": true,
+      "version": 2,
+      "status": "IN_PROGRESS",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0096-0016-0000-000000000003",
+      "metricId": "00000000-0096-0001-0000-000000000003",
+      "name": "Metric Alert #3 — Enterprise Compliance Record",
+      "operator": "Metric Alert operator configuration (3)",
+      "thresholdValue": 3750,
+      "evaluationCron": "Metric Alert evaluationCron configuration (3)",
+      "cooldownMinutes": 30,
+      "severity": "Metric Alert severity configuration (3)",
+      "lastEvaluatedAt": "2026-11-03T10:00:00Z",
+      "lastTriggeredAt": "2026-11-03T10:00:00Z",
+      "activeWorkItemId": "00000000-0096-0001-0000-000000000003",
+      "isEnabled": false,
+      "version": 3,
+      "status": "COMPLETED",
+      "isDeleted": false
+    }
+  ],
+  "DatReportSubscription": [
+    {
+      "id": "00000000-0096-0017-0000-000000000001",
+      "dashboardId": "00000000-0096-0001-0000-000000000001",
+      "name": "Report Subscription #1 — Enterprise Primary Record",
+      "scheduleCron": "Report Subscription scheduleCron configuration (1)",
+      "exportFormat": "2026-11-01T10:00:00Z",
+      "recipientUserIds": [
+        "item-1-a",
+        "item-1-b"
+      ],
+      "presetFiltersJson": {
+        "configured": true,
+        "tier": 1
+      },
+      "isEnabled": true,
+      "lastDeliveredAt": "2026-11-01T10:00:00Z",
+      "lastDeliveryFileId": "00000000-0096-0001-0000-000000000001",
+      "version": 1,
+      "status": "ACTIVE",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0096-0017-0000-000000000002",
+      "dashboardId": "00000000-0096-0001-0000-000000000002",
+      "name": "Report Subscription #2 — Enterprise Operations Record",
+      "scheduleCron": "Report Subscription scheduleCron configuration (2)",
+      "exportFormat": "2026-11-02T10:00:00Z",
+      "recipientUserIds": [
+        "item-2-a",
+        "item-2-b"
+      ],
+      "presetFiltersJson": {
+        "configured": true,
+        "tier": 2
+      },
+      "isEnabled": true,
+      "lastDeliveredAt": "2026-11-02T10:00:00Z",
+      "lastDeliveryFileId": "00000000-0096-0001-0000-000000000002",
+      "version": 2,
+      "status": "IN_PROGRESS",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0096-0017-0000-000000000003",
+      "dashboardId": "00000000-0096-0001-0000-000000000003",
+      "name": "Report Subscription #3 — Enterprise Compliance Record",
+      "scheduleCron": "Report Subscription scheduleCron configuration (3)",
+      "exportFormat": "2026-11-03T10:00:00Z",
+      "recipientUserIds": [
+        "item-3-a",
+        "item-3-b"
+      ],
+      "presetFiltersJson": {
+        "configured": true,
+        "tier": 3
+      },
+      "isEnabled": false,
+      "lastDeliveredAt": "2026-11-03T10:00:00Z",
+      "lastDeliveryFileId": "00000000-0096-0001-0000-000000000003",
+      "version": 3,
+      "status": "COMPLETED",
+      "isDeleted": false
+    }
+  ]
+}
