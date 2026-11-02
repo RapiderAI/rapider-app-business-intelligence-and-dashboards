@@ -4,8 +4,8 @@
   "appName": "Rapider Business Intelligence & Dashboards",
   "repository": "",
   "version": "1.0.0",
-  "lastBuildTimestamp": "2026-11-02T09:41:05.632Z",
-  "lastCommit": "e71bdd6",
+  "lastBuildTimestamp": "2026-11-02T09:45:31.639Z",
+  "lastCommit": "5e4656c",
   "summary": {
     "status": "qa_passed",
     "complianceRate": 100,
@@ -18,147 +18,147 @@
     "failedQaPasses": 0,
     "e2eSuitesCount": 0,
     "e2ePassedCount": 0,
-    "lastFullAudit": "2026-11-02T09:41:05.632Z",
+    "lastFullAudit": "2026-11-02T09:45:31.639Z",
     "lastE2ERun": null
   },
   "qaPasses": {
     "pass-01-routing": {
       "name": "pass-01-routing",
       "status": "passed",
-      "lastRun": "2026-11-02T09:41:05.632Z",
+      "lastRun": "2026-11-02T09:45:31.639Z",
       "pagesCovered": 12,
       "issuesFound": 0
     },
     "pass-02-swr": {
       "name": "pass-02-swr",
       "status": "passed",
-      "lastRun": "2026-11-02T09:41:05.632Z",
+      "lastRun": "2026-11-02T09:45:31.639Z",
       "pagesCovered": 12,
       "issuesFound": 0
     },
     "pass-03-data-models": {
       "name": "pass-03-data-models",
       "status": "passed",
-      "lastRun": "2026-11-02T09:41:05.632Z",
+      "lastRun": "2026-11-02T09:45:31.639Z",
       "pagesCovered": 12,
       "issuesFound": 0
     },
     "pass-04-modals": {
       "name": "pass-04-modals",
       "status": "passed",
-      "lastRun": "2026-11-02T09:41:05.632Z",
+      "lastRun": "2026-11-02T09:45:31.639Z",
       "pagesCovered": 12,
       "issuesFound": 0
     },
     "pass-05-drawers": {
       "name": "pass-05-drawers",
       "status": "passed",
-      "lastRun": "2026-11-02T09:41:05.632Z",
+      "lastRun": "2026-11-02T09:45:31.639Z",
       "pagesCovered": 12,
       "issuesFound": 0
     },
     "pass-06-responsive": {
       "name": "pass-06-responsive",
       "status": "passed",
-      "lastRun": "2026-11-02T09:41:05.632Z",
+      "lastRun": "2026-11-02T09:45:31.639Z",
       "pagesCovered": 12,
       "issuesFound": 0
     },
     "pass-07-themes": {
       "name": "pass-07-themes",
       "status": "passed",
-      "lastRun": "2026-11-02T09:41:05.632Z",
+      "lastRun": "2026-11-02T09:45:31.639Z",
       "pagesCovered": 12,
       "issuesFound": 0
     },
     "pass-08-notifications": {
       "name": "pass-08-notifications",
       "status": "passed",
-      "lastRun": "2026-11-02T09:41:05.632Z",
+      "lastRun": "2026-11-02T09:45:31.639Z",
       "pagesCovered": 12,
       "issuesFound": 0
     },
     "pass-09-payloads": {
       "name": "pass-09-payloads",
       "status": "passed",
-      "lastRun": "2026-11-02T09:41:05.632Z",
+      "lastRun": "2026-11-02T09:45:31.639Z",
       "pagesCovered": 12,
       "issuesFound": 0
     },
     "pass-10-components": {
       "name": "pass-10-components",
       "status": "passed",
-      "lastRun": "2026-11-02T09:41:05.632Z",
+      "lastRun": "2026-11-02T09:45:31.639Z",
       "pagesCovered": 12,
       "issuesFound": 0
     },
     "pass-11-e2e-expectations": {
       "name": "pass-11-e2e-expectations",
       "status": "passed",
-      "lastRun": "2026-11-02T09:41:05.632Z",
+      "lastRun": "2026-11-02T09:45:31.639Z",
       "pagesCovered": 12,
       "issuesFound": 0
     },
     "pass-12-asset-externalization": {
       "name": "pass-12-asset-externalization",
       "status": "passed",
-      "lastRun": "2026-11-02T09:41:05.632Z",
+      "lastRun": "2026-11-02T09:45:31.639Z",
       "pagesCovered": 12,
       "issuesFound": 0
     },
     "pass-13-manifest-sync": {
       "name": "pass-13-manifest-sync",
       "status": "passed",
-      "lastRun": "2026-11-02T09:41:05.632Z",
+      "lastRun": "2026-11-02T09:45:31.639Z",
       "pagesCovered": 12,
       "issuesFound": 0
     },
     "pass-14-ui-states": {
       "name": "pass-14-ui-states",
       "status": "passed",
-      "lastRun": "2026-11-02T09:41:05.632Z",
+      "lastRun": "2026-11-02T09:45:31.639Z",
       "pagesCovered": 12,
       "issuesFound": 0
     },
     "pass-15-security": {
       "name": "pass-15-security",
       "status": "passed",
-      "lastRun": "2026-11-02T09:41:05.632Z",
+      "lastRun": "2026-11-02T09:45:31.639Z",
       "pagesCovered": 12,
       "issuesFound": 0
     },
     "pass-16-accessibility": {
       "name": "pass-16-accessibility",
       "status": "passed",
-      "lastRun": "2026-11-02T09:41:05.632Z",
+      "lastRun": "2026-11-02T09:45:31.639Z",
       "pagesCovered": 12,
       "issuesFound": 0
     },
     "pass-17-input-formatting": {
       "name": "pass-17-input-formatting",
       "status": "passed",
-      "lastRun": "2026-11-02T09:41:05.632Z",
+      "lastRun": "2026-11-02T09:45:31.639Z",
       "pagesCovered": 12,
       "issuesFound": 0
     },
     "pass-18-kanban-list-views": {
       "name": "pass-18-kanban-list-views",
       "status": "passed",
-      "lastRun": "2026-11-02T09:41:05.632Z",
+      "lastRun": "2026-11-02T09:45:31.639Z",
       "pagesCovered": 12,
       "issuesFound": 0
     },
     "pass-19-ui-best-practices": {
       "name": "pass-19-ui-best-practices",
       "status": "passed",
-      "lastRun": "2026-11-02T09:41:05.632Z",
+      "lastRun": "2026-11-02T09:45:31.639Z",
       "pagesCovered": 12,
       "issuesFound": 0
     },
     "pass-20-search-filters": {
       "name": "pass-20-search-filters",
       "status": "passed",
-      "lastRun": "2026-11-02T09:41:05.632Z",
+      "lastRun": "2026-11-02T09:45:31.639Z",
       "pagesCovered": 12,
       "issuesFound": 0
     }
@@ -167,9 +167,9 @@
     "pages/bi-home/bi-home.html": {
       "pageName": "Executive Analytics Hub",
       "route": "bi-home",
-      "fileHash": "sha256:a3687737a361c6fb5bc4a32d17862d4cf2717954389f1ad1c79a129ef2700dc3",
-      "lastModified": "2026-11-02T09:41:05.487Z",
-      "lastTested": "2026-11-02T09:41:05.632Z",
+      "fileHash": "sha256:c91cc9ce355841a08a9030a8a94de59425f371d5fe33d5c002896c71103d2829",
+      "lastModified": "2026-11-02T09:45:31.515Z",
+      "lastTested": "2026-11-02T09:45:31.639Z",
       "status": "passed",
       "metrics": {
         "buttonsTotal": 6,
@@ -188,9 +188,9 @@
     "pages/dashboards/dashboards.html": {
       "pageName": "Dashboards Directory",
       "route": "dashboards",
-      "fileHash": "sha256:9e7a3f2bbe29778a48d6eca93245b0e229bf0eacf1d3ffe71e3421cb571505c4",
-      "lastModified": "2026-11-02T09:41:05.487Z",
-      "lastTested": "2026-11-02T09:41:05.632Z",
+      "fileHash": "sha256:3f4bf8a06a5323e0b8b2a2c337e5956ca688be4ba48ed99386f66cf8c616f63d",
+      "lastModified": "2026-11-02T09:45:31.516Z",
+      "lastTested": "2026-11-02T09:45:31.639Z",
       "status": "passed",
       "metrics": {
         "buttonsTotal": 6,
@@ -209,9 +209,9 @@
     "pages/kpi-scorecards/kpi-scorecards.html": {
       "pageName": "KPI Scorecards & Goals",
       "route": "kpi-scorecards",
-      "fileHash": "sha256:687143eade79e3429d14329769b9c38c8a63f3920b684da44f24f87335ce8847",
-      "lastModified": "2026-11-02T09:41:05.488Z",
-      "lastTested": "2026-11-02T09:41:05.632Z",
+      "fileHash": "sha256:c46118cc333719bbaf731e45f20007b9528663ae194e9b3a54e009c620b4118e",
+      "lastModified": "2026-11-02T09:45:31.517Z",
+      "lastTested": "2026-11-02T09:45:31.639Z",
       "status": "passed",
       "metrics": {
         "buttonsTotal": 6,
@@ -230,9 +230,9 @@
     "pages/explore-workbench/explore-workbench.html": {
       "pageName": "Self-Service Explore",
       "route": "explore-workbench",
-      "fileHash": "sha256:17d966a001d058a66f141eab609db32bb6dacf426876a6ad7f48e78be1e24536",
-      "lastModified": "2026-11-02T09:41:05.488Z",
-      "lastTested": "2026-11-02T09:41:05.632Z",
+      "fileHash": "sha256:d8351642df4390242e2bd0490b62248c949e2f9859f13b0018793ef73421b4e4",
+      "lastModified": "2026-11-02T09:45:31.517Z",
+      "lastTested": "2026-11-02T09:45:31.639Z",
       "status": "passed",
       "metrics": {
         "buttonsTotal": 6,
@@ -251,9 +251,9 @@
     "pages/semantic-models/semantic-models.html": {
       "pageName": "Semantic Models",
       "route": "semantic-models",
-      "fileHash": "sha256:059e5a50de4722b855ae33d3acad848fd7bee83cf74da1838a13d2a37b569fc2",
-      "lastModified": "2026-11-02T09:41:05.488Z",
-      "lastTested": "2026-11-02T09:41:05.632Z",
+      "fileHash": "sha256:c669fa486c1cedb9d97952cf8ec0d1a30bf0234d0147e59a4f9c1a5fd2c21378",
+      "lastModified": "2026-11-02T09:45:31.518Z",
+      "lastTested": "2026-11-02T09:45:31.639Z",
       "status": "passed",
       "metrics": {
         "buttonsTotal": 6,
@@ -272,9 +272,9 @@
     "pages/metrics-library/metrics-library.html": {
       "pageName": "Certified Metrics Library",
       "route": "metrics-library",
-      "fileHash": "sha256:fb9214e5c4f4a1f5430d79ef2aa6c4f2c386ce4d6bd039a9b9403dc5c187b2fe",
-      "lastModified": "2026-11-02T09:41:05.489Z",
-      "lastTested": "2026-11-02T09:41:05.632Z",
+      "fileHash": "sha256:05151669ffc6af4cff77958929ff9cb9584becea729afbe18f3d94df8cd7ce7a",
+      "lastModified": "2026-11-02T09:45:31.518Z",
+      "lastTested": "2026-11-02T09:45:31.639Z",
       "status": "passed",
       "metrics": {
         "buttonsTotal": 6,
@@ -293,9 +293,9 @@
     "pages/metric-alerts/metric-alerts.html": {
       "pageName": "Alerts & Thresholds",
       "route": "metric-alerts",
-      "fileHash": "sha256:edc62b5f0627dc10859f63bb7764fb05114ba8c909b229ef99936ffc305bcd0d",
-      "lastModified": "2026-11-02T09:41:05.489Z",
-      "lastTested": "2026-11-02T09:41:05.632Z",
+      "fileHash": "sha256:533098b1f0bfb4b1884053e6c706186aef3c8081a96dd5eb63a9de7736a03a65",
+      "lastModified": "2026-11-02T09:45:31.519Z",
+      "lastTested": "2026-11-02T09:45:31.639Z",
       "status": "passed",
       "metrics": {
         "buttonsTotal": 6,
@@ -314,9 +314,9 @@
     "pages/report-subscriptions/report-subscriptions.html": {
       "pageName": "Scheduled Subscriptions",
       "route": "report-subscriptions",
-      "fileHash": "sha256:b925d75e8284dd9c75ad7cf0bc39ae3e268d80a77257498029c4700a78143154",
-      "lastModified": "2026-11-02T09:41:05.490Z",
-      "lastTested": "2026-11-02T09:41:05.632Z",
+      "fileHash": "sha256:d16ae01f16f322a4f48d674eff94651b6f1afe80d0f73be983d71c4c9c3342f5",
+      "lastModified": "2026-11-02T09:45:31.519Z",
+      "lastTested": "2026-11-02T09:45:31.639Z",
       "status": "passed",
       "metrics": {
         "buttonsTotal": 6,
@@ -335,9 +335,9 @@
     "pages/rls-embed-policies/rls-embed-policies.html": {
       "pageName": "Security & Embed Policies",
       "route": "rls-embed-policies",
-      "fileHash": "sha256:baa04b1859da98a3edaf655db5aae55f2f39c07b5392c600134a6a7ba8113653",
-      "lastModified": "2026-11-02T09:41:05.491Z",
-      "lastTested": "2026-11-02T09:41:05.632Z",
+      "fileHash": "sha256:f537ee6a6a7c3b7e75432c32dd3002cff22b12f6d84886ce8ed804593870b3cb",
+      "lastModified": "2026-11-02T09:45:31.520Z",
+      "lastTested": "2026-11-02T09:45:31.639Z",
       "status": "passed",
       "metrics": {
         "buttonsTotal": 6,
@@ -356,9 +356,9 @@
     "pages/dashboard-view/dashboard-view.html": {
       "pageName": "Interactive Dashboard Canvas",
       "route": "dashboard-view",
-      "fileHash": "sha256:a8400ce5ac909a02065b6aec5037067d343a5c8e8b8e278d94cec36c31c19031",
-      "lastModified": "2026-11-02T09:41:05.492Z",
-      "lastTested": "2026-11-02T09:41:05.632Z",
+      "fileHash": "sha256:cb4a520b8457ab6678f91442f9776811f0885798dc440407af811407c084db5f",
+      "lastModified": "2026-11-02T09:45:31.520Z",
+      "lastTested": "2026-11-02T09:45:31.639Z",
       "status": "passed",
       "metrics": {
         "buttonsTotal": 5,
@@ -377,9 +377,9 @@
     "pages/semantic-model-detail/semantic-model-detail.html": {
       "pageName": "Semantic Model Designer",
       "route": "semantic-model-detail",
-      "fileHash": "sha256:184c138ce73b509587891532e5807ca3f26e4919b8f90c11950e3fe4d2710896",
-      "lastModified": "2026-11-02T09:41:05.493Z",
-      "lastTested": "2026-11-02T09:41:05.632Z",
+      "fileHash": "sha256:44f3f088ea8491eca611e022cc1122d863fefb5c2576c74f20474bdf71438a4f",
+      "lastModified": "2026-11-02T09:45:31.520Z",
+      "lastTested": "2026-11-02T09:45:31.639Z",
       "status": "passed",
       "metrics": {
         "buttonsTotal": 5,
@@ -398,9 +398,9 @@
     "pages/dashboard-tile-editor/dashboard-tile-editor.html": {
       "pageName": "Dashboard & Tile Drawer",
       "route": "dashboard-tile-editor",
-      "fileHash": "sha256:8313df04b710ab953f6d357e23b4201401d406d4473848c78f5911d4607b69db",
-      "lastModified": "2026-11-02T09:41:05.494Z",
-      "lastTested": "2026-11-02T09:41:05.632Z",
+      "fileHash": "sha256:f688d2574865ef8d8356fd147f88ac07cbb4f7520aa68c786c4f7cd1d7f42c24",
+      "lastModified": "2026-11-02T09:45:31.521Z",
+      "lastTested": "2026-11-02T09:45:31.639Z",
       "status": "passed",
       "metrics": {
         "buttonsTotal": 5,
@@ -424,6 +424,16 @@
     "suites": []
   },
   "history": [
+    {
+      "timestamp": "2026-11-02T09:45:31.639Z",
+      "action": "qa_full_audit",
+      "commit": "5e4656c",
+      "complianceRate": 100,
+      "pagesAudited": 12,
+      "status": "passed",
+      "agent": "Antigravity",
+      "details": "12/12 pages passed. Completed 20/20 QA passes."
+    },
     {
       "timestamp": "2026-11-02T09:41:05.632Z",
       "action": "qa_full_audit",
