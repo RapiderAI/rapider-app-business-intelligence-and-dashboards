@@ -3,8 +3,10 @@
   "key": "business-intelligence-and-dashboards",
   "domainKey": "DAT",
   "appSuite": {
-    "key": "DAT",
-    "title": "Rapider Data & Analytics Suite"
+    "key": "APP",
+    "title": "Rapider Business Intelligence & Dashboards",
+    "shortTitle": "Enterprise Suite",
+    "icon": "fas fa-chart-bar"
   },
   "type": "App",
   "description": "Business Intelligence & Dashboards enterprise microapplication in the Rapider Data & Analytics Suite.",

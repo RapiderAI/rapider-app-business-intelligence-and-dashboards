@@ -7,6 +7,7 @@
   <script src="https://kit.fontawesome.com/5b23df26dc.js" crossorigin="anonymous" defer></script>
   <script src="/assets/js/rapider-components.js" defer></script>
   <link rel="stylesheet" href="/assets/themes/rapider-tailwind-theme.css">
+  <link rel="stylesheet" href="/assets/themes/rapider-design-system.css">
   <link rel="stylesheet" href="/assets/themes/crm-expenses-design.css">
   <style>
     :root {
@@ -197,85 +198,207 @@
     html.dark .appbox, body.dark .appbox, html.dark .filter-bar, body.dark .filter-bar, html.dark table.data-table th, body.dark table.data-table th, html.dark .kanban-col, body.dark .kanban-col, html.dark .drawer-foot, body.dark .drawer-foot { background: #0f172a !important; color: #cbd5e1 !important; border-color: #334155 !important; }
     html.dark input, body.dark input, html.dark select, body.dark select, html.dark textarea, body.dark textarea { background: #0f172a !important; color: #f1f5f9 !important; border-color: #334155 !important; }
   </style>
+<style data-collapsible-sidebar>
+/* Canonical Pass 21 Collapsible Suite Sidebar Layout & State Styles */
+.layout,
+.ds-shell.layout {
+  display: grid !important;
+  grid-template-columns: 232px minmax(0, 1fr) !important;
+  min-height: 100vh;
+  width: 100%;
+  transition: grid-template-columns 0.2s ease;
+}
+.layout.sidebar-collapsed,
+.ds-shell.layout.sidebar-collapsed {
+  grid-template-columns: 68px minmax(0, 1fr) !important;
+}
+aside.sidebar,
+aside#suiteSidebar {
+  background: var(--component-inner-background-color, #ffffff);
+  border-right: 1px solid var(--primary-border-color, #e9ecf3);
+  padding: 22px 14px 16px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 30;
+  width: 232px;
+  min-width: 232px;
+  max-width: 232px;
+  transition: width 0.2s ease, min-width 0.2s ease, max-width 0.2s ease, padding 0.2s ease;
+}
+aside.sidebar.sidebar-collapsed,
+.sidebar-collapsed aside.sidebar {
+  width: 68px !important;
+  min-width: 68px !important;
+  max-width: 68px !important;
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+}
+aside.sidebar.sidebar-collapsed .suite-title,
+aside.sidebar.sidebar-collapsed .sidebar-collapse-btn,
+aside.sidebar.sidebar-collapsed .appbox-meta,
+aside.sidebar.sidebar-collapsed .appbox span:not(.appicon),
+aside.sidebar.sidebar-collapsed .appbox b,
+aside.sidebar.sidebar-collapsed .appbox small,
+aside.sidebar.sidebar-collapsed .sidebar-label,
+aside.sidebar.sidebar-collapsed .navlabel,
+aside.sidebar.sidebar-collapsed .profile-meta,
+aside.sidebar.sidebar-collapsed .profile-link strong,
+aside.sidebar.sidebar-collapsed .profile-link small,
+.sidebar-collapsed aside.sidebar .suite-title,
+.sidebar-collapsed aside.sidebar .sidebar-collapse-btn,
+.sidebar-collapsed aside.sidebar .appbox-meta,
+.sidebar-collapsed aside.sidebar .appbox span:not(.appicon),
+.sidebar-collapsed aside.sidebar .appbox b,
+.sidebar-collapsed aside.sidebar .appbox small,
+.sidebar-collapsed aside.sidebar .sidebar-label,
+.sidebar-collapsed aside.sidebar .navlabel,
+.sidebar-collapsed aside.sidebar .profile-meta,
+.sidebar-collapsed aside.sidebar .profile-link strong,
+.sidebar-collapsed aside.sidebar .profile-link small {
+  display: none !important;
+}
+aside.sidebar.sidebar-collapsed .brand-row,
+.sidebar-collapsed aside.sidebar .brand-row {
+  justify-content: center !important;
+  padding: 0 0 18px 0 !important;
+}
+aside.sidebar.sidebar-collapsed .brand-row .brand,
+.sidebar-collapsed aside.sidebar .brand-row .brand {
+  justify-content: center !important;
+  flex: none !important;
+  padding: 0 !important;
+  gap: 0 !important;
+}
+aside.sidebar.sidebar-collapsed .appbox,
+.sidebar-collapsed aside.sidebar .appbox {
+  justify-content: center !important;
+  padding: 8px 4px !important;
+}
+aside.sidebar.sidebar-collapsed .nav a,
+.sidebar-collapsed aside.sidebar .nav a {
+  justify-content: center !important;
+  padding: 10px 0 !important;
+  width: 44px !important;
+  margin: 0 auto 3px auto !important;
+  font-size: 0 !important;
+}
+aside.sidebar.sidebar-collapsed .nav a i,
+aside.sidebar.sidebar-collapsed .nav a .nav-icon,
+.sidebar-collapsed aside.sidebar .nav a i,
+.sidebar-collapsed aside.sidebar .nav a .nav-icon {
+  font-size: 15px !important;
+  width: 18px !important;
+  height: 18px !important;
+  margin: 0 !important;
+}
+aside.sidebar.sidebar-collapsed .profile-link,
+.sidebar-collapsed aside.sidebar .profile-link {
+  justify-content: center !important;
+  padding: 12px 0 0 !important;
+}
+aside.sidebar.sidebar-collapsed:hover .brand-row .suite-icon,
+.sidebar-collapsed aside.sidebar:hover .brand-row .suite-icon,
+aside.sidebar.sidebar-collapsed .brand-row:hover .suite-icon {
+  display: none !important;
+}
+aside.sidebar.sidebar-collapsed:hover .brand-row .suite-expand-icon,
+.sidebar-collapsed aside.sidebar:hover .brand-row .suite-expand-icon,
+aside.sidebar.sidebar-collapsed .brand-row:hover .suite-expand-icon {
+  display: inline-flex !important;
+  cursor: pointer;
+  animation: pulse-caret 1.2s infinite ease-in-out;
+}
+@media (max-width: 768px) {
+  .layout,
+  .ds-shell.layout {
+    display: block !important;
+  }
+  aside.sidebar,
+  aside#suiteSidebar {
+    position: fixed !important;
+    left: 0 !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    width: 260px !important;
+    min-width: 260px !important;
+    max-width: 260px !important;
+    transform: translateX(-100%) !important;
+    z-index: 50 !important;
+  }
+  body.navopen aside.sidebar,
+  body.navopen aside#suiteSidebar {
+    transform: translateX(0) !important;
+  }
+  body.navopen .shade {
+    display: block !important;
+    position: fixed !important;
+    inset: 0 !important;
+    background: rgba(15, 23, 42, 0.48) !important;
+    z-index: 45 !important;
+  }
+  .mobile-menu {
+    display: inline-flex !important;
+  }
+  .sidebar-collapse-btn {
+    display: none !important;
+  }
+}
+</style>
 </head>
 <body>
   <div class="shade" id="mobileShade"></div>
-  <div class="layout" id="appLayout">
-    <aside class="sidebar" id="appSidebar" aria-label="Rapider Business Intelligence &amp; Dashboards navigation">
+  <div class="layout ds-shell @container" id="appLayout">
+    <aside class="sidebar" id="suiteSidebar" aria-label="Business Intelligence &amp; Dashboards navigation">
       <div class="brand-row">
-        <a class="brand" href="#/bi-home" id="suiteBrandLink" title="Data &amp; Analytics Suite">
+        <a class="brand" href="#/bi-home" data-nav-route="bi-home" title="Enterprise Suite">
           <span class="suite-icon-container">
-            <i class="suite-icon fas fa-chart-bar" aria-hidden="true"></i>
-            <i class="suite-expand-icon fas fa-chevron-right" aria-hidden="true"></i>
+            <i class="suite-icon fas fa-chart-bar"></i>
+            <i class="suite-expand-icon fas fa-chevron-right"></i>
           </span>
-          <span class="suite-title sidebar-label">Data &amp; Analytics Suite</span>
+          <span class="suite-title">Enterprise Suite</span>
         </a>
-        <button type="button" class="sidebar-collapse-btn" id="sidebarCollapseBtn" aria-label="Collapse sidebar" title="Collapse sidebar">
-          <i class="fas fa-chevron-left" aria-hidden="true"></i>
+        <button type="button" class="sidebar-collapse-btn" title="Collapse sidebar" aria-label="Collapse sidebar">
+          <i class="fas fa-chevron-left"></i>
         </button>
       </div>
-
-      <a class="appbox" href="#/bi-home">
-        <div class="appicon"><i class="fas fa-chart-bar" aria-hidden="true"></i></div>
-        <div class="sidebar-label">
-          <b>Business Intelligence &amp; Dash</b>
-          <small>Rapider Data &amp; Analytics Suite</small>
-        </div>
+      <a class="appbox" href="#/bi-home" data-nav-route="bi-home" title="Business Intelligence &amp; Dashboards">
+        <span class="appicon"><i class="fas fa-chart-bar"></i></span>
+        <span class="appbox-meta">
+          <b>Business Intelligence &amp; Dashboards</b>
+          <small>Enterprise Suite</small>
+        </span>
       </a>
-
-      <nav class="nav" aria-label="Primary">
-      <div class="navlabel">Analytics</div>
-        <a href="#/bi-home" class="nav-link" data-route="bi-home" title="Executive Analytics Hub">
-          <i class="fas fa-chart-bar icon" aria-hidden="true"></i>
-          <span class="sidebar-label">Executive Analytics Hub</span>
-        </a>
-        <a href="#/dashboards" class="nav-link" data-route="dashboards" title="Dashboards Directory">
-          <i class="fas fa-chart-bar icon" aria-hidden="true"></i>
-          <span class="sidebar-label">Dashboards Directory</span>
-        </a>
-        <a href="#/kpi-scorecards" class="nav-link" data-route="kpi-scorecards" title="KPI Scorecards &amp; Goals">
-          <i class="fas fa-chart-bar icon" aria-hidden="true"></i>
-          <span class="sidebar-label">KPI Scorecards &amp; Goals</span>
-        </a>
-      <div class="navlabel">Modeling &amp; Studio</div>
-        <a href="#/explore-workbench" class="nav-link" data-route="explore-workbench" title="Self-Service Explore">
-          <i class="fas fa-chart-bar icon" aria-hidden="true"></i>
-          <span class="sidebar-label">Self-Service Explore</span>
-        </a>
-        <a href="#/semantic-models" class="nav-link active" data-route="semantic-models" title="Semantic Models">
-          <i class="fas fa-chart-bar icon" aria-hidden="true"></i>
-          <span class="sidebar-label">Semantic Models</span>
-        </a>
-        <a href="#/metrics-library" class="nav-link" data-route="metrics-library" title="Certified Metrics Library">
-          <i class="fas fa-chart-bar icon" aria-hidden="true"></i>
-          <span class="sidebar-label">Certified Metrics Library</span>
-        </a>
-      <div class="navlabel">Governance &amp; Delivery</div>
-        <a href="#/metric-alerts" class="nav-link" data-route="metric-alerts" title="Alerts &amp; Thresholds">
-          <i class="fas fa-chart-bar icon" aria-hidden="true"></i>
-          <span class="sidebar-label">Alerts &amp; Thresholds</span>
-        </a>
-        <a href="#/report-subscriptions" class="nav-link" data-route="report-subscriptions" title="Scheduled Subscriptions">
-          <i class="fas fa-chart-bar icon" aria-hidden="true"></i>
-          <span class="sidebar-label">Scheduled Subscriptions</span>
-        </a>
-        <a href="#/rls-embed-policies" class="nav-link" data-route="rls-embed-policies" title="Security &amp; Embed Policies">
-          <i class="fas fa-chart-bar icon" aria-hidden="true"></i>
-          <span class="sidebar-label">Security &amp; Embed Policies</span>
-        </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#/bi-home" data-nav-route="bi-home" title="Executive Analytics Hub"><i class="nav-icon fas fa-chart-bar"></i><span class="sidebar-label">Executive Analytics Hub</span></a>
+        <a href="#/dashboards" data-nav-route="dashboards" title="Dashboards Directory"><i class="nav-icon fas fa-chart-bar"></i><span class="sidebar-label">Dashboards Directory</span></a>
+        <a href="#/kpi-scorecards" data-nav-route="kpi-scorecards" title="KPI Scorecards &amp; Goals"><i class="nav-icon fas fa-chart-bar"></i><span class="sidebar-label">KPI Scorecards &amp; Goals</span></a>
+        <div class="navlabel">Modeling &amp; Studio</div>
+        <a href="#/explore-workbench" data-nav-route="explore-workbench" title="Self-Service Explore"><i class="nav-icon fas fa-chart-bar"></i><span class="sidebar-label">Self-Service Explore</span></a>
+        <a class="active" aria-current="page" href="#/semantic-models" data-nav-route="semantic-models" title="Semantic Models"><i class="nav-icon fas fa-chart-bar"></i><span class="sidebar-label">Semantic Models</span></a>
+        <a href="#/metrics-library" data-nav-route="metrics-library" title="Certified Metrics Library"><i class="nav-icon fas fa-chart-bar"></i><span class="sidebar-label">Certified Metrics Library</span></a>
+        <div class="navlabel">Governance &amp; Delivery</div>
+        <a href="#/metric-alerts" data-nav-route="metric-alerts" title="Alerts &amp; Thresholds"><i class="nav-icon fas fa-chart-bar"></i><span class="sidebar-label">Alerts &amp; Thresholds</span></a>
+        <a href="#/report-subscriptions" data-nav-route="report-subscriptions" title="Scheduled Subscriptions"><i class="nav-icon fas fa-chart-bar"></i><span class="sidebar-label">Scheduled Subscriptions</span></a>
+        <a href="#/rls-embed-policies" data-nav-route="rls-embed-policies" title="Security &amp; Embed Policies"><i class="nav-icon fas fa-chart-bar"></i><span class="sidebar-label">Security &amp; Embed Policies</span></a>
       </nav>
-
       <div class="side-bottom">
-        <div class="profile-link">
-          <div class="avatar-badge">EV</div>
-          <div class="sidebar-label">
-            <strong style="font-size:12px;display:block">Elena Vance</strong>
-            <small style="font-size:11px;color:var(--muted)">BI Explorer / Analyst</small>
-          </div>
-        </div>
+        <a class="profile-link" href="#/bi-home" data-nav-route="bi-home" title="Business Intelligence &amp; Dashboards Workspace">
+          <span class="sidebar-avatar">APP</span>
+          <span class="profile-meta">
+            <strong>Business Intelligence &amp; Dashboards</strong>
+            <small>Enterprise Suite</small>
+          </span>
+        </a>
       </div>
     </aside>
-
+    <div class="shade" data-action="close-menu"></div>
     <div class="main-col">
       <header class="topbar h-16 sticky top-0 z-30 flex items-center justify-between px-6 border-b border-border-color bg-background/95 backdrop-blur">
         <div class="flex items-center gap-3 min-w-0">
@@ -566,5 +689,89 @@
       window.loadEntitySWR('DatSemanticModel', function(rows) { rows_4 = rows; renderLedger_4(); });
     
   </script>
+<script data-collapsible-sidebar>
+(function() {
+  function initCollapsibleSidebar() {
+    var sidebar = document.querySelector("aside.sidebar, #suiteSidebar, #apm-sidebar");
+    if (!sidebar) return;
+    var layout = sidebar.closest(".layout, .ds-shell") || document.querySelector(".layout, .ds-shell") || document.body;
+
+    function setCollapsed(collapsed) {
+      if (collapsed) {
+        sidebar.classList.add("sidebar-collapsed");
+        if (layout) layout.classList.add("sidebar-collapsed");
+        try { localStorage.setItem("rapider_sidebar_collapsed", "true"); } catch(e) {}
+      } else {
+        sidebar.classList.remove("sidebar-collapsed");
+        if (layout) layout.classList.remove("sidebar-collapsed");
+        try { localStorage.setItem("rapider_sidebar_collapsed", "false"); } catch(e) {}
+      }
+    }
+
+    var collapseBtns = sidebar.querySelectorAll(".sidebar-collapse-btn, #btn-sidebar-collapse");
+    collapseBtns.forEach(function(btn) {
+      btn.addEventListener("click", function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        setCollapsed(true);
+      });
+    });
+
+    var brand = sidebar.querySelector(".brand");
+    var brandRow = sidebar.querySelector(".brand-row");
+    var suiteIconContainer = sidebar.querySelector(".suite-icon-container");
+
+    function handleExpandClick(e) {
+      if (sidebar.classList.contains("sidebar-collapsed") || (layout && layout.classList.contains("sidebar-collapsed"))) {
+        e.preventDefault();
+        e.stopPropagation();
+        setCollapsed(false);
+      }
+    }
+
+    if (suiteIconContainer) suiteIconContainer.addEventListener("click", handleExpandClick);
+    if (brand) brand.addEventListener("click", handleExpandClick);
+    if (brandRow) brandRow.addEventListener("click", handleExpandClick);
+
+    // Wire sidebar route links to window.rapiderApi.navigate when hosted
+    sidebar.querySelectorAll("a[data-nav-route]").forEach(function(a) {
+      a.addEventListener("click", function(e) {
+        var targetRoute = a.getAttribute("data-nav-route");
+        if (!targetRoute) return;
+        document.body.classList.remove("navopen");
+        if (window.rapiderApi && typeof window.rapiderApi.navigate === "function") {
+          e.preventDefault();
+          window.rapiderApi.navigate(targetRoute);
+        }
+      });
+    });
+
+    // Wire mobile hamburger menu toggle & shade backdrop
+    document.querySelectorAll(".mobile-menu, [data-action='menu']").forEach(function(btn) {
+      btn.addEventListener("click", function(e) {
+        e.preventDefault();
+        document.body.classList.toggle("navopen");
+      });
+    });
+    document.querySelectorAll(".shade, [data-action='close-menu']").forEach(function(sh) {
+      sh.addEventListener("click", function() {
+        document.body.classList.remove("navopen");
+      });
+    });
+
+    try {
+      if (localStorage.getItem("rapider_sidebar_collapsed") === "true") {
+        setCollapsed(true);
+      }
+    } catch(e) {}
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initCollapsibleSidebar);
+  } else {
+    initCollapsibleSidebar();
+  }
+})();
+</script>
 </body>
 </html>
