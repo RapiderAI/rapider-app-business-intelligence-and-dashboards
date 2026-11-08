@@ -266,6 +266,14 @@ aside.sidebar.sidebar-collapsed .brand-row,
 .sidebar-collapsed aside.sidebar .brand-row {
   justify-content: center !important;
   padding: 0 0 18px 0 !important;
+  cursor: pointer !important;
+}
+aside.sidebar .brand-row .brand {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
 }
 aside.sidebar.sidebar-collapsed .brand-row .brand,
 .sidebar-collapsed aside.sidebar .brand-row .brand {
@@ -273,6 +281,7 @@ aside.sidebar.sidebar-collapsed .brand-row .brand,
   flex: none !important;
   padding: 0 !important;
   gap: 0 !important;
+  cursor: pointer !important;
 }
 aside.sidebar.sidebar-collapsed .appbox,
 .sidebar-collapsed aside.sidebar .appbox {
@@ -357,13 +366,13 @@ aside.sidebar.sidebar-collapsed .brand-row:hover .suite-expand-icon {
   <div class="layout ds-shell @container" id="appLayout">
     <aside class="sidebar" id="suiteSidebar" aria-label="Business Intelligence &amp; Dashboards navigation">
       <div class="brand-row">
-        <a class="brand" href="#/bi-home" data-nav-route="bi-home" title="Enterprise Suite">
+        <button type="button" class="brand" data-action="expand-sidebar" title="Enterprise Suite" aria-label="Enterprise Suite">
           <span class="suite-icon-container">
             <i class="suite-icon fas fa-chart-bar"></i>
             <i class="suite-expand-icon fas fa-chevron-right"></i>
           </span>
           <span class="suite-title">Enterprise Suite</span>
-        </a>
+        </button>
         <button type="button" class="sidebar-collapse-btn" title="Collapse sidebar" aria-label="Collapse sidebar">
           <i class="fas fa-chevron-left"></i>
         </button>
@@ -680,8 +689,13 @@ aside.sidebar.sidebar-collapsed .brand-row:hover .suite-expand-icon {
 (function() {
   function initCollapsibleSidebar() {
     var sidebar = document.querySelector("aside.sidebar, #suiteSidebar, #apm-sidebar");
-    if (!sidebar) return;
+    if (!sidebar || sidebar.dataset.collapsibleBound === "true") return;
+    sidebar.dataset.collapsibleBound = "true";
     var layout = sidebar.closest(".layout, .ds-shell") || document.querySelector(".layout, .ds-shell") || document.body;
+
+    function isCollapsed() {
+      return sidebar.classList.contains("sidebar-collapsed") || (layout && layout.classList.contains("sidebar-collapsed"));
+    }
 
     function setCollapsed(collapsed) {
       if (collapsed) {
@@ -695,34 +709,39 @@ aside.sidebar.sidebar-collapsed .brand-row:hover .suite-expand-icon {
       }
     }
 
-    var collapseBtns = sidebar.querySelectorAll(".sidebar-collapse-btn, #btn-sidebar-collapse");
-    collapseBtns.forEach(function(btn) {
-      btn.addEventListener("click", function(e) {
+    // Use window capture-phase listener so it executes BEFORE any host/SDK document capture-phase anchor listener
+    window.addEventListener("click", function(e) {
+      var target = e.target;
+      if (!target || typeof target.closest !== "function") return;
+
+      var collapseBtn = target.closest(".sidebar-collapse-btn, #btn-sidebar-collapse");
+      if (collapseBtn && sidebar.contains(collapseBtn)) {
         e.preventDefault();
         e.stopPropagation();
+        if (typeof e.stopImmediatePropagation === "function") e.stopImmediatePropagation();
         setCollapsed(true);
-      });
-    });
+        return;
+      }
 
-    var brand = sidebar.querySelector(".brand");
-    var brandRow = sidebar.querySelector(".brand-row");
-    var suiteIconContainer = sidebar.querySelector(".suite-icon-container");
-
-    function handleExpandClick(e) {
-      if (sidebar.classList.contains("sidebar-collapsed") || (layout && layout.classList.contains("sidebar-collapsed"))) {
+      var expandTrigger = target.closest(".brand-row, .brand, .suite-icon-container, .suite-expand-icon, [data-action='expand-sidebar']");
+      if (expandTrigger && sidebar.contains(expandTrigger) && isCollapsed()) {
         e.preventDefault();
         e.stopPropagation();
+        if (typeof e.stopImmediatePropagation === "function") e.stopImmediatePropagation();
         setCollapsed(false);
+        return;
       }
-    }
-
-    if (suiteIconContainer) suiteIconContainer.addEventListener("click", handleExpandClick);
-    if (brand) brand.addEventListener("click", handleExpandClick);
-    if (brandRow) brandRow.addEventListener("click", handleExpandClick);
+    }, true);
 
     // Wire sidebar route links to window.rapiderApi.navigate when hosted
     sidebar.querySelectorAll("a[data-nav-route]").forEach(function(a) {
       a.addEventListener("click", function(e) {
+        if (a.classList.contains("brand") && isCollapsed()) {
+          e.preventDefault();
+          e.stopPropagation();
+          setCollapsed(false);
+          return;
+        }
         var targetRoute = a.getAttribute("data-nav-route");
         if (!targetRoute) return;
         document.body.classList.remove("navopen");
